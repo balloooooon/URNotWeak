@@ -1,0 +1,32 @@
+.nav {
+  align-items: center;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(8.37, 8.37, 8.37, 0.42) 56.25%,
+      rgba(51.85, 51.85, 51.85, 0) 100%
+  );
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 24px;
+  position: relative;
+  width: 391px;
+}
+
+.nav .element {
+  color: #ffffff;
+  font-family: "Roboto-Medium", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  line-height: 20px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.nav .m-menu {
+  height: 24px !important;
+  position: relative !important;
+  width: 24px !important;
+}
