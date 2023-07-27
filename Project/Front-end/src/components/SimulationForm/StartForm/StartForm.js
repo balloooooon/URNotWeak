@@ -29,7 +29,7 @@ const StartForm = () => {
           </button>
           <div className="ellipse-4-4" />
           <img src="" />
-          <p className="text-9">밀어서 통화하기</p>
+          <p className="text-9">밀어서 통화하기zz</p>
         </div>
       </div>
     </div>
