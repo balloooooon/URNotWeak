@@ -155,3 +155,48 @@ my-react-app/
     git fetch upstream
     ```
   
+### 브랜치 생성 명령어
+
+- 현재 위치에서 새로운 브랜치 생성
+    
+    ```bash
+    git branch new_branch_name
+    ```
+    
+- 브랜치 생성과 동시에 이동하기
+    
+    ```bash
+    git checkout -b new_branch_name
+    ```
+    
+
+### 브랜치 삭제 명령어
+
+- 브랜치 삭제
+    
+    ```bash
+    git branch -d branch_name
+    ```
+    
+- 병합하지 않은 브랜치 강제 삭제
+    
+    ```bash
+    git branch -D branch_name
+    ```
+    
+- 원격 브랜치 삭제
+    
+    ```bash
+    git push --delete 원격_Repo_별칭 원격_branch_name
+    
+    ex) git push --delete origin test
+    ```
+    
+
+### 브랜치 이름 변경 명령어
+
+- 이름 변경
+
+    ```bash
+    git branch -m origin_branch_name new_branch_name
+    ```
