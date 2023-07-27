@@ -1,7 +1,7 @@
 import React from "react";
 import "./StartForm.css";
 
-const StartForm = () => {
+export const StartForm = () => {
   return (
     <div className="android---5-1">
       <div className="status-bar">
