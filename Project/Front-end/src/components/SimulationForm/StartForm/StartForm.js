@@ -1,5 +1,6 @@
-import React from "react";
-import "./StartForm.css";
+// import React from "react";
+// // import Nav from "../../Nav/Nav";
+// import "./StartForm.css";
 
 export const StartForm = () => {
   return (
@@ -36,4 +37,22 @@ export const StartForm = () => {
   );
 };
 
-export default StartForm;
+//             <ButtonsDark
+//               className="buttons-dark-instance"
+//               hasButton={false}
+//               icon={false}
+//               state="enabled"
+//               type="filled"
+//             />
+//             <img className="ellipse" alt="Ellipse" src="ellipse-44.png" />
+//             <img className="icon-phone" alt="Icon phone" src="icon-phone.png" />
+//             <div className="text-wrapper">밀어서 통화하기</div>
+//           </div>
+//         </div>
+//       </div>
+//       {/* <FrameWrapper className="frame-62" /> */}
+//     </div>
+//   );
+// };
+
+// export default StartForm;
