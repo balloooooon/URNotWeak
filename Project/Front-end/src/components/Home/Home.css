@@ -1,0 +1,72 @@
+.home {
+    align-items: center;
+    background-color: #000000;
+    border: 7px none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: var(--variable-collection-HEIGHT);
+    position: relative;
+    width: var(--variable-collection-WIDTH);
+}
+
+.home .homepages {
+    align-items: center;
+    align-self: stretch;
+    border-radius: 15px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 10px;
+    overflow-y: scroll;
+    position: relative;
+    width: 100%;
+}
+
+.home .frame-57 {
+    background-image: url(./rectangle-137-5.png) !important;
+    position: relative !important;
+}
+
+.home .frame-2608140 {
+    background-image: url(./home-2.png) !important;
+    position: relative !important;
+}
+
+.home .frame-instance {
+    background-image: url(./rectangle-137-6.png) !important;
+}
+
+.home .frame-2608139-instance {
+    background-image: url(./home-3.png) !important;
+    position: relative !important;
+}
+
+.home .design-component-instance-node {
+    background-image: url(./rectangle-137-7.png) !important;
+}
+
+.home .frame-2608141-instance {
+    background-image: url(./home-4.png) !important;
+    position: relative !important;
+}
+
+.home .frame-2 {
+    background-image: url(./rectangle-137-8.png) !important;
+}
+
+.home .frame-2608142-instance {
+    background-image: url(./home-5.png) !important;
+    position: relative !important;
+}
+
+.home .frame-3 {
+    background-image: url(./rectangle-137-9.png) !important;
+}
+
+.home .nav-instance {
+    left: 1px !important;
+    position: absolute !important;
+    top: 0 !important;
+}
