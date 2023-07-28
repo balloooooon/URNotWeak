@@ -12,12 +12,14 @@ import Simulation from "pages/Simulation/Simulation"
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="simul" element={<Simulation />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="display">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="simul" element={<Simulation />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
