@@ -5,10 +5,12 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import scrollbar from 'smooth-scrollbar'
 
 import Home from "pages/Homepage/HomePage"
 import Simulation from "pages/Simulation/Simulation"
 
+scrollbar.init(document.querySelector('#smooth-scroll'));
 
 function App() {
   return (
