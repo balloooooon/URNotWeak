@@ -1,11 +1,11 @@
 import React from "react";
 // import StartForm from "./components/SimulationForm/StartForm/StartForm";
 // import StartAnd from "./components/SimulationForm/StartForm/StartAnd";
-import StartTxt from "./components/SimulationForm/StartForm/StartTxt";
 import "./App.css";
+import NextBtn from "./components/SimulationForm/NextBtn";
 
 function App() {
-  return <StartTxt />;
+  return <NextBtn />;
 }
 
 export default App;

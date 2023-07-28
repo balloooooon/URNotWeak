@@ -1,6 +1,7 @@
 import { useCallback } from "react";
+import SendImg from "../../../assets/images/send.svg";
 import "./StartTxt.css";
-const Android87 = () => {
+const StartTxt = () => {
   const onM324menuIconClick = useCallback(() => {
     // Please sync "Android - 4" to the project
   }, []);
@@ -58,10 +59,10 @@ const Android87 = () => {
           <div className="group-child" />
           <div className="div7">지금 출발한다</div>
         </div>
-        <img className="icon-send" alt="" src="/-icon-send.svg" />
+        <img className="icon-send" alt="" src={SendImg} />
       </div>
     </div>
   );
 };
 
-export default Android87;
+export default StartTxt;
