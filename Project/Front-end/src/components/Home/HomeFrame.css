@@ -7,20 +7,32 @@
   position: relative;
 }
 
-.frame .img1 {
-  background-image: url(.../assets/images/home1.png);
+img {
+  object-fit: cover;
 }
-.frame .img2 {
-  background-image: url(.../assets/images/home2.png);
+
+.home1 {
+  content: url(assets/images/home1.png);
 }
-.frame .img3 {
-  background-image: url(.../assets/images/home3.png);
+.home2 {
+  content: url(assets/images/home2.png);
 }
-.frame .img4 {
-  background-image: url(.../assets/images/home4.png);
+.home3 {
+  content: url(assets/images/home3.png);
 }
-.frame .img5 {
-  background-image: url(.../assets/images/home5.png);
+.home4 {
+  content: url(assets/images/home4.png);
+}
+.home5 {
+  content: url(assets/images/home5.png);
+}
+
+.big-top {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 
@@ -32,11 +44,6 @@
       rgba(0, 0, 0, 0.47) 80.66%,
       rgba(0, 0, 0, 0.5) 100%
   );
-  height: 716px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 392px;
 }
 
 .frame .group {
@@ -44,13 +51,12 @@
   left: 25px;
   position: absolute;
   top: 553px;
-  width: 233px;
+  width: 50%;
+  min-width: 250px;
 }
 
 .frame .overlap-group {
-  height: 101px;
   position: relative;
-  width: 229px;
 }
 
 .frame .title {
