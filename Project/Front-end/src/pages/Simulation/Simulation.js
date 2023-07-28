@@ -1,14 +1,16 @@
 import React from "react";
 import { Nav } from "components/Nav/Nav";
-import { StartForm } from "components/SimulationForm/StartForm/StartForm"
-
+import StartAnd from "components/SimulationForm/StartForm/StartAnd";
+import NextBtn from "components/SimulationForm/NextBtn";
+import StartTxt from "components/SimulationForm/StartForm/StartTxt";
+import SelectForm from "components/SimulationForm/SelectForm/SelecctForm";
 export const Simulation = () => {
-    return (
-        <div>
-            <Nav className="nav-instance" />
-            <StartForm />
-        </div>
-    );
+  return (
+    <div>
+      {/* <Nav className="nav-instance" /> */}
+      <SelectForm />
+    </div>
+  );
 };
 
 export default Simulation;

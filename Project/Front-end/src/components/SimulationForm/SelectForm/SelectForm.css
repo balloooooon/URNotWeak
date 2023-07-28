@@ -1,0 +1,126 @@
+.simul-child {
+  position: relative;
+  border-radius: 22px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(0, 0, 0, 0.96) 52.6%,
+    rgba(71, 71, 70, 0.61) 99.99%
+  );
+  border: 1px solid #000;
+  box-sizing: border-box;
+  width: 100%; /* 화면 너비에 맞게 늘어나도록 설정 */
+  height: 100vh; /* 화면 높이에 맞게 자동으로 조절됨 */
+  overflow: hidden; /* 내용이 넘치는 경우 잘림 처리 */
+  text-align: left;
+  font-size: 14px;
+  color: #fff;
+  font-family: Roboto;
+  background-color: #000000; /* 배경색을 검은색으로 설정 */
+}
+
+.div {
+  top: 0;
+  left: 40px;
+  letter-spacing: 0.1px;
+  line-height: 30px;
+  font-weight: 600;
+  display: inline-block;
+  width: 229px;
+  height: 30px;
+}
+
+.div,
+.div1,
+.parent {
+  position: absolute;
+}
+
+.div1 {
+  top: 46px;
+  left: 25px;
+  font-size: 16px;
+  letter-spacing: 0.1px;
+  line-height: 30px;
+  display: inline-block;
+  width: 258px;
+  height: 22px;
+}
+
+.parent {
+  width: calc(100% - 83px);
+  top: 125px;
+  right: 41px;
+  left: 42px;
+  height: 75px;
+  text-align: center;
+  font-size: 24px;
+  color: #060606;
+}
+
+.simul-inner {
+  position: absolute;
+  top: 600px;
+  left: 305px;
+  width: 49px;
+  height: 49px;
+}
+
+.div2 {
+  position: relative;
+  letter-spacing: 0.1px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.m324menu-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.group {
+  /* position: absolute; */
+  width: 100%;
+  /* top: 52px; */
+  top: calc(125px + 75px);
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  padding: 14px 24px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.m324wifi-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.icons,
+.status-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.status-bar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 14px 24px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+}
