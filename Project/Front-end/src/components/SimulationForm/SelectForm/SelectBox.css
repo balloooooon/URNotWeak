@@ -1,66 +1,39 @@
 .box {
   background-color: transparent;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  margin-top: 250px;
   width: 100%;
-}
-
-.group {
-  display: flex;
-  width: 100%;
-  height: 600px;
 }
 
 .box .Thumnail1 {
-  position: absolute;
-  border-radius: 50%;
-  height: 276px;
-  width: 276px;
-  overflow: hidden;
-  border: 5px solid rgba(47, 47, 47, 0.8);
-}
-
-.box .ImgBox1 {
-  height: 276px;
-  left: 0;
-  object-fit: cover;
   position: fixed;
-  top: 0;
-  width: 244px;
-}
-
-.box .Thumnail2 {
-  position: absolute;
-  border: 5px solid rgba(47, 47, 47, 0.8);
+  top: 420px;
+  left: -50px;
   border-radius: 50%;
   height: 197px;
   width: 197px;
   overflow: hidden;
+  border: 5px solid rgba(47, 47, 47, 0.8);
 }
 
-.box .ImgBox2 {
-  height: 197px;
-  left: 0;
+.box .Thumnail2 {
   position: fixed;
-  top: 0;
-  width: 186px;
-}
-/* 여기가 2 */
-
-.box .Thumnail3 {
-  position: absolute;
+  top: 300px;
+  right: -85px;
   border: 5px solid rgba(47, 47, 47, 0.8);
   border-radius: 50%;
-  height: 180px;
-  width: 180px;
+  height: 300px;
+  width: 300px;
   overflow: hidden;
 }
 
-.box .ImgBox3 {
-  height: 180px;
-  left: 0;
+.box .Thumnail3 {
   position: fixed;
-  top: 0;
-  width: 180px;
+  left: 100px;
+  top: 600px;
+  border: 5px solid rgba(47, 47, 47, 0.8);
+  border-radius: 50%;
+  height: 177px;
+  width: 177px;
+  overflow: hidden;
 }

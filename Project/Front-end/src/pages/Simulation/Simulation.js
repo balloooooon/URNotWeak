@@ -1,4 +1,5 @@
 import React from "react";
+import "./Simulation.css";
 import { Nav } from "components/Nav/Nav";
 import StartAnd from "components/SimulationForm/StartForm/StartAnd";
 import NextBtn from "components/SimulationForm/NextBtn";
@@ -9,6 +10,7 @@ export const Simulation = () => {
     <div>
       {/* <Nav className="nav-instance" /> */}
       <SelectForm />
+      {/* <StartAnd /> */}
     </div>
   );
 };

@@ -1,5 +1,7 @@
-.simul-child {
+.simul- {
+  align-items: center;
   position: relative;
+  flex-direction: column;
   border-radius: 22px;
   background: linear-gradient(
     180deg,
@@ -9,36 +11,34 @@
   );
   border: 1px solid #000;
   box-sizing: border-box;
-  width: 100%; /* 화면 너비에 맞게 늘어나도록 설정 */
-  height: 100vh; /* 화면 높이에 맞게 자동으로 조절됨 */
-  overflow: hidden; /* 내용이 넘치는 경우 잘림 처리 */
-  text-align: left;
+  width: 100%;
+  min-width: 392px; /* 최소 가로 크기를 392px로 설정 */
+  height: 100vh;
+  min-height: 758px; /* 최소 세로 크기를 758px로 설정 */
+  overflow: hidden;
+  text-align: center;
   font-size: 14px;
-  color: #fff;
   font-family: Roboto;
-  background-color: #000000; /* 배경색을 검은색으로 설정 */
+  background-color: #000000;
 }
 
-.div {
+.simul-txt {
+  font-family: Roboto;
+  color: #fff;
+  text-align: center;
   top: 0;
-  left: 40px;
-  letter-spacing: 0.1px;
+  letter-spacing: 0.3px;
   line-height: 30px;
   font-weight: 600;
   display: inline-block;
   width: 229px;
   height: 30px;
+  margin-bottom: 10px;
 }
 
-.div,
-.div1,
-.parent {
-  position: absolute;
-}
-
-.div1 {
+.simul-txt2 {
+  color: #fff;
   top: 46px;
-  left: 25px;
   font-size: 16px;
   letter-spacing: 0.1px;
   line-height: 30px;
@@ -48,79 +48,12 @@
 }
 
 .parent {
-  width: calc(100% - 83px);
+  width: 100%;
   top: 125px;
-  right: 41px;
-  left: 42px;
+  justify-content: center;
   height: 75px;
-  text-align: center;
-  font-size: 24px;
-  color: #060606;
-}
-
-.simul-inner {
-  position: absolute;
-  top: 600px;
-  left: 305px;
-  width: 49px;
-  height: 49px;
-}
-
-.div2 {
-  position: relative;
-  letter-spacing: 0.1px;
-  line-height: 20px;
-  font-weight: 500;
-}
-
-.m324menu-icon {
-  position: relative;
-  width: 24px;
-  height: 24px;
-  overflow: hidden;
-  flex-shrink: 0;
-  cursor: pointer;
-}
-
-.group {
-  /* position: absolute; */
-  width: 100%;
-  /* top: 52px; */
-  top: calc(125px + 75px);
-  right: 0;
-  left: 0;
-  display: flex;
-  flex-direction: row;
-  padding: 14px 24px;
-  box-sizing: border-box;
+  font-size: 30px;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-}
-
-.m324wifi-icon {
-  position: relative;
-  width: 24px;
-  height: 24px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.icons,
-.status-bar {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.status-bar {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  right: 0;
-  left: 0;
-  padding: 14px 24px;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: space-between;
+  margin-bottom: 75px;
 }
