@@ -9,7 +9,8 @@
 }
 
 .call-btn1,
-.call-btn2 {
+.call-btn2,
+.red-btn {
   position: absolute;
   width: 70px;
   height: 70px;
@@ -23,6 +24,10 @@
 .call-btn2 {
   bottom: 150px;
   right: 66px;
+}
+
+.red-btn {
+  bottom: 150px;
 }
 
 .count-time,

@@ -3,15 +3,23 @@ import CallBtn from "../../../assets/Group54.svg";
 import RejectBtn from "../../../assets/images/reject_btn.png";
 import CallingImg from "../../../assets/images/white_phone.png";
 import RedBtn from "../../../assets/images/redBtn.png";
+import VideoForm from "../StoryForm/VideoForm";
 import "./StartAnd.css";
 
 const StartAnd = () => {
   const [count, setCount] = useState(0);
   const [isCallBtn, setCallBtn] = useState(true);
+  const [isRedBtn, setRedBtn] = useState(false);
   useEffect(() => {
     const interval = setInterval(() => {
       setCount((prevCount) => prevCount + 1);
     }, 1000);
+    if (count == 5) {
+      clearInterval(interval);
+      setCallBtn(false);
+      setRedBtn(true);
+    }
+
     return () => clearInterval(interval);
   }, []);
   const formatTime = (seconds) => {
@@ -24,6 +32,7 @@ const StartAnd = () => {
 
   const handleCallBtn = () => {
     setCallBtn(false);
+    setRedBtn(true);
   };
 
   return (
@@ -40,15 +49,21 @@ const StartAnd = () => {
           )}
           <div className="phone-num">02-1234-56**</div>
         </div>
-        <img
-          className="call-btn1"
-          alt=""
-          src={CallBtn}
-          onClick={handleCallBtn}
-        />
-        <img className="call-btn2" alt="" src={RejectBtn} />
-        {/* <img className="frame-item" alt="" src="/vector-15.svg" /> */}
+        {isRedBtn ? (
+          <img className="red-btn" alt="" src={RedBtn} />
+        ) : (
+          <>
+            <img
+              className="call-btn1"
+              alt=""
+              src={CallBtn}
+              onClick={handleCallBtn}
+            />
+            <img className="call-btn2" alt="" src={RejectBtn} />
+          </>
+        )}
       </div>
+      {count >= 5 && <VideoForm />}
     </div>
   );
 };
