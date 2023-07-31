@@ -10,7 +10,7 @@ export const Frame = ({ backimage, text1, text2, link }) => {
                 <img className={`big-top img ${backimage}`}></img>
                 <div className="group">
                   <Link to={`/${link}`} className="overlap-group">
-                    <p className="title btx">
+                    <p className="title btx" inner>
                         {text1}
                     </p>
                     <div className="subtitle stx">{text2}</div>
