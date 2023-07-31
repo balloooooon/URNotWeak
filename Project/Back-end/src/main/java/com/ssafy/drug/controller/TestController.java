@@ -1,6 +1,8 @@
 package com.ssafy.drug.controller;
 
 import com.ssafy.drug.dto.TestContentDto;
+import com.ssafy.drug.dto.TestResultDto;
+import com.ssafy.drug.dto.TestResultInterface;
 import com.ssafy.drug.model.User;
 import com.ssafy.drug.service.TestService;
 import org.slf4j.Logger;
@@ -12,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -31,4 +34,11 @@ public class TestController {
 
     }
 
+    // 취약테스트 결과 내용 가져오기
+    @GetMapping(value = "/result",produces = { MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<TestResultInterface> getResultContent(@RequestParam int score){
+        TestResultInterface result = testService.selectResultContent(score);
+        return new ResponseEntity<TestResultInterface>(result, HttpStatus.OK);
+
+    }
 }
