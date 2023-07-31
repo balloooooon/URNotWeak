@@ -1,7 +1,8 @@
 package com.ssafy.drug.controller;
 
+import com.ssafy.drug.dto.TestContentDto;
 import com.ssafy.drug.model.User;
-import com.ssafy.drug.service.UserService;
+import com.ssafy.drug.service.TestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,25 +16,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("user")
-public class UserController {
+@RequestMapping("test")
+public class TestController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    UserService userService;
+    TestService testService;
 
-    // 모든 사용자 조회
     @GetMapping(produces = { MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity<List<User>> getAllusers(){
-        List<User> user = userService.findAll();
-        return new ResponseEntity<List<User>>(user, HttpStatus.OK);
+    public ResponseEntity<List<TestContentDto>> getContents(){
+        List<TestContentDto> contents = testService.selectAllContent();
+        return new ResponseEntity<List<TestContentDto>>(contents, HttpStatus.OK);
 
     }
 
-    // 사용자 번호 가져오기
-    @GetMapping(value = "/userno", produces = { MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity<Long> getUserNo(){
-        Long userNo = userService.countUser();
-        return new ResponseEntity<Long>(userNo, HttpStatus.OK);
-    }
 }

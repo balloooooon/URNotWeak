@@ -1,4 +1,4 @@
-package com.ssafy.drug.dto;
+package com.ssafy.drug.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

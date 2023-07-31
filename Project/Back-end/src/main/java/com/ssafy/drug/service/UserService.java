@@ -1,6 +1,6 @@
 package com.ssafy.drug.service;
 
-import com.ssafy.drug.dto.User;
+import com.ssafy.drug.model.User;
 import com.ssafy.drug.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

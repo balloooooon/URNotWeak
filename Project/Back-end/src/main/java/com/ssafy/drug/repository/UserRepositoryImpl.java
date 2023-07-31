@@ -1,7 +1,7 @@
 package com.ssafy.drug.repository;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import com.ssafy.drug.dto.QUser;
+import com.ssafy.drug.model.QUser;
 import com.ssafy.drug.repository.querydsl.UserRepositoryCustom;
 import lombok.RequiredArgsConstructor;
 
