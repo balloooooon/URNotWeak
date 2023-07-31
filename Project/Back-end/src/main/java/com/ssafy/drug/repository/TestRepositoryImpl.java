@@ -2,6 +2,7 @@ package com.ssafy.drug.repository;
 
 import com.querydsl.core.group.GroupBy;
 import com.querydsl.core.group.GroupBy.*;
+import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.ssafy.drug.dto.TestAnswerDto;
 import com.ssafy.drug.dto.TestContentDto;
@@ -32,26 +33,15 @@ public class TestRepositoryImpl implements TestRepositoryCustom {
 
         QTestQuest qTestQuest = QTestQuest.testQuest;
         QTestAnswer qTestAnswer = QTestAnswer.testAnswer;
-//        List<TestQuest> answers = queryFactory
-//                .select(qTestQuest)
-//                .from(qTestQuest)
-//                .join(qTestQuest.testAnswers, qTestAnswer)
-//                .fetch();
 
-//        Map<Long, TestContentDto> resultMap = queryFactory
-//                .from(qTestQuest)
-//                .join(qTestAnswer).on(qTestAnswer.testQuest.testQNo.eq(qTestQuest.testQNo))
-//                .transform(groupBy(qTestQuest.testQNo).as(new TestContentDto(
-//                        qTestQuest.testQNo,
-//                        list(new TestAnswerDto(qTestAnswer.testAId, qTestAnswer.testAContent, qTestAnswer.testScore))
-//
-//                )));
-
-        List<?> fetch = queryFactory
+        List<TestContentDto> result = queryFactory
                 .from(qTestQuest)
                 .join(qTestAnswer).on(qTestAnswer.testQuest.testQNo.eq(qTestQuest.testQNo))
-                .fetch();
+                .transform(groupBy(qTestQuest.testQNo).list(Projections.constructor(TestContentDto.class,
+                        qTestQuest.testQNo, qTestQuest.testQImg,
+                        list(Projections.constructor(TestAnswerDto.class, qTestAnswer.testAId, qTestAnswer.testAContent, qTestAnswer.testScore)
+                        ))));
 
-        return null;
+        return result;
     }
 }

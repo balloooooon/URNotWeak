@@ -23,6 +23,7 @@ public class TestController {
     @Autowired
     TestService testService;
 
+    // 취약테스트 내용 모두 가져오기
     @GetMapping(produces = { MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<List<TestContentDto>> getContents(){
         List<TestContentDto> contents = testService.selectAllContent();
