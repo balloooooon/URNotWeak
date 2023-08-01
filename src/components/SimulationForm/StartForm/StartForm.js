@@ -1,7 +1,8 @@
-import React from "react";
-import "./StartForm.css";
+// import React from "react";
+// // import Nav from "../../Nav/Nav";
+// import "./StartForm.css";
 
-const StartForm = () => {
+export const StartForm = () => {
   return (
     <div className="android---5-1">
       <div className="status-bar">
@@ -29,11 +30,29 @@ const StartForm = () => {
           </button>
           <div className="ellipse-4-4" />
           <img src="" />
-          <p className="text-9">밀어서 통화하기</p>
+          <p className="text-9">밀어서 통화하기zz</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default StartForm;
+//             <ButtonsDark
+//               className="buttons-dark-instance"
+//               hasButton={false}
+//               icon={false}
+//               state="enabled"
+//               type="filled"
+//             />
+//             <img className="ellipse" alt="Ellipse" src="ellipse-44.png" />
+//             <img className="icon-phone" alt="Icon phone" src="icon-phone.png" />
+//             <div className="text-wrapper">밀어서 통화하기</div>
+//           </div>
+//         </div>
+//       </div>
+//       {/* <FrameWrapper className="frame-62" /> */}
+//     </div>
+//   );
+// };
+
+// export default StartForm;
