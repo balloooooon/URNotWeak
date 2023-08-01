@@ -12,14 +12,14 @@ const SelectBox = ({ ThumbClick }) => {
   return (
     <div className="box">
       {ThumbnailImg.map((thumbnail, index) => (
-        <div key={index} className={`ImgBox${index + 1}`}>
-          <img
-            className={`Thumnail${index + 1}`}
-            alt=""
-            src={thumbnail}
-            onClick={() => handleThumbClick(index)}
-          />
-        </div>
+        // <div key={index} className={`ImgBox${index + 1}`}>
+        <img
+          className={`Thumnail${index + 1}`}
+          alt=""
+          src={thumbnail}
+          onClick={() => handleThumbClick(index)}
+        />
+        // </div>
       ))}
     </div>
   );

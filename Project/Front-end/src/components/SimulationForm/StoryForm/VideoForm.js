@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Nav from "components/Nav/Nav";
 import video1 from "../../../assets/images/pregnant1.mp4";
 import NextBtn from "../NextBtn";
 import SelectTxt from "./SelectTxt";
@@ -12,7 +11,6 @@ const VideoForm = () => {
   };
   return (
     <>
-      <Nav />
       {!VideoEnded ? (
         <div className="video-story">
           <div className="videoform-wrapper">
