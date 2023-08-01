@@ -1,5 +1,5 @@
 
-.frame {
+.homeFrame { 
   background-position: 50% 50%;
   background-size: cover;
   width: 100%;
@@ -36,7 +36,7 @@ img {
 }
 
 
-.frame .rectangle {
+.homeFrame .rectangle {
   background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0) 0%,
@@ -46,7 +46,7 @@ img {
   );
 }
 
-.frame .group {
+.homeFrame .group {
   height: 101px;
   left: 25px;
   position: absolute;
@@ -55,11 +55,11 @@ img {
   min-width: 250px;
 }
 
-.frame .overlap-group {
+.homeFrame .overlap-group {
   position: static;
 }
 
-.frame .title {
+.homeFrame .title {
   color: #ffffff;
   font-family: "Roboto-SemiBold", Helvetica;
   font-size: 24px;
