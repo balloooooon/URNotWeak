@@ -14,7 +14,7 @@ const StartAnd = () => {
     const interval = setInterval(() => {
       setCount((prevCount) => prevCount + 1);
     }, 1000);
-    if (count == 5) {
+    if (count == 3) {
       clearInterval(interval);
       setCallBtn(false);
       setRedBtn(true);
@@ -37,33 +37,33 @@ const StartAnd = () => {
 
   return (
     <div className="start1">
-      <div className="group-parent">
-        <div className="call-wrapper">
-          {isCallBtn ? (
-            <div className="calling-txt">통화 수신중</div>
-          ) : (
-            <div className="count-time">
-              <img className="call-img" src={CallingImg} />
-              {formatTime(count)}
-            </div>
-          )}
-          <div className="phone-num">02-1234-56**</div>
-        </div>
-        {isRedBtn ? (
-          <img className="red-btn" alt="" src={RedBtn} />
+      <div className="call-wrapper">
+        {isCallBtn ? (
+          <div className="calling-txt">통화 수신중</div>
         ) : (
-          <>
-            <img
-              className="call-btn1"
-              alt=""
-              src={CallBtn}
-              onClick={handleCallBtn}
-            />
-            <img className="call-btn2" alt="" src={RejectBtn} />
-          </>
+          <div className="count-time">
+            <img className="call-img" src={CallingImg} />
+            {formatTime(count)}
+          </div>
         )}
+        <div className="phone-num">02-1234-56**</div>
       </div>
-      {count >= 5 && <VideoForm />}
+
+      {isRedBtn ? (
+        <img className="red-btn" alt="" src={RedBtn} />
+      ) : (
+        <div className="group-parent1">
+          <img
+            className="call-btn1"
+            alt=""
+            src={CallBtn}
+            onClick={handleCallBtn}
+          />
+          <img className="call-btn2" alt="" src={RejectBtn} />
+        </div>
+      )}
+
+      {count >= 3 && <VideoForm />}
     </div>
   );
 };

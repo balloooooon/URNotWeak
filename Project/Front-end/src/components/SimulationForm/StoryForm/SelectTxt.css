@@ -1,0 +1,122 @@
+.background,
+.group-child {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+}
+.group-child {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.background-parent {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.div {
+  color: #f9f9f9;
+  position: relative;
+  letter-spacing: 0.1px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.parent {
+  margin: 0 !important;
+  position: absolute;
+  width: 100%;
+  top: 52px;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  padding: 14px 24px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+.button-wrapper,
+.buttonslight {
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+}
+.button-wrapper {
+  flex-direction: row;
+  padding: 10px 24px;
+  justify-content: center;
+}
+.buttonslight {
+  position: absolute;
+  width: calc(100% - 91px);
+  top: 224.84px;
+  right: 47px;
+  left: 44px;
+  background-color: rgba(230, 224, 233, 0.12);
+  flex-direction: column;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+.p {
+  margin: 0;
+}
+.buttonslight1 {
+  position: absolute;
+  width: calc(100% - 91px);
+  top: 293.73px;
+  right: 47px;
+  left: 44px;
+  border-radius: 100px;
+  background-color: rgba(230, 224, 233, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+.div3 {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  font-size: 24px;
+  letter-spacing: 0.1px;
+  line-height: 30px;
+  color: #f9f9f9;
+  display: inline-block;
+  height: 156.91px;
+}
+.buttonslight-parent {
+  position: absolute;
+  margin: 0 !important;
+  width: calc(100% - 43px);
+  top: 213px;
+  right: 21px;
+  left: 22px;
+  height: 353.73px;
+  z-index: 3;
+  text-align: center;
+}
+.simul-4 {
+  position: relative;
+  border-radius: 22px;
+  background-color: #000000;
+  width: 100%;
+  height: 758px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 14px;
+  font-family: Roboto;
+}

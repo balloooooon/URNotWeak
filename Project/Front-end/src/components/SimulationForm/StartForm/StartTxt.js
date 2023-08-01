@@ -54,9 +54,9 @@ const StartTxt = () => {
           </div>
         </div>
       </div>
-      <div className="group-parent" onClick={onFrameContainer8Click}>
+      <div className="group-parent1" onClick={onFrameContainer8Click}>
         <div className="rectangle-parent">
-          <div className="group-child" />
+          <div className="group-child1" />
           <div className="div7">지금 출발한다</div>
         </div>
         <img className="icon-send" alt="" src={SendImg} />

@@ -81,7 +81,7 @@
   position: relative;
   overflow: hidden;
 }
-.group-child {
+.group-child1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -113,7 +113,7 @@
   display: flex;
   align-items: center;
 }
-.group-parent {
+.group-parent1 {
   align-self: stretch;
   flex-direction: row;
   padding: 14px 24px;
