@@ -1,8 +1,16 @@
 import React from "react";
 import { Frame } from "components/Home/HomeFrame";
 import { Nav } from "components/Nav/Nav";
+import Chatting from "pages/Chatting/Chatting";
 
 export const Home = () => {
+
+  Chatting.loadScript();
+
+  Chatting.boot({
+    pluginKey: "0c4aec1b-7fe4-4693-bafb-49862c83f43e",
+  })
+
   return (
     <div className="display">
       <Nav className="nav-instance" />
