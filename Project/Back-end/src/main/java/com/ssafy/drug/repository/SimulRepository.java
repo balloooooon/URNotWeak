@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface SimulRepository extends JpaRepository<SimulationDetail, Integer> {
     public List<SimulationDetail> findBySimulThumbnail(int no);
+    public List<SimulationDetail> findBySimulation_SimulNoOrderBySimulOrderAsc(int simulNo);
 }

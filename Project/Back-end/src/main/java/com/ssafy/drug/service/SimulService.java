@@ -1,5 +1,6 @@
 package com.ssafy.drug.service;
 
+import com.ssafy.drug.dto.SimulDetailDto;
 import com.ssafy.drug.dto.SimulThumbnailDto;
 import com.ssafy.drug.model.SimulationDetail;
 import com.ssafy.drug.repository.SimulRepository;
@@ -23,5 +24,14 @@ public class SimulService {
             results.add(SimulThumbnailDto.from(e));
         });
         return results;
+    }
+
+    public List<SimulDetailDto> selectAllContents(int simulNo){
+        List<SimulationDetail> contents = simulRepository.findBySimulation_SimulNoOrderBySimulOrderAsc(simulNo);
+        List<SimulDetailDto> result = new ArrayList<>();
+        contents.forEach(e -> {
+            result.add(SimulDetailDto.from(e));
+        });
+        return result;
     }
 }
