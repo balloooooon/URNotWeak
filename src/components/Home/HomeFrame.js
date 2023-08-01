@@ -4,7 +4,7 @@ import "./HomeFrame.css";
 
 export const Frame = ({ backimage, text1, text2, link }) => {
     return (
-        <div className={`frame`}>
+        <div className={`homeFrame`}>
             <div className={`overlap `}>
                 <div className="rectangle big-top" />
                 <img className={`big-top img ${backimage}`}></img>
