@@ -1,6 +1,7 @@
 package com.ssafy.drug.controller;
 
 import com.ssafy.drug.dto.SimulDetailDto;
+import com.ssafy.drug.dto.SimulResultDto;
 import com.ssafy.drug.dto.SimulThumbnailDto;
 import com.ssafy.drug.dto.TestContentDto;
 import com.ssafy.drug.model.SimulationDetail;
@@ -42,4 +43,11 @@ public class SimulController {
 
     }
 
+    // 시뮬레이션 결과 가져오기
+    @GetMapping(value = "/result/{simulNo}",produces = { MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<SimulResultDto> getResult(@PathVariable("simulNo") int simulNo){
+        SimulResultDto result = simulService.selectResult(simulNo);
+        return new ResponseEntity<SimulResultDto>(result, HttpStatus.OK);
+
+    }
 }
