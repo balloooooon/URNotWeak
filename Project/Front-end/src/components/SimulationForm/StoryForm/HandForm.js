@@ -41,7 +41,11 @@ const HandForm = () => {
             alt=""
             src="/httpslottiefilescomanimationsshieldupuejjv2msnp1@2x.png"
           />
+<<<<<<< HEAD
           <div className="div2">드래그하여 내려주세요</div>
+=======
+          <div className="div2">드래그하여 내려주세요 !</div>
+>>>>>>> 0d39bd3 (Feat : simul retry)
         </div>
       </div>
     </div>
