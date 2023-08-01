@@ -1,6 +1,6 @@
 import React from "react";
-import { Nav } from "components/Nav/Nav";
 import { Frame } from "components/Home/HomeFrame";
+import { Nav } from "components/Nav/Nav";
 
 export const Home = () => {
   return (

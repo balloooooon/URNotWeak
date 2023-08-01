@@ -14,13 +14,15 @@ scrollbar.init(document.querySelector('#smooth-scroll'));
 
 function App() {
   return (
-    <div className="display">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="simul" element={<Simulation />} />
-        </Routes>
-      </BrowserRouter>
+    <div>
+      <div className="display">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="simul" element={<Simulation />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }
