@@ -12,13 +12,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("test")
 public class TestController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -36,9 +34,17 @@ public class TestController {
 
     // 취약테스트 결과 내용 가져오기
     @GetMapping(value = "/result",produces = { MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity<TestResultInterface> getResultContent(@RequestParam int score){
-        TestResultInterface result = testService.selectResultContent(score);
-        return new ResponseEntity<TestResultInterface>(result, HttpStatus.OK);
+    public ResponseEntity<TestResultDto> getResultContent(@RequestParam int score){
+        TestResultDto result = testService.selectResultContent(score);
+        return new ResponseEntity<TestResultDto>(result, HttpStatus.OK);
+
+    }
+
+    // 결과 통계정보 가져오기(점수기반)
+    @GetMapping(value = "/statistics",produces = { MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<Float> getResultPercent(@RequestParam int score){
+        float percent = testService.getResultPercent(score);
+        return new ResponseEntity<Float>(percent, HttpStatus.OK);
 
     }
 }

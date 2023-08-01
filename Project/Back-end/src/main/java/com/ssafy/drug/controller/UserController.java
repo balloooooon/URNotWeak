@@ -9,12 +9,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("user")
 public class UserController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -35,5 +34,13 @@ public class UserController {
     public ResponseEntity<Long> getUserNo(){
         Long userNo = userService.countUser();
         return new ResponseEntity<Long>(userNo, HttpStatus.OK);
+    }
+
+    // 최종점수 저장
+    @PostMapping("/result")
+    public ResponseEntity<String> postResult(@RequestBody User user){
+        logger.info(String.valueOf(user));
+        userService.postResult(user);
+        return new ResponseEntity<String>("최종점수를 저장했습니다", HttpStatus.OK);
     }
 }
