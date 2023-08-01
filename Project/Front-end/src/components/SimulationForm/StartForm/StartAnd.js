@@ -4,6 +4,7 @@ import RejectBtn from "../../../assets/images/reject_btn.png";
 import CallingImg from "../../../assets/images/white_phone.png";
 import RedBtn from "../../../assets/images/redBtn.png";
 import VideoForm from "../StoryForm/VideoForm";
+import Nav from "components/Nav/Nav";
 import "./StartAnd.css";
 
 const StartAnd = () => {
@@ -37,6 +38,7 @@ const StartAnd = () => {
 
   return (
     <div className="start1">
+      <Nav />
       <div className="call-wrapper">
         {isCallBtn ? (
           <div className="calling-txt">통화 수신중</div>
