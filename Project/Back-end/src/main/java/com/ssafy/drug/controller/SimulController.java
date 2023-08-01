@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("simul")
+@RequestMapping("simulation")
 public class SimulController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -24,10 +24,12 @@ public class SimulController {
     SimulService simulService;
 
     // 시뮬레이션 썸네일 가져오기
-    @GetMapping(produces = { MediaType.APPLICATION_JSON_VALUE })
+    @GetMapping(value = "/thumbnail",produces = { MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<List<SimulThumbnailDto>> getContents(){
         List<SimulThumbnailDto> thumbnails = simulService.selectThumbnail();
         return new ResponseEntity<List<SimulThumbnailDto>>(thumbnails, HttpStatus.OK);
 
     }
+
+
 }
