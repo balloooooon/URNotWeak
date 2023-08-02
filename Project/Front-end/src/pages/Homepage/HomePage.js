@@ -36,7 +36,7 @@ export const Home = () => {
             text2="마약 취약성 확인하기"
           />
           <Frame
-            link="ai"
+            link="ai/upload"
             backimage="home4"
             text1="망가져 가는 내모습 유지할 수 없는 일상"
             text2="얼굴AI"

@@ -21,7 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="simul" element={<Simulation />} />
-            <Route path="ai" element={<AI/> } />
+            <Route path="ai/*" element={<AI/> } />
           </Routes>
         </BrowserRouter>
       </div>
