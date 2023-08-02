@@ -24,6 +24,7 @@ export const MenuBar = ({closebtn}) => {
         <div className="items">
             <div className="item"><Link to="/" className="text-wrapper">Home </Link></div>
             <div className="item"><Link to="/simul" className="text-wrapper">Simulation </Link></div>
+            <div className="item"><Link to="/ai" className="text-wrapper">AI </Link></div>
             <div className="item"><Link to="/test" className="text-wrapper">Test </Link></div>
             <div className="item"><Link to="/" className="text-wrapper">AboutUs </Link></div>
         </div>
