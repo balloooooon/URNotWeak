@@ -1,4 +1,4 @@
-package com.example.gccoffee.configuration;
+package com.ssafy.drug.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
