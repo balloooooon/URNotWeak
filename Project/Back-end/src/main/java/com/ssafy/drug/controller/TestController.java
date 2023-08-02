@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("test")
 public class TestController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
