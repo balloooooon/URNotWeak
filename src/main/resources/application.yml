@@ -7,7 +7,7 @@ spring:
   datasource:
     url: jdbc:mariadb://43.202.55.53:3306/drug
     driver-class-name: org.mariadb.jdbc.Driver
-    username: ssafyE204
+    username: root
     password: 1793
   jpa:
     open-in-view: false
