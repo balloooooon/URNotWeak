@@ -31,7 +31,6 @@ const SelectBox = ({ ThumbClick }) => {
             onClick={() => handleThumbClick(index)}
             autoPlay
             loop
-            // controls
             style={{ objectFit: "cover" }}
           />
         </div>
