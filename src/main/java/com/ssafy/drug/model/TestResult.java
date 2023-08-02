@@ -1,24 +1,23 @@
 package com.ssafy.drug.model;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 @Data
+@Getter
+@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity(name="test_result")
 public class TestResult {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="test_r_id")
-    int testRId;
+    Integer testRId;
 
     @NotNull
     @Column(name="test_r_score")
-    int testRScore;
+    Integer testRScore;
 
     @NotNull
     @Column(name="test_r_title")
@@ -36,8 +35,11 @@ public class TestResult {
     @Column(name="test_r_img_url")
     String testRImg;
 
+    @Column(name="test_r_count")
+    Integer testRCount;
+
     @Builder
-    public TestResult(int testRId, int testRScore, String testRTitle, String testRSubtitle, String testRContent, String testRImg) {
+    public TestResult(Integer testRId, Integer testRScore, String testRTitle, String testRSubtitle, String testRContent, String testRImg) {
         this.testRId = testRId;
         this.testRScore = testRScore;
         this.testRTitle = testRTitle;
@@ -45,4 +47,20 @@ public class TestResult {
         this.testRContent = testRContent;
         this.testRImg = testRImg;
     }
+
+    public void plusCount(){
+        this.testRCount+=1;
+    }
+
+//    @Builder
+//    public TestResult(Integer testRId, Integer testRScore, String testRTitle, String testRSubtitle, String testRContent, String testRImg, Integer testRCount) {
+//        this.testRId = testRId;
+//        this.testRScore = testRScore;
+//        this.testRTitle = testRTitle;
+//        this.testRSubtitle = testRSubtitle;
+//        this.testRContent = testRContent;
+//        this.testRImg = testRImg;
+//        this.testRCount = testRCount;
+//    }
+
 }
