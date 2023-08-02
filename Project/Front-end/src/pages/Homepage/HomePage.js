@@ -2,6 +2,7 @@ import React from "react";
 import { Frame } from "components/Home/HomeFrame";
 import { Nav } from "components/Nav/Nav";
 import Chatting from "pages/Chatting/Chatting";
+import './HomePage.css'
 
 export const Home = () => {
 
