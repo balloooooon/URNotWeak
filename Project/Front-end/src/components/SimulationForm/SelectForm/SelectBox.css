@@ -1,8 +1,10 @@
+
 .box {
   background-color: transparent;
   display: flex;
   margin-top: 250px;
   width: 100%;
+  min-height: 100vh;
 }
 
 .box .Thumnail1 {

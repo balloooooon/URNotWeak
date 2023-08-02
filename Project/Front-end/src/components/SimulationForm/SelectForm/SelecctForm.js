@@ -11,20 +11,19 @@ const SelectForm = () => {
     setSelectedIndex(index);
   };
 
-  if (selectedIndex === 1) {
-    return <StartAnd />;
-  } else if (selectedIndex === 2) {
-    return <ResultForm />;
-  }
-
   return (
     <div className="simul-">
-      <Nav />
-      <div className="parent">
-        <div className="simul-txt">시뮬레이션</div>
-        <div className="simul-txt2">시나리오 선택</div>
-      </div>
-      <SelectBox ThumbClick={handleThumbClick} />
+      {selectedIndex === 1 ? (
+        <StartAnd />
+      ) : (
+        <div>
+          <div className="select-parent">
+            <div className="simul-txt">시뮬레이션</div>
+            <div className="simul-txt2">시나리오 선택</div>
+          </div>
+          <SelectBox ThumbClick={handleThumbClick} />
+        </div>
+      )}
     </div>
   );
 };

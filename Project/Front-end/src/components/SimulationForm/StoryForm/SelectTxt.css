@@ -30,7 +30,7 @@
 }
 
 .parent {
-  margin: 0 !important;
+  margin: 0 ;
   position: absolute;
   width: 100%;
   top: 52px;

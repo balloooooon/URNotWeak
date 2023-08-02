@@ -1,4 +1,6 @@
-body {
-  min-width: 392px;
-  min-height: 758px;
+.simul {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: 100vh;
 }
