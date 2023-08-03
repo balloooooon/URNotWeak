@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import handback2 from "../../../assets/images/handback2.png";
+import React, { useRef } from "react";
+import Draggable from "react-draggable";
 import handback from "../../../assets/images/hand-back.png";
 import handdirec from "../../../assets/images/handform-direc.svg";
 import drug from "../../../assets/images/drug.png";
@@ -7,31 +7,47 @@ import drug from "../../../assets/images/drug.png";
 import "./HandForm.css";
 
 const HandForm = ({ onNext }) => {
-  const [handbackImg, setHandbackImg] = useState(handback);
+  const drugRef = useRef(null);
 
-  const handleDrag = (event) => {
-    console.log("시작")
-    const offsetY = event.clientY;
-    if (offsetY >= 50) {
-      setHandbackImg(handback2);
-    } else {
-      setHandbackImg(handback);
-    }
+  const handleDragStart = () => {
+    console.log("시작");
   };
+const handleDrag=(ui)=>{
+if(ui.changedTouches[0].clientY>=350){
+{onNext()}}
+}
+
+
+  // const handleDrag = (e, ui) => {
+  //   if (ui.deltaY >= 200) {
+  //     console.log("성공");
+  //   }
+  // };
 
   return (
     <div className="hand-form">
       <div className="hand-parent">
-        <img className="handbackimg" alt="" src={handbackImg} />
+        <img className="handbackimg" alt="" src={handback} />
         <div className="hand-group">
           <img className="hand-direc" alt="" src={handdirec} />
-          <img
-            className="drug"
-            alt=""
-            src={drug}
-            draggable="true"
+          {/* Draggable 컴포넌트로 감싸서 드래그 동작을 추가합니다. */}
+          <Draggable
+            axis="y"
+            onStart={handleDragStart}
             onDrag={handleDrag}
-          />
+            bounds={{ top: 0, bottom: 220 }}
+            >
+            {/* drug 이미지를 감싸는 div에 ref를 지정합니다. */}
+            <div className="drug" ref={drugRef}>
+              <img
+                alt=""
+                src={drug}
+                onDrag={handleDrag} 
+                onMouseDown={handleDragStart}
+                onDragStart={(e) => e.preventDefault()} // 이미지 드래그의 기본 동작 방지
+              />
+            </div>
+          </Draggable>
           <div className="drag">드래그하여 내려주세요 !</div>
         </div>
       </div>
