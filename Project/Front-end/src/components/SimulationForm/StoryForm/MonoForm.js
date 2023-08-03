@@ -1,9 +1,9 @@
 import "./MonoForm.css";
 import NextBtn from "../NextBtn";
-const MonoForm = () => {
+const MonoForm = ({onNext}) => {
   return (
     <div className="mono">
-      <NextBtn />
+      <NextBtn onClick={onNext}/>
       <div className="mono-wrapper">
         <div className="mono-txt">
           <p className="p">너무 힘든데...</p>

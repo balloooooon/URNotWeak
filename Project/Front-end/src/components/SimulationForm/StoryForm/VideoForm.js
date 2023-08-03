@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SelectTxt from "./SelectTxt";
 import MonoForm from "./MonoForm";
+import HandForm from "./HandForm";
 import NextBtn from "../NextBtn";
 import "./VideoForm.css";
 
@@ -36,12 +37,10 @@ const VideoForm = ({ selectedIndex }) => {
       const video = videoRef;
       const newSource = simulData[currentStep].simulVideoUrl;
 
-      // 비디오를 중지한 후에 바꾸어야 합니다.
       video.pause();
       video.src = newSource;
       video.load();
 
-      // 비디오가 준비되면 자동으로 재생합니다.
       video.onloadeddata = () => {
         video.play();
       };
@@ -60,7 +59,11 @@ const VideoForm = ({ selectedIndex }) => {
                     ref={(ref) => setVideoRef(ref)}
                     autoPlay
                     loop
-                    style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                    style={{
+                      objectFit: "cover",
+                      width: "100%",
+                      height: "100%",
+                    }}
                   >
                     <source
                       src={simulData[currentStep].simulVideoUrl}
@@ -86,8 +89,9 @@ const VideoForm = ({ selectedIndex }) => {
                 />
               )}
               {simulData[currentStep].simulContentType === 3 && (
-                <MonoForm text={simulData[currentStep].simulText} />
+                <MonoForm text={simulData[currentStep].simulText} onNext={handleNextClick} />
               )}
+              {simulData[currentStep].simulContentType === 5 && <HandForm onNext={handleNextClick} />}
             </>
           )}
         </>
