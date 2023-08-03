@@ -1,0 +1,12 @@
+
+.exampleimg {
+    width: 90%;
+    height: 130px;
+    margin: 0 auto;
+}
+
+.imgitem {
+    width: 50%;
+    height: 120px;
+    object-fit: cover;
+}
