@@ -1,10 +1,8 @@
 import "./MonoForm.css";
 import NextBtn from "../NextBtn";
-import Nav from "components/Nav/Nav";
 const MonoForm = () => {
   return (
     <div className="mono">
-      <Nav />
       <NextBtn />
       <div className="mono-wrapper">
         <div className="mono-txt">
