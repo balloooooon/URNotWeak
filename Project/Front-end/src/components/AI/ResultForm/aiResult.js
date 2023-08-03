@@ -1,5 +1,6 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
+import { BottomMenu } from "components/common/BottomMenu/BottomMenu";
 import './aiResult.css'
 
 export const AI = () => {
@@ -16,7 +17,7 @@ export const AI = () => {
         src={null} 
         />
       <div className="btn" onClick={goUpload}>다시해보기</div>
-
+      <BottomMenu></BottomMenu>
     </div>
   );
 };
