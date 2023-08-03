@@ -28,7 +28,7 @@ const SelectBox = ({ ThumbClick }) => {
             className={`Thumnail${index + 1}`}
             alt=""
             src={thumbnail.url}
-            onClick={() => handleThumbClick(index)}
+            onClick={() => handleThumbClick(index + 1)}
             autoPlay
             loop
             style={{ objectFit: "cover" }}

@@ -1,26 +1,12 @@
-.background,
-.group-child {
+.background {
   position: absolute;
   height: 100%;
   width: 100%;
   top: 0;
   bottom: 0;
+  opacity: 0.3;
 }
-.group-child {
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.background-parent {
-  align-self: stretch;
-  flex: 1;
-  position: relative;
-  z-index: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-}
+
 .div {
   color: #f9f9f9;
   position: relative;
@@ -30,7 +16,7 @@
 }
 
 .parent {
-  margin: 0 ;
+  margin: 0;
   position: absolute;
   width: 100%;
   top: 52px;
@@ -44,50 +30,54 @@
   justify-content: space-between;
   z-index: 2;
 }
-.button-wrapper,
-.buttonslight {
+.button-wrapper001,
+.buttonslight002,
+.buttonslight001 {
   border-radius: 100px;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
 }
-.button-wrapper {
+.button-wrapper001 {
   flex-direction: row;
   padding: 10px 24px;
   justify-content: center;
 }
-.buttonslight {
+.buttonslight001 {
+  margin-top: 230px;
+  margin-bottom: 100px;
+  left: 50px;
+  right: 50px;
   position: absolute;
-  width: calc(100% - 91px);
-  top: 224.84px;
-  right: 47px;
-  left: 44px;
-  background-color: rgba(230, 224, 233, 0.12);
   flex-direction: column;
-  justify-content: flex-start;
+  border-radius: 100px;
+  background-color: rgba(230, 224, 233, 0.12);
+  cursor: pointer;
+}
+.buttonslight002 {
+  margin-top: 300px;
+  left: 50px;
+  right: 50px;
+  position: absolute;
+  flex-direction: column;
+  border-radius: 100px;
+  background-color: rgba(230, 224, 233, 0.12);
   cursor: pointer;
 }
 .p {
   margin: 0;
 }
-.buttonslight1 {
-  position: absolute;
-  width: calc(100% - 91px);
-  top: 293.73px;
-  right: 47px;
-  left: 44px;
-  border-radius: 100px;
-  background-color: rgba(230, 224, 233, 0.12);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  cursor: pointer;
+
+.divforselect {
+  margin-top: 200px;
+  padding: auto;
 }
-.div3 {
+
+.div003 {
   position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
+  left: 50px;
+  right: 50px;
+  margin-top: 200px;
+  margin-bottom: 10px;
   font-size: 24px;
   letter-spacing: 0.1px;
   line-height: 30px;
@@ -95,28 +85,18 @@
   display: inline-block;
   height: 156.91px;
 }
-.buttonslight-parent {
-  position: absolute;
-  margin: 0 !important;
-  width: calc(100% - 43px);
-  top: 213px;
-  right: 21px;
-  left: 22px;
-  height: 353.73px;
-  z-index: 3;
-  text-align: center;
-}
-.simul-4 {
+
+.simul-412 {
   position: relative;
   border-radius: 22px;
   background-color: #000000;
   width: 100%;
-  height: 758px;
+  height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  text-align: center;
   font-size: 14px;
   font-family: Roboto;
 }

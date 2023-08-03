@@ -7,8 +7,8 @@
 }
 .mono-txt {
   top: calc(50% - 100px);
-  left: calc(50% - 108px);
-  right: 0px;
+  left: 50px;
+  right: 50px;
   letter-spacing: 0.1px;
   line-height: 30px;
 }

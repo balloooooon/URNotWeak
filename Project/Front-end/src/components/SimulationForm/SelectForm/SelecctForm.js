@@ -13,8 +13,8 @@ const SelectForm = () => {
 
   return (
     <div className="simul-">
-      {selectedIndex === 1 ? (
-        <StartAnd />
+      {selectedIndex === 1 || selectedIndex === 2 ? (
+        <StartAnd selectedIndex={selectedIndex} />
       ) : (
         <div>
           <div className="select-parent">
