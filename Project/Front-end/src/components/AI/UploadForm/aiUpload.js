@@ -6,17 +6,6 @@ import './aiUpload.css'
 export const AI = () => {
   const [imageSrc, setImageSrc] = useState(null);
   const navigate = useNavigate();
-  // 사진 axios에서 들고오도록 바꾸기
-  const images = [
-    "https://www.thefirstmedia.net/news/photo/202303/113980_96437_3559.jpg",
-    "https://sitem.ssgcdn.com/13/03/75/item/1000438750313_i1_750.jpg",
-    "https://image.dongascience.com/Photo/2020/03/5bddba7b6574b95d37b6079c199d7101.jpg",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Golde33443.jpg/280px-Golde33443.jpg",
-  ];
-
-  useEffect(() => {
-    console.log(imageSrc);
-  })
 
   // 사진 올렸을 때 실행
   const onUpload = (e) => {
@@ -50,10 +39,10 @@ export const AI = () => {
     <div className="upload">
       <div>
         <p className="st">예시</p>
-        <ImageSlider images={images}/>
+        <ImageSlider/>
       </div>
       <div className="split">
-        <label for="file">
+        <label htmlFor="file">
           <div className="btn">파일 업로드하기</div>
         </label>
         <input 
