@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import SelectBox from "./SelectBox";
 import StartAnd from "../StartForm/StartAnd";
-import ResultForm from "../ResultForm/ResultForm";
-import Nav from "components/Nav/Nav";
+import StartTxt from "../StartForm/StartTxt";
 import "./SelectForm.css";
 
 const SelectForm = () => {
@@ -15,6 +14,8 @@ const SelectForm = () => {
     <div className="simul-">
       {selectedIndex === 1 || selectedIndex === 2 ? (
         <StartAnd selectedIndex={selectedIndex} />
+      ) : selectedIndex === 3 ? (
+        <StartTxt selectedIndex={selectedIndex} />
       ) : (
         <div>
           <div className="select-parent">
