@@ -7,7 +7,7 @@ import VideoForm from "../StoryForm/VideoForm";
 import Nav from "components/Nav/Nav";
 import "./StartAnd.css";
 
-const StartAnd = ({selectedIndex}) => {
+const StartAnd = ({ selectedIndex }) => {
   const [count, setCount] = useState(0);
   const [isCallBtn, setCallBtn] = useState(true);
   const [isRedBtn, setRedBtn] = useState(false);
@@ -16,7 +16,7 @@ const StartAnd = ({selectedIndex}) => {
   const handleCallBtn = () => {
     setCallBtn(false);
     setRedBtn(true);
-    setCount(0); 
+    setCount(0);
   };
 
   useEffect(() => {
@@ -25,10 +25,9 @@ const StartAnd = ({selectedIndex}) => {
         setCount((prevCount) => prevCount + 1);
       }, 1000);
 
-   
       if (count >= 3) {
         setShowVideoForm(true);
-        clearInterval(interval); 
+        clearInterval(interval);
       }
 
       return () => clearInterval(interval);
@@ -36,7 +35,9 @@ const StartAnd = ({selectedIndex}) => {
   }, [count, isCallBtn]);
 
   const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60).toString().padStart(2, "0");
+    const minutes = Math.floor(seconds / 60)
+      .toString()
+      .padStart(2, "0");
     const remaining = (seconds % 60).toString().padStart(2, "0");
     return `${minutes}:${remaining}`;
   };
@@ -59,7 +60,7 @@ const StartAnd = ({selectedIndex}) => {
       {isRedBtn ? (
         <img className="red-btn" alt="" src={RedBtn} />
       ) : (
-        <div className="group-parent1">
+        <>
           <img
             className="call-btn1"
             alt=""
@@ -67,10 +68,10 @@ const StartAnd = ({selectedIndex}) => {
             onClick={handleCallBtn}
           />
           <img className="call-btn2" alt="" src={RejectBtn} />
-        </div>
+        </>
       )}
 
-      {showVideoForm && <VideoForm selectedIndex={selectedIndex}/>} 
+      {showVideoForm && <VideoForm selectedIndex={selectedIndex} />}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SelectTxt from "./SelectTxt";
 import MonoForm from "./MonoForm";
@@ -8,6 +8,7 @@ import "./VideoForm.css";
 const VideoForm = ({ selectedIndex }) => {
   const [simulData, setSimulData] = useState([]);
   const [currentStep, setCurrentStep] = useState(0);
+  const [videoRef, setVideoRef] = useState(null);
 
   useEffect(() => {
     const fetchSimulData = async () => {
@@ -24,12 +25,28 @@ const VideoForm = ({ selectedIndex }) => {
     fetchSimulData();
   }, [selectedIndex]);
 
-  // 확인
   const handleNextClick = () => {
     if (currentStep < simulData.length - 1) {
       setCurrentStep(currentStep + 1);
     }
   };
+
+  useEffect(() => {
+    if (videoRef && simulData.length > 0) {
+      const video = videoRef;
+      const newSource = simulData[currentStep].simulVideoUrl;
+
+      // 비디오를 중지한 후에 바꾸어야 합니다.
+      video.pause();
+      video.src = newSource;
+      video.load();
+
+      // 비디오가 준비되면 자동으로 재생합니다.
+      video.onloadeddata = () => {
+        video.play();
+      };
+    }
+  }, [videoRef, currentStep, simulData]);
 
   return (
     <>
@@ -40,6 +57,7 @@ const VideoForm = ({ selectedIndex }) => {
               <div className="videoform-wrapper">
                 <div className="videoform">
                   <video
+                    ref={(ref) => setVideoRef(ref)}
                     autoPlay
                     loop
                     style={{ objectFit: "cover", width: "100%", height: "100%" }}

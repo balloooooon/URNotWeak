@@ -1,39 +1,30 @@
-import { useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import SendImg from "../../../assets/images/send.svg";
+import VideoForm from "../StoryForm/VideoForm";
 import "./StartTxt.css";
-const StartTxt = () => {
-  const onM324menuIconClick = useCallback(() => {
-    // Please sync "Android - 4" to the project
-  }, []);
+
+const StartTxt = ({ selectedIndex }) => {
+  const [isContentVisible, setIsContentVisible] = useState(false);
+  const [showVideoForm, setShowVideoForm] = useState(false);
 
   const onFrameContainer8Click = useCallback(() => {
-    // Please sync "Android - 85" to the project
-  }, []);
+    setIsContentVisible(!isContentVisible);
+  }, [isContentVisible]);
+
+  useEffect(() => {
+    if (isContentVisible) {
+      const timer = setTimeout(() => {
+        setIsContentVisible(false);
+        setShowVideoForm(true);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isContentVisible]);
 
   return (
     <div className="android-87">
-      <div className="status-bar">
-        <div className="div">12:45</div>
-        <div className="icons">
-          <img className="m324wifi-icon" alt="" src="/m324wifi.svg" />
-          <img
-            className="m324wifi-icon"
-            alt=""
-            src="/m324signal-cellular.svg"
-          />
-          <img className="m324wifi-icon" alt="" src="/m324battery-full.svg" />
-        </div>
-      </div>
-      <div className="status-bar">
-        <div className="div">약해지지마</div>
-        <img
-          className="m324menu-icon"
-          alt=""
-          src="/m324menu.svg"
-          onClick={onM324menuIconClick}
-        />
-      </div>
-      <div className="frame-parent">
+      <div className={`frame-parent ${showVideoForm ? "hidden" : ""}`}>
         <div className="frame-group">
           <div className="frame">
             <div className="div">야! 지금 클럽인데 빨리 나와!</div>
@@ -48,19 +39,33 @@ const StartTxt = () => {
             <div className="div">빨리와</div>
           </div>
         </div>
-        <div className="frame-wrapper">
-          <div className="wrapper">
-            <div className="div">오</div>
+        <div className={`frame-wrapper ${showVideoForm ? "hidden" : ""}`}>
+          <div className="wrapper12">
+            <div className="div1225">오</div>
           </div>
+          {isContentVisible && !showVideoForm && (
+            <div className="wrapper13">
+              <div className="div1225">지금 출발한다</div>
+            </div>
+          )}
         </div>
       </div>
-      <div className="group-parent1" onClick={onFrameContainer8Click}>
-        <div className="rectangle-parent">
-          <div className="group-child1" />
-          <div className="div7">지금 출발한다</div>
+      <div
+        className={`group-parent01 ${isContentVisible || showVideoForm ? "hidden" : ""}`}
+        onClick={onFrameContainer8Click}
+      >
+        <div className={`rectangle-parent ${isContentVisible ? "hidden" : ""}`}>
+          <div className={`group-child1 ${isContentVisible ? "hidden" : ""}`} />
+          {!isContentVisible && !showVideoForm && (
+            <div className={`div7 ${isContentVisible ? "hidden" : ""}`}>
+              지금 출발한다
+            </div>
+          )}
+          <img className="icon-send" alt="" src={SendImg} />
         </div>
-        <img className="icon-send" alt="" src={SendImg} />
       </div>
+
+      {showVideoForm && <VideoForm selectedIndex={selectedIndex} />}
     </div>
   );
 };
