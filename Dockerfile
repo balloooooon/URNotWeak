@@ -18,9 +18,9 @@ RUN rm /etc/nginx/conf.d/default.conf
 
 # host pc 의 nginx.conf 를 아래 경로에 복사
 COPY ./nginx.conf /etc/nginx/conf.d
-
-COPY certificate.crt /etc/nginx/certificate.crt
-COPY private.key /etc/nginx/private.key  # 개인 키 파일 복사
+# 
+COPY certificate.crt /etc/nginx/ssl/certificate.crt
+COPY private.key /etc/nginx/ssl/private.key
 
 # 80 포트 오픈
 EXPOSE 80
