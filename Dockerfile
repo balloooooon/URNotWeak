@@ -20,7 +20,7 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY ./nginx.conf /etc/nginx/conf.d
 # 
 COPY /etc/nginx/ssl/certificate.crt /etc/nginx/ssl/certificate.crt
-COPY /etc/nginx/ssl/certificate.crt /etc/nginx/ssl/private.key
+COPY /etc/nginx/ssl/private.key /etc/nginx/ssl/private.key
 
 # 80 포트 오픈
 EXPOSE 80
