@@ -80,7 +80,7 @@ const VideoForm = ({ selectedIndex }) => {
                 <NextBtn onClick={handleNextClick} />
               </div>
               <div className="frame-child001">
-                <div className="chapter1-txt">{`Chapter ${simulData[currentStep].simulOrder}. ${simulData[currentStep].simulText}`}</div>
+                <div className="chapter1-txt">{`${simulData[currentStep].simulText}. ${simulData[currentStep].simulAnswer1}`}</div>
               </div>
             </div>
           ) : (

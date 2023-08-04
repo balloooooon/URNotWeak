@@ -4,12 +4,12 @@
   position: relative;
   flex-direction: column;
   border-radius: 22px;
-  background: linear-gradient(
+  /* background: linear-gradient(
     180deg,
     transparent,
     rgba(0, 0, 0, 0.96) 52.6%,
     rgba(71, 71, 70, 0.61) 99.99%
-  );
+  ); */
   border: 1px solid #000;
   box-sizing: border-box;
   width: 100%;
