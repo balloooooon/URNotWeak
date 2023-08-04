@@ -3,6 +3,8 @@ import axios from "axios";
 import SelectTxt from "./SelectTxt";
 import MonoForm from "./MonoForm";
 import HandForm from "./HandForm";
+import AR from "../AR";
+import ResultForm from "../ResultForm/ResultForm";
 import NextBtn from "../NextBtn";
 import "./VideoForm.css";
 
@@ -10,12 +12,13 @@ const VideoForm = ({ selectedIndex }) => {
   const [simulData, setSimulData] = useState([]);
   const [currentStep, setCurrentStep] = useState(0);
   const [videoRef, setVideoRef] = useState(null);
+  const [showResultForm, setShowResultForm] = useState(false);
 
   useEffect(() => {
     const fetchSimulData = async () => {
       try {
         const response = await axios.get(
-          `http://43.202.55.53:8589/simulation/${selectedIndex}`
+          `https://www.urnotweak.site:8589/simulation/${selectedIndex}`
         );
         setSimulData(response.data);
       } catch (error) {
@@ -29,6 +32,8 @@ const VideoForm = ({ selectedIndex }) => {
   const handleNextClick = () => {
     if (currentStep < simulData.length - 1) {
       setCurrentStep(currentStep + 1);
+    } else {
+      setShowResultForm(true);
     }
   };
 
@@ -49,7 +54,7 @@ const VideoForm = ({ selectedIndex }) => {
 
   return (
     <>
-      {simulData.length > 0 && (
+      {!showResultForm && simulData.length > 0 && (
         <>
           {simulData[currentStep].simulContentType === 1 ? (
             <div className="video-story">
@@ -89,13 +94,22 @@ const VideoForm = ({ selectedIndex }) => {
                 />
               )}
               {simulData[currentStep].simulContentType === 3 && (
-                <MonoForm text={simulData[currentStep].simulText} onNext={handleNextClick} />
+                <MonoForm
+                  text={simulData[currentStep].simulText}
+                  onNext={handleNextClick}
+                />
               )}
-              {simulData[currentStep].simulContentType === 5 && <HandForm onNext={handleNextClick} />}
+              {simulData[currentStep].simulContentType === 4 && (
+                <AR onNext={handleNextClick} />
+              )}
+              {simulData[currentStep].simulContentType === 5 && (
+                <HandForm onNext={handleNextClick} />
+              )}
             </>
           )}
         </>
       )}
+      {showResultForm && <ResultForm selectedIndex={selectedIndex} />}
     </>
   );
 };
