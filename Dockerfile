@@ -19,8 +19,15 @@ RUN rm /etc/nginx/conf.d/default.conf
 # host pc 의 nginx.conf 를 아래 경로에 복사
 COPY ./nginx.conf /etc/nginx/conf.d
 
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /app/build /usr/share/nginx/html
+
+COPY certificate.crt /etc/nginx/certificate.crt
+COPY private.key /etc/nginx/private.key  # 개인 키 파일 복사
+
 # 80 포트 오픈
 EXPOSE 80
+EXPOSE 443
 
 # container 실행 시 자동으로 실행할 command. nginx 시작함
 CMD ["nginx", "-g", "daemon off;"]
