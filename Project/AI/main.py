@@ -2,7 +2,7 @@ from flask import Flask, request,jsonify
 from werkzeug.utils import secure_filename
 from flask import send_file
 import os
-from models.e4e import predict
+# from models.e4e import predict
 
 def remo_credir():
     try:
@@ -36,7 +36,7 @@ def pred():
         
         # 결과 이미지 반환
         image_path = 'result\\' + 'apple.jpg'
-        predict()
+        # predict()
         return send_file(image_path, mimetype='image/jpeg')
     if request.method == 'GET':
         return "get!"
