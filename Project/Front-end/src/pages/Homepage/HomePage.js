@@ -9,7 +9,7 @@ export const Home = () => {
   Chatting.loadScript();
 
   Chatting.boot({
-    pluginKey: "0c4aec1b-7fe4-4693-bafb-49862c83f43e",
+    pluginKey: process.env.REACT_APP_CHAT_PLUGIN_KEY
   })
 
   return (
