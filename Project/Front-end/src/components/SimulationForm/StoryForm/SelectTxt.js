@@ -13,11 +13,13 @@ const SelectTxt = ({ text, answer1, answer2, onNext }) => {
             <div className="div">{answer1}</div>
           </div>
         </div>
-        <div className="buttonslight002">
-          <div className="button-wrapper001" onClick={onNext}>
-            <div className="div">{answer2}</div>
+        {answer2 !== null && (
+          <div className="buttonslight002">
+            <div className="button-wrapper001" onClick={onNext}>
+              <div className="div">{answer2}</div>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
