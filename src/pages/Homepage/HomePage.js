@@ -1,8 +1,17 @@
 import React from "react";
-import { Nav } from "components/Nav/Nav";
 import { Frame } from "components/Home/HomeFrame";
+import { Nav } from "components/Nav/Nav";
+import Chatting from "pages/Chatting/Chatting";
+import './HomePage.css'
 
 export const Home = () => {
+
+  Chatting.loadScript();
+
+  Chatting.boot({
+    pluginKey: "0c4aec1b-7fe4-4693-bafb-49862c83f43e",
+  })
+
   return (
     <div className="display">
       <Nav className="nav-instance" />
@@ -27,7 +36,7 @@ export const Home = () => {
             text2="마약 취약성 확인하기"
           />
           <Frame
-            link="ai"
+            link="ai/upload"
             backimage="home4"
             text1="망가져 가는 내모습 유지할 수 없는 일상"
             text2="얼굴AI"

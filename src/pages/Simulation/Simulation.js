@@ -6,9 +6,12 @@ import NextBtn from "components/SimulationForm/NextBtn";
 import StartTxt from "components/SimulationForm/StartForm/StartTxt";
 import SelectForm from "components/SimulationForm/SelectForm/SelecctForm";
 import VideoForm from "components/SimulationForm/StoryForm/VideoForm";
+import SelectTxt from "components/SimulationForm/StoryForm/SelectTxt";
 export const Simulation = () => {
   return (
-    <div>
+    <div className="simul">
+      <Nav />
+      {/* <SelectTxt /> */}
       {/* <Nav className="nav-instance" /> */}
       <SelectForm />
       {/* <StartAnd /> */}

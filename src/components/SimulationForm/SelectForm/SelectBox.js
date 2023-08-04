@@ -1,25 +1,39 @@
-import React from "react";
-import Thumnail1 from "../../../assets/images/thumnail1.gif";
-import Thumnail2 from "../../../assets/images/thumnail2.gif";
-import Thumnail3 from "../../../assets/images/thumnail3.gif";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./SelectBox.css";
 
 const SelectBox = ({ ThumbClick }) => {
-  const ThumbnailImg = [Thumnail1, Thumnail2, Thumnail3];
+  const [thumbnails, setThumbnails] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://www.urnotweak.site:8589/simulation/thumbnail")
+      .then((response) => {
+        setThumbnails(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching thumbnails:", error);
+      });
+  }, []);
+
   const handleThumbClick = (index) => {
     ThumbClick(index);
   };
+
   return (
     <div className="box">
-      {ThumbnailImg.map((thumbnail, index) => (
-        // <div key={index} className={`ImgBox${index + 1}`}>
-        <img
-          className={`Thumnail${index + 1}`}
-          alt=""
-          src={thumbnail}
-          onClick={() => handleThumbClick(index)}
-        />
-        // </div>
+      {thumbnails.map((thumbnail, index) => (
+        <div key={index} className={`ImgBox${index + 1}`}>
+          <video
+            className={`Thumnail${index + 1}`}
+            alt=""
+            src={thumbnail.url}
+            onClick={() => handleThumbClick(index + 1)}
+            autoPlay
+            loop
+            style={{ objectFit: "cover" }}
+          />
+        </div>
       ))}
     </div>
   );

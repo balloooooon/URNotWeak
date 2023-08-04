@@ -4,24 +4,36 @@ import RejectBtn from "../../../assets/images/reject_btn.png";
 import CallingImg from "../../../assets/images/white_phone.png";
 import RedBtn from "../../../assets/images/redBtn.png";
 import VideoForm from "../StoryForm/VideoForm";
+import Nav from "components/Nav/Nav";
 import "./StartAnd.css";
 
-const StartAnd = () => {
+const StartAnd = ({ selectedIndex }) => {
   const [count, setCount] = useState(0);
   const [isCallBtn, setCallBtn] = useState(true);
   const [isRedBtn, setRedBtn] = useState(false);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCount((prevCount) => prevCount + 1);
-    }, 1000);
-    if (count == 5) {
-      clearInterval(interval);
-      setCallBtn(false);
-      setRedBtn(true);
-    }
+  const [showVideoForm, setShowVideoForm] = useState(false);
 
-    return () => clearInterval(interval);
-  }, []);
+  const handleCallBtn = () => {
+    setCallBtn(false);
+    setRedBtn(true);
+    setCount(0);
+  };
+
+  useEffect(() => {
+    if (!isCallBtn) {
+      const interval = setInterval(() => {
+        setCount((prevCount) => prevCount + 1);
+      }, 1000);
+
+      if (count >= 3) {
+        setShowVideoForm(true);
+        clearInterval(interval);
+      }
+
+      return () => clearInterval(interval);
+    }
+  }, [count, isCallBtn]);
+
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60)
       .toString()
@@ -30,40 +42,36 @@ const StartAnd = () => {
     return `${minutes}:${remaining}`;
   };
 
-  const handleCallBtn = () => {
-    setCallBtn(false);
-    setRedBtn(true);
-  };
-
   return (
     <div className="start1">
-      <div className="group-parent">
-        <div className="call-wrapper">
-          {isCallBtn ? (
-            <div className="calling-txt">통화 수신중</div>
-          ) : (
-            <div className="count-time">
-              <img className="call-img" src={CallingImg} />
-              {formatTime(count)}
-            </div>
-          )}
-          <div className="phone-num">02-1234-56**</div>
-        </div>
-        {isRedBtn ? (
-          <img className="red-btn" alt="" src={RedBtn} />
+      <Nav />
+      <div className="call-wrapper">
+        {isCallBtn ? (
+          <div className="calling-txt">통화 수신중</div>
         ) : (
-          <>
-            <img
-              className="call-btn1"
-              alt=""
-              src={CallBtn}
-              onClick={handleCallBtn}
-            />
-            <img className="call-btn2" alt="" src={RejectBtn} />
-          </>
+          <div className="count-time">
+            <img className="call-img" src={CallingImg} alt="Calling" />
+            {formatTime(count)}
+          </div>
         )}
+        <div className="phone-num">02-1234-56**</div>
       </div>
-      {count >= 5 && <VideoForm />}
+
+      {isRedBtn ? (
+        <img className="red-btn" alt="" src={RedBtn} />
+      ) : (
+        <>
+          <img
+            className="call-btn1"
+            alt=""
+            src={CallBtn}
+            onClick={handleCallBtn}
+          />
+          <img className="call-btn2" alt="" src={RejectBtn} />
+        </>
+      )}
+
+      {showVideoForm && <VideoForm selectedIndex={selectedIndex} />}
     </div>
   );
 };

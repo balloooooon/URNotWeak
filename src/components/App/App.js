@@ -9,18 +9,26 @@ import scrollbar from 'smooth-scrollbar'
 
 import Home from "pages/Homepage/HomePage"
 import Simulation from "pages/Simulation/Simulation"
+import AI from 'pages/AI/AI'
+import AR from 'components/AR/AR'
+import Test from 'pages/Test/Test'
 
 scrollbar.init(document.querySelector('#smooth-scroll'));
 
 function App() {
   return (
-    <div className="display">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="simul" element={<Simulation />} />
-        </Routes>
-      </BrowserRouter>
+    <div>
+      <div className="display">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="simul" element={<Simulation />} />
+            <Route path="ai/*" element={<AI/> } />
+            <Route path="ar" element={<AR />} />
+            <Route path="test/*" element={<Test />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }
