@@ -12,11 +12,12 @@ const HandForm = ({ onNext }) => {
   const handleDragStart = () => {
     console.log("시작");
   };
-const handleDrag=(ui)=>{
-if(ui.changedTouches[0].clientY>=350){
-{onNext()}}
-}
-
+  const handleDrag = (ui) => {
+    if (ui.changedTouches[0].clientY >= 350) {
+      console.log("잠온다");
+      onNext();
+    }
+  };
 
   return (
     <div className="hand-form">
@@ -29,14 +30,14 @@ if(ui.changedTouches[0].clientY>=350){
             onStart={handleDragStart}
             onDrag={handleDrag}
             bounds={{ top: 0, bottom: 220 }}
-            >
+          >
             <div className="drug" ref={drugRef}>
               <img
                 alt=""
                 src={drug}
-                onDrag={handleDrag} 
+                onDrag={handleDrag}
                 onMouseDown={handleDragStart}
-                onDragStart={(e) => e.preventDefault()} 
+                onDragStart={(e) => e.preventDefault()}
               />
             </div>
           </Draggable>
