@@ -1,14 +1,18 @@
+// /* global Kakao */
+
 import React, { useState, useEffect } from "react";
+import SelectForm from "../SelectForm/SelecctForm";
 import axios from "axios";
 import line from "../../../assets/images/line.png";
 import instagram from "../../../assets/images/instagram.png";
-import kakao from "../../../assets/images/kakao.png";
+import kakaoimg from "../../../assets/images/kakao.png";
 import link from "../../../assets/images/share.png";
 import "./ResultForm.css";
 
 const ResultForm = ({ selectedIndex }) => {
   const [resultData, setResultData] = useState(null);
   const [randomImagePair, setRandomImagePair] = useState(null);
+  const [showSelectForm, setShowSelectForm] = useState(false); 
 
 
   useEffect(() => {
@@ -35,9 +39,46 @@ const ResultForm = ({ selectedIndex }) => {
     return imagePair;
   };
 
+  // useEffect(() => {
+  //   Kakao.init(process.env.REACT_APP_KAKAO_API_KEY); // Kakao API 키 초기화
+  // }, []);
+
+
+  const handleKakaoShare = () => {
+    if (window.Kakao) {
+      window.Kakao.Link.sendDefault({
+        objectType: "feed",
+        content: {
+          title: "친구에게 공유하기",
+          description: "약해지지마 - 시뮬레이션을 체험하시겠습니까?",
+          imageUrl: kakaoimg, 
+          link: {
+            mobileWebUrl: "http://localhost:3000/simul",
+            webUrl: "http://localhost:3000/simul",
+          }
+        },
+        buttons: [
+          {
+            title: "웹으로 보기",
+            link: {
+              mobileWebUrl: "http://localhost:3000/simul",
+              webUrl: "http://localhost:3000/simul",
+            }
+          }
+        ]
+      });
+    }
+  };
+
+
   if (!resultData || !randomImagePair) {
     return null;
   }
+
+  if (showSelectForm) {
+  return <SelectForm/>;
+  }
+
   return (
     <div className="result222">
       <div className="frame-parent222">
@@ -73,7 +114,7 @@ const ResultForm = ({ selectedIndex }) => {
                 <div className="div222">전, 후 사진 AI 체험하기</div>
               </div>
             </div>
-            <div className="buttonslight2221">
+            <div className="buttonslight2221" onClick={() => setShowSelectForm(true)}>
               <div className="button-wrapper222">
                 <div className="div222">다른 스토리 확인하기</div>
               </div>
@@ -84,7 +125,7 @@ const ResultForm = ({ selectedIndex }) => {
         <div className="group-wrapper222">
           <div className="group-div222">
             <div className="div2224">친구에게 공유하기</div>
-            <img className="kakaotalk222" alt="카톡공유이미지" src={kakao} />
+            <img className="kakaotalk222" alt="카톡공유이미지" src={kakaoimg} onClick={handleKakaoShare} />
             <img className="instagram222" alt="인스타공유" src={instagram} />
             <div className="group-child222" />
             <img className="share-url222" alt="링크공유" src={link} />
@@ -105,7 +146,7 @@ const ResultForm = ({ selectedIndex }) => {
               <div className="rectangle-parent222">
                 <div className="group-item222" />
                 <div className="group-inner222" />
-                <div className="ai">시뮬레이션</div>
+                <div className="ai222">AR</div>
               </div>
               <div className="rectangle-group222">
                 <div className="group-item222" />
