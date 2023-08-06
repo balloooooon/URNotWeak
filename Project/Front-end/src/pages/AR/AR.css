@@ -11,6 +11,7 @@
 }
 
 .back {
+    content: url('assets/images/ai-background.png');
     z-index: -2;
 }
 
