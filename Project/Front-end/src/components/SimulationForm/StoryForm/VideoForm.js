@@ -43,9 +43,10 @@ useEffect(() => {
       console.error("Error fetching data:", error);
     }
   };
-
   fetchSimulTxt();
 }, [currentStep,selectedIndex]);
+
+
   const handleNextClick = () => {
     if (currentStep < simulData.length - 1) {
       setCurrentStep(prevStep => prevStep + 1);
@@ -53,9 +54,6 @@ useEffect(() => {
       setShowResultForm(true);
     }
   };
-
-// 안되네 ㅋㅋ 
-
 
 
   useEffect(() => {
@@ -116,6 +114,8 @@ useEffect(() => {
           text={currentStepData.simulText}
           answer1={currentStepData.simulAnswer1}
           answer2={currentStepData.simulAnswer2}
+          shift1={currentStepData.simulShift1}
+          shift2={currentStepData.simulShift2}
           onNext={handleNextClick}
         />
       );
