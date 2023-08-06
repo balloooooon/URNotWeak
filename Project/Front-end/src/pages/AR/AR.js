@@ -6,9 +6,9 @@ import Filter2 from 'components/AR filter/filter2';
 import Filter3 from 'components/AR filter/filter3';
 // import AiUpload from 'components/AI/UploadForm/aiUpload';
 // import AiResult from 'components/AI/ResultForm/aiResult';
-// import './AI.css'
+import './AR.css'
 
-export const AI = () => {
+export const AR = () => {
 
   return (
     <div className="display">
@@ -29,4 +29,4 @@ export const AI = () => {
   );
 };
 
-export default AI;
+export default AR;
