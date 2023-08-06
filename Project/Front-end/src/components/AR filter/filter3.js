@@ -1,10 +1,10 @@
 import React from 'react';
-import './filter2.css'; 
+import './filter3.css'; 
 
 function ExternalPage() {
   return (
     <div className="centered-and-scaled">
-      <object data="/filter2.html" />
+      <object data="/filter3.html" />
     </div>
   );
 }

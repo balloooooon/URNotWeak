@@ -1,8 +1,3 @@
-// import './datgui.js'
-// import './TweenMaxmin.js'
-import * as module from 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js';
-import * as ddd from 'https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.5/dat.gui.min.js';
-
 const camera = document.querySelector('#camera');
 const playBtn = document.querySelector('.playBtn');
 const canvas = document.querySelector('.main');
@@ -18,20 +13,20 @@ const effectCtx = effectCanvas.getContext('2d');
 const MAX_DELAY = 100;
 
 const OPTIONS = {
-  delay: 0,
-  delayRandom: 0,
-  glitchFrequency: 0,
-  glitchMultiply: false,
+  delay: 55,
+  delayRandom: 0.65,
+  glitchFrequency: 74,
+  glitchMultiply: true,
   specular: false,
   colorEffect: true };
 
 
-const gui = new module.dat[0].GUI();
-gui.add(OPTIONS, 'delay').min(0).max(MAX_DELAY).step(1);
-gui.add(OPTIONS, 'delayRandom').min(0).max(1).step(0.001);
-gui.add(OPTIONS, 'glitchFrequency').min(0).max(100).step(1);
-gui.add(OPTIONS, 'glitchMultiply');
-gui.add(OPTIONS, 'specular');
+// const gui = new dat.GUI();
+// gui.add(OPTIONS, 'delay').min(0).max(MAX_DELAY).step(1);
+// gui.add(OPTIONS, 'delayRandom').min(0).max(1).step(0.001);
+// gui.add(OPTIONS, 'glitchFrequency').min(0).max(100).step(1);
+// gui.add(OPTIONS, 'glitchMultiply');
+// gui.add(OPTIONS, 'specular');
 // gui.add(OPTIONS, 'colorEffect')
 
 class Fifo {
@@ -71,10 +66,10 @@ const STATE = {
 
 
 function init() {
-  const tl = new module.TimelineMax({ repeat: -1, yoyo: true });
-  tl.fromTo(STATE, 1, { progress: 0 }, { progress: 1, ease: module.Power0.easeNone });
-  tl.fromTo(STATE, 0.5, { COLOR_BG: 'hsl(4, 90, 58)' }, { COLOR_BG: 'hsl(208, 79, 51)', ease: module.Power0.easeNone }, 0);
-  tl.fromTo(STATE, 0.5, { COLOR_BG: 'hsl(208, 79, 51)' }, { COLOR_BG: 'hsl(49, 98, 60)', ease: module.Power0.easeNone }, 0.5);
+  const tl = new TimelineMax({ repeat: -1, yoyo: true });
+  tl.fromTo(STATE, 1, { progress: 0 }, { progress: 1, ease: Power0.easeNone });
+  tl.fromTo(STATE, 0.5, { COLOR_BG: 'hsl(4, 90, 58)' }, { COLOR_BG: 'hsl(208, 79, 51)', ease: Power0.easeNone }, 0);
+  tl.fromTo(STATE, 0.5, { COLOR_BG: 'hsl(208, 79, 51)' }, { COLOR_BG: 'hsl(49, 98, 60)', ease: Power0.easeNone }, 0.5);
 }
 
 function update(t) {
@@ -101,14 +96,14 @@ function draw() {
 }
 
 function delay() {
-  module.frameData = effectCtx.getImageData(0, 0, STATE.W, STATE.H);
+  frameData = effectCtx.getImageData(0, 0, STATE.W, STATE.H);
 
   const delayRandom = OPTIONS.delayRandom * Math.random() || 1;
   const delay = OPTIONS.delay - 1;
-  const frame = pastFrames.at(~~(delay * delayRandom)) || module.frameData;
+  const frame = pastFrames.at(~~(delay * delayRandom)) || frameData;
   effectCtx.putImageData(frame, 0, 0);
 
-  pastFrames.push(module.frameData);
+  pastFrames.push(frameData);
 }
 
 function clear() {
@@ -207,7 +202,7 @@ function start() {
   init();
   camera.onloadedmetadata = function() {
     camera.play();
-    module.TweenMax.to(text, 0.3, { opacity: 0, ease: module.Power0.easeNone });
+    TweenMax.to(text, 0.3, { opacity: 0, ease: Power0.easeNone });
     requestAnimationFrame(loop);
   };
 }
@@ -259,7 +254,7 @@ function withVideo() {
 
 playBtn.onclick = function () {
   camera.play();
-  module.TweenMax.to(text, 0.3, { opacity: 0, ease: module.Power0.easeNone });
+  TweenMax.to(text, 0.3, { opacity: 0, ease: Power0.easeNone });
 };
 
 // export default App;
