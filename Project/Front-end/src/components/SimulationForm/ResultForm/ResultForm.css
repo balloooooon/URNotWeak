@@ -1,14 +1,18 @@
-.div {
+.result222 {
+  overflow: scroll;
+}
+
+.div222 {
   position: relative;
   letter-spacing: 0.1px;
   line-height: 20px;
   font-weight: 500;
 }
 
-.api {
+.api222 {
   margin: 0;
 }
-.api-container {
+.api-container222 {
   position: absolute;
   top: 41px;
   left: calc(50% - 124px);
@@ -19,14 +23,14 @@
   width: 229px;
   height: 150px;
 }
-.api-wrapper {
+.api-wrapper222 {
   align-self: stretch;
   position: relative;
   height: 231px;
   font-size: 24px;
 }
-.div2 {
-  position: absolute;
+.div2222 {
+  /* position: absolute; */
   bottom: 40px;
   left: calc(50% - 135px);
   letter-spacing: 0.1px;
@@ -36,7 +40,7 @@
   width: 270px;
   height: 54px;
 }
-.frame-child {
+.frame-child222 {
   position: absolute;
   height: calc(100% - 197px);
   top: 55px;
@@ -44,19 +48,19 @@
   left: calc(50% - 142px);
   width: 273px;
 }
-.frame-item {
+.frame-item222 {
   position: absolute;
   top: 28px;
   left: calc(50% - 39px);
   width: 67px;
   height: 2px;
 }
-.group {
+.group222 {
   align-self: stretch;
   position: relative;
-  height: 359px;
+  height: 270px;
 }
-.div3 {
+.div2223 {
   position: absolute;
   top: 19px;
   left: 107px;
@@ -67,35 +71,44 @@
   width: 178px;
   height: 22px;
 }
-.frame-inner,
-.icon {
+.frame-inner222,
+.icon222,
+.icon223 {
   position: absolute;
   top: 440.5px;
   left: 161.5px;
   width: 67px;
   height: 2px;
 }
-.icon {
+.icon222 {
   top: 59px;
   left: 17px;
-  width: 356px;
+  width: 178px;
   height: 223px;
   object-fit: cover;
 }
-.button-wrapper,
-.buttonslight,
-.buttonslight1 {
+.icon223 {
+  top: 59px;
+  left: 195px;
+  width: 178px;
+  height: 223px;
+  object-fit: cover;
+}
+
+.button-wrapper222,
+.buttonslight222,
+.buttonslight2221 {
   border-radius: 100px;
   display: flex;
   align-items: center;
 }
-.button-wrapper {
+.button-wrapper222 {
   flex-direction: row;
   padding: 10px 24px;
   justify-content: center;
 }
-.buttonslight,
-.buttonslight1 {
+.buttonslight222,
+.buttonslight2221 {
   position: absolute;
   width: 100%;
   top: 0;
@@ -105,10 +118,10 @@
   flex-direction: column;
   justify-content: flex-start;
 }
-.buttonslight1 {
+.buttonslight2221 {
   top: 55px;
 }
-.buttonslight-parent {
+.buttonslight-parent222 {
   position: absolute;
   width: 62.24%;
   top: 302px;
@@ -117,19 +130,19 @@
   height: 95px;
   font-size: 14px;
 }
-.vector-icon {
+.vector-icon222 {
   position: absolute;
   top: 12px;
   left: 155px;
   width: 67px;
   height: 2px;
 }
-.container {
+.container222 {
   position: relative;
   width: 392px;
   height: 422px;
 }
-.div4 {
+.div2224 {
   position: absolute;
   top: 0;
   left: 42px;
@@ -137,32 +150,32 @@
   line-height: 20px;
   font-weight: 500;
 }
-.group-child,
-.kakaotalk,
-.instagram {
+.group-child222,
+.kakaotalk222,
+.instagram222 {
   position: absolute;
   top: 31px;
   height: 53px;
 }
-.kakaotalk {
+.kakaotalk222 {
   left: 0;
   object-fit: cover;
 }
-.group-child,
-.instagram,
-.kakaotalk {
+.group-child222,
+.instagram222,
+.kakaotalk222 {
   width: 53px;
 }
-.instagram {
+.instagram222 {
   left: 71px;
   object-fit: cover;
 }
-.group-child {
+.group-child222 {
   left: 140px;
   border-radius: 50%;
   background-color: #d9d9d9;
 }
-.share-url {
+.share-url222 {
   position: absolute;
   top: 42px;
   left: 150px;
@@ -170,20 +183,20 @@
   height: 29px;
   object-fit: cover;
 }
-.group-div {
+.group-div222 {
   position: absolute;
   top: 25px;
   left: 100px;
   width: 191px;
   height: 82px;
 }
-.group-wrapper {
+.group-wrapper222 {
   position: relative;
   width: 392px;
   height: 152px;
   font-size: 14px;
 }
-.div5 {
+.div5222 {
   position: absolute;
   top: 15px;
   left: 61px;
@@ -193,7 +206,7 @@
   width: 270px;
   height: 35px;
 }
-.buttonslight2 {
+.buttonslight2222 {
   position: absolute;
   top: 288px;
   left: 136px;
@@ -206,7 +219,7 @@
   cursor: pointer;
   font-size: 14px;
 }
-.group-item {
+.group-item222 {
   position: absolute;
   top: 140px;
   left: 0;
@@ -214,72 +227,72 @@
   width: 140px;
   height: 40px;
 }
-.group-inner {
+.group-inner222 {
   top: 0;
   background-color: #fff;
   height: 140px;
 }
-.ai,
-.group-inner,
-.rectangle-parent {
+.ai222,
+.group-inner222,
+.rectangle-parent222 {
   position: absolute;
   left: 0;
   width: 140px;
 }
-.rectangle-parent {
+.rectangle-parent222 {
   top: 0;
   height: 180px;
 }
-.ai {
+.ai222 {
   top: 145px;
   letter-spacing: 0.1px;
   line-height: 30px;
   display: inline-block;
 }
-.rectangle-container,
-.rectangle-group {
+.rectangle-container222,
+.rectangle-group222 {
   position: absolute;
   top: 0;
   left: 162px;
   width: 140px;
   height: 180px;
 }
-.rectangle-container {
+.rectangle-container222 {
   left: 324px;
 }
-.group-container,
-.group-parent,
-.rectangle-parent1 {
+.group-container222,
+.group-parent222,
+.rectangle-parent2221 {
   position: absolute;
   top: 0;
   left: 486px;
   width: 140px;
   height: 180px;
 }
-.group-container,
-.group-parent {
+.group-container222,
+.group-parent222 {
   left: 0;
   width: 626px;
 }
-.group-container {
+.group-container222 {
   top: 59px;
   left: 61px;
   width: 302px;
   overflow-x: auto;
   color: #000;
 }
-.frame-div {
+.frame-div222 {
   position: relative;
   width: 392px;
   height: 387px;
 }
 .android-47,
-.frame-parent {
+.frame-parent222 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-.frame-parent {
+.frame-parent222 {
   align-self: stretch;
   flex: 1;
   overflow-y: auto;
@@ -288,7 +301,8 @@
   text-align: center;
   font-size: 16px;
 }
-.result {
+.result222 {
+  top: 100px;
   position: relative;
   border-radius: 22px;
   background-color: #000;
@@ -299,4 +313,7 @@
   font-size: 14px;
   color: #fff;
   font-family: Roboto;
+}
+.result-video {
+  width: 100%;
 }

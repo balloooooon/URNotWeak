@@ -7,7 +7,7 @@ const SelectBox = ({ ThumbClick }) => {
 
   useEffect(() => {
     axios
-      .get("http://43.202.55.53:8589/simulation/thumbnail")
+      .get("https://www.urnotweak.site:8589/simulation/thumbnail")
       .then((response) => {
         setThumbnails(response.data);
       })

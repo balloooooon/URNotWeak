@@ -12,17 +12,12 @@ const HandForm = ({ onNext }) => {
   const handleDragStart = () => {
     console.log("시작");
   };
-const handleDrag=(ui)=>{
-if(ui.changedTouches[0].clientY>=350){
-{onNext()}}
-}
-
-
-  // const handleDrag = (e, ui) => {
-  //   if (ui.deltaY >= 200) {
-  //     console.log("성공");
-  //   }
-  // };
+  const handleDrag = (ui) => {
+    if (ui.changedTouches[0].clientY >= 350) {
+      console.log("잠온다");
+      onNext();
+    }
+  };
 
   return (
     <div className="hand-form">
@@ -30,21 +25,19 @@ if(ui.changedTouches[0].clientY>=350){
         <img className="handbackimg" alt="" src={handback} />
         <div className="hand-group">
           <img className="hand-direc" alt="" src={handdirec} />
-          {/* Draggable 컴포넌트로 감싸서 드래그 동작을 추가합니다. */}
           <Draggable
             axis="y"
             onStart={handleDragStart}
             onDrag={handleDrag}
             bounds={{ top: 0, bottom: 220 }}
-            >
-            {/* drug 이미지를 감싸는 div에 ref를 지정합니다. */}
+          >
             <div className="drug" ref={drugRef}>
               <img
                 alt=""
                 src={drug}
-                onDrag={handleDrag} 
+                onDrag={handleDrag}
                 onMouseDown={handleDragStart}
-                onDragStart={(e) => e.preventDefault()} // 이미지 드래그의 기본 동작 방지
+                onDragStart={(e) => e.preventDefault()}
               />
             </div>
           </Draggable>
