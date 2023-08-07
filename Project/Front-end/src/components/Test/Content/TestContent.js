@@ -12,15 +12,21 @@ export const Content = ({list}) => {
 
   // index가 바뀔때 사진이랑 문항 새로고침
   useEffect(() => {
-    console.log(index+'contenteffect');
-    console.log(list);
-    for(let i = 0 ; i < list.length ; i++) {
-      if(list[i].testQNo == index) {
-        setImg(list[i].testQImg)
-        setAns0(list[i].testAnswers[0]);
-        setAns1(list[i].testAnswers[1]);
-        break;
+    if(list === undefined) {  // 혹시 새로고침 했으면 list가 비어있으니까 뒤로가기
+      navigate(-1);
+    }
+    else {
+      console.log(index+'contenteffect');
+      console.log(list);
+      for(let i = 0 ; i < list.length ; i++) {
+        if(list[i].testQNo == index) {
+          setImg(list[i].testQImg)
+          setAns0(list[i].testAnswers[0]);
+          setAns1(list[i].testAnswers[1]);
+          break;
+        }
       }
+
     }
   }, [index]);
 
@@ -40,10 +46,6 @@ export const Content = ({list}) => {
   const refreshListener = (e) => {
     e.preventDefault(); //기본클릭 동작방지
     e.returnValue = "";
-
-    // 새로고침이면 이전 화면으로(를 만들고싶은데 안됨)
-    // 이 위치에서 하는게 아닌 것 같음.
-    console.log('1111');
   }
 
   const btn = (btn) => {
