@@ -3,7 +3,8 @@ import axios from "axios";
 import SelectTxt from "./SelectTxt";
 import MonoForm from "./MonoForm";
 import HandForm from "./HandForm";
-import AR from "../AR";
+// import AR from "../AR";
+import AR2 from "components/AR filter/filter2";
 import ResultForm from "../ResultForm/ResultForm";
 import NextBtn from "../NextBtn";
 import "./VideoForm.css";
@@ -29,32 +30,29 @@ const VideoForm = ({ selectedIndex }) => {
 
     fetchSimulData();
   }, [selectedIndex]);
-//  selectedIndex가 변경될 때마다 simulData를 새로 가져옴
+  //  selectedIndex가 변경될 때마다 simulData를 새로 가져옴
 
-
-useEffect(() => {
-  const fetchSimulTxt = async () => {
-    try {
-      const response = await axios.get(
-        `https://www.urnotweak.site:8589/simulation/${selectedIndex}`
-      );
-      setSimulTxt(response.data[currentStep].simulText);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-  fetchSimulTxt();
-}, [currentStep,selectedIndex]);
-
+  useEffect(() => {
+    const fetchSimulTxt = async () => {
+      try {
+        const response = await axios.get(
+          `https://www.urnotweak.site:8589/simulation/${selectedIndex}`
+        );
+        setSimulTxt(response.data[currentStep].simulText);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchSimulTxt();
+  }, [currentStep, selectedIndex]);
 
   const handleNextClick = () => {
     if (currentStep < simulData.length - 1) {
-      setCurrentStep(prevStep => prevStep + 1);
+      setCurrentStep((prevStep) => prevStep + 1);
     } else {
       setShowResultForm(true);
     }
   };
-
 
   useEffect(() => {
     if (videoRef && simulData.length > 0) {
@@ -71,8 +69,7 @@ useEffect(() => {
     }
   }, [videoRef, currentStep, simulData]);
 
-// VideoRef나 currentStep이나 simulData가 바뀌면 비디오 정보도 바뀌게 설정
-
+  // VideoRef나 currentStep이나 simulData가 바뀌면 비디오 정보도 바뀌게 설정
 
   let content = null;
 
@@ -120,13 +117,11 @@ useEffect(() => {
         />
       );
     } else if (currentStepData.simulContentType === 3) {
-      console.log("mono",currentStepData.simulText)
-      content = (
-        <MonoForm text={simulTxt} onNext={handleNextClick} />
-      );
+      console.log("mono", currentStepData.simulText);
+      content = <MonoForm text={simulTxt} onNext={handleNextClick} />;
     } else if (currentStepData.simulContentType === 4) {
-      console.log("ar으로 이동")
-      content = <AR onNext={handleNextClick} />;
+      console.log("ar으로 이동");
+      content = <AR2 onNext={handleNextClick} />;
     } else if (currentStepData.simulContentType === 5) {
       content = <HandForm onNext={handleNextClick} currentStep={currentStep} />;
     }
