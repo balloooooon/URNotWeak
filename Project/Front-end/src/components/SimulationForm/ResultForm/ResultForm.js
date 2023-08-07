@@ -8,6 +8,9 @@ import line from "../../../assets/images/line.png";
 import twitter from "../../../assets/images/트위터.png";
 import kakaoimg from "../../../assets/images/kakao.png";
 import link from "../../../assets/images/share.png";
+import ai_img from "../../../assets/images/rec_ai.png"
+import ar_img from "../../../assets/images/rec_ar.png"
+import test_img from "../../../assets/images/rec_.png"
 import "./ResultForm.css";
 
 const ResultForm = ({ selectedIndex }) => {
@@ -129,17 +132,16 @@ const ResultForm = ({ selectedIndex }) => {
           <img className="icon222" alt="" src={randomImagePair.drugBeforeImg} />
           <img className="icon223" alt="" src={randomImagePair.drugAfterImg} />
           <div className="buttonslight-parent222">
-            <div className="buttonslight222">
-              <div className="button-wrapper222">
-                <div className="div222">전, 후 사진 AI 체험하기</div>
+            <div className="buttonslight222" style={{ pointerEvents: "none" }}>
+              <div className="button-wrapper2221"style={{ pointerEvents: "none" }}>
+                <div className="div2221"style={{ pointerEvents: "none" }}>전, 후 사진 AI 체험하기</div>
               </div>
             </div>
-            <div
+            <div 
               className="buttonslight2221"
-              onClick={() => setShowSelectForm(true)}
             >
-              <div className="button-wrapper222">
-                <div className="div222">다른 스토리 확인하기</div>
+              <div className="button-wrapper222" >
+                <div className="div222"  onClick={() => setShowSelectForm(true)}>다른 스토리 확인하기</div>
               </div>
             </div>
           </div>
@@ -187,25 +189,25 @@ const ResultForm = ({ selectedIndex }) => {
               >
                 <div className="group-item222" /><Link to="/ar/filter2">
 
-                <div className="group-inner222" />
+                <div className="group-inner222" style={{ backgroundImage: `url(${ar_img})` }} />
                 <div className="ai222">AR</div>
                 </Link>
               </div>
               <div className="rectangle-group222">
                 <div className="group-item222" />
-                <div className="group-inner222" />
+                <div className="group-inner222" style={{ backgroundImage: `url(${ai_img})` }}/>
                 <div className="ai222">AI</div>
               </div>
               <div className="rectangle-container222">
                 <div className="group-item222" />
-                <div className="group-inner222" />
-                <div className="ai222">채팅</div>
+                <div className="group-inner222" style={{ backgroundImage: `url(${test_img})` }}/>
+                <div className="ai222">TEST</div>
               </div>
-              <div className="rectangle-parent2221">
-                <div className="group-item222" />
+              {/* <div className="rectangle-parent2221"> */}
+                {/* <div className="group-item222" />
                 <div className="group-inner222" />
                 <div className="ai222">...</div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
