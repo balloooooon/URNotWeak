@@ -10,10 +10,7 @@ export const Content = ({list}) => {
 
   const navigate = useNavigate();
 
-  const goUpload = () => {
-    navigate('/ai/upload');
-  }
-
+  // index가 바뀔때 사진이랑 문항 새로고침
   useEffect(() => {
     console.log(index+'contenteffect');
     console.log(list);
@@ -26,6 +23,28 @@ export const Content = ({list}) => {
       }
     }
   }, [index]);
+
+  // 현재 컴포넌트에 새로고침 이벤트 달기
+  useEffect(() => {
+    (()=> {
+      window.addEventListener("beforeunload", refreshListener);
+    })();
+
+    return () => {
+      window.removeEventListener("beforeunload", refreshListener);
+    };
+    
+  },[]) 
+
+  //새로고침 이벤트가 발생하면 새로고침/취소에 상관없이 실행
+  const refreshListener = (e) => {
+    e.preventDefault(); //기본클릭 동작방지
+    e.returnValue = "";
+
+    // 새로고침이면 이전 화면으로(를 만들고싶은데 안됨)
+    // 이 위치에서 하는게 아닌 것 같음.
+    console.log('1111');
+  }
 
   const btn = (btn) => {
     if(btn == 0) setScore((pre)=> pre+ans0.testAScore);
@@ -60,7 +79,6 @@ export const Content = ({list}) => {
         />
       <div className="btn" onClick={btn0}>{ans0.testAContent}</div>
       <div className="btn" onClick={btn1}>{ans1.testAContent}</div>
-      <div className="btn" onClick={goUpload}>다시해보기</div>
     </div>
   );
 };
