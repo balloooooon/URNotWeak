@@ -9,6 +9,14 @@
   font-weight: 500;
 }
 
+
+.div2221 {
+  position: relative;
+  letter-spacing: 0.1px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
 .api222 {
   margin: 0;
 }
@@ -107,6 +115,14 @@
   padding: 10px 24px;
   justify-content: center;
 }
+
+.button-wrapper2221 {
+  flex-direction: row;
+  padding: 10px 24px;
+  justify-content: center;
+}
+
+
 .buttonslight222,
 .buttonslight2221 {
   position: absolute;
@@ -273,7 +289,7 @@
 .group-container222,
 .group-parent222 {
   left: 0;
-  width: 626px;
+  width: 490px;
 }
 .group-container222 {
   top: 59px;
