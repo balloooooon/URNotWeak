@@ -152,7 +152,7 @@
 }
 .group-child222,
 .kakaotalk222,
-.instagram222 {
+.twitter222 {
   position: absolute;
   top: 31px;
   height: 53px;
@@ -162,13 +162,14 @@
   object-fit: cover;
 }
 .group-child222,
-.instagram222,
+.twitter222,
 .kakaotalk222 {
   width: 53px;
 }
-.instagram222 {
+.twitter222 {
   left: 71px;
   object-fit: cover;
+  border-radius: 50%;
 }
 .group-child222 {
   left: 140px;

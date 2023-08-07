@@ -17,7 +17,7 @@ const SelectForm = () => {
       ) : selectedIndex === 3 ? (
         <StartTxt selectedIndex={selectedIndex} />
       ) : (
-        <div>
+        <div className="simul-form">
           <div className="select-parent">
             <div className="simul-txt">시뮬레이션</div>
             <div className="simul-txt2">시나리오 선택</div>
