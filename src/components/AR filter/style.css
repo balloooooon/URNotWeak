@@ -1,0 +1,56 @@
+/* * {
+  box-sizing: border-box;
+}
+
+html, body, canvas {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #f44034;
+}
+
+::-moz-selection {
+  background: red;
+}
+
+::selection {
+  background: red;
+}
+
+video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 0;
+}
+
+.stuff {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 400px;
+  height: 200px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  font-family: "ZCOOL KuaiLe";
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 rgba(255, 0, 0, 0.3), -2px -2px 0 rgba(0, 128, 0, 0.3), 2px -2px 0 rgba(0, 0, 255, 0.3);
+}
+
+button {
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-family: "ZCOOL KuaiLe";
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 rgba(255, 0, 0, 0.3), -2px -2px 0 rgba(0, 128, 0, 0.3), 2px -2px 0 rgba(0, 0, 255, 0.3);
+  cursor: hand;
+  cursor: pointer;
+} */

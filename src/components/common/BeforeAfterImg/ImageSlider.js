@@ -8,7 +8,7 @@ const ImageSlider = () => {
   
   // 사진 axios에서 들고오도록
   useEffect(() => {
-    axios.get('http://43.202.55.53:8589/drugimg')
+    axios.get(process.env.REACT_APP_SERVER_API_URL+'/drugimg')
     .then((response)=>{saveImg(response.data)})
     .catch((Error)=>{console.log(Error)});
 

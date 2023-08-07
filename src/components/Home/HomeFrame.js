@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./HomeFrame.css";
 
 export const Frame = ({ backimage, text1, text2, link }) => {
+
     return (
         <div className={`homeFrame`}>
             <div className={`overlap `}>

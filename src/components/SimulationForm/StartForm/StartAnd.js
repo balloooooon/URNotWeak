@@ -45,29 +45,35 @@ const StartAnd = ({ selectedIndex }) => {
   return (
     <div className="start1">
       <Nav />
-      <div className="call-wrapper">
-        {isCallBtn ? (
-          <div className="calling-txt">통화 수신중</div>
-        ) : (
-          <div className="count-time">
-            <img className="call-img" src={CallingImg} alt="Calling" />
-            {formatTime(count)}
-          </div>
-        )}
-        <div className="phone-num">02-1234-56**</div>
-      </div>
+      {showVideoForm ? null : (
+        <div className="call-wrapper">
+          {isCallBtn ? (
+            <div className="calling-txt">통화 수신중</div>
+          ) : (
+            <div className="count-time">
+              <img className="call-img" src={CallingImg} alt="Calling" />
+              {formatTime(count)}
+            </div>
+          )}
+          <div className="phone-num">02-1234-56**</div>
+        </div>
+      )}
 
-      {isRedBtn ? (
-        <img className="red-btn" alt="" src={RedBtn} />
-      ) : (
+      {showVideoForm ? null : (
         <>
-          <img
-            className="call-btn1"
-            alt=""
-            src={CallBtn}
-            onClick={handleCallBtn}
-          />
-          <img className="call-btn2" alt="" src={RejectBtn} />
+          {isRedBtn ? (
+            <img className="red-btn" alt="" src={RedBtn} />
+          ) : (
+            <>
+              <img
+                className="call-btn1"
+                alt=""
+                src={CallBtn}
+                onClick={handleCallBtn}
+              />
+              <img className="call-btn2" alt="" src={RejectBtn} />
+            </>
+          )}
         </>
       )}
 

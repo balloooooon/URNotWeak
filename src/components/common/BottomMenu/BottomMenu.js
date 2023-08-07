@@ -4,33 +4,40 @@ import './BottomMenu.css';
 
 export const BottomMenu = () => {
     return (
-        <div className="dis">
-            <div className="button-wrapper">
-              <div className="div">추천</div>
-            </div>
-          <div className="buttonslight2">
-            <div className="button-wrapper">
-              <Link to="/" className="div" style={{ textDecoration: "none" }}>메인 페이지로</Link>
-            </div>
+      <div className="bottom-menu">
+      <div className="div2225">추천</div>
+      <div
+        className="buttonslight2222"
+        // onClick={onButtonsLightContainer2Click}
+      >
+        <div className="button-wrapper222">
+          <Link to="/" className="div222"  style={{ textDecoration: "none" }}>메인 페이지로</Link>
+        </div>
+      </div>
+      <div className="group-container222">
+        <div className="group-parent222">
+          <div className="rectangle-parent222">
+            <div className="group-item222" />
+            <div className="group-inner222" />
+            <div className="ai">시뮬레이션</div>
           </div>
-          <div className="group-container">
-            <div className="group-parent">
-                <Link to="/simul" className="overlap-group">
-                    <div className="rectangle-parent">
-                        <div className="group-item" />
-                        <div className="group-inner" />
-                        <div className="ai">시뮬레이션</div>
-                    </div>
-                </Link>
-                <Link to="/ai/upload" className="overlap-group">
-                    <div className="rectangle-group">
-                        <div className="group-item" />
-                        <div className="group-inner" />
-                        <div className="ai">AI</div>
-                    </div>
-                </Link>
-            </div>
+          <div className="rectangle-group222">
+            <div className="group-item222" />
+            <div className="group-inner222" />
+            <div className="ai222">AI</div>
+          </div>
+          <div className="rectangle-container222">
+            <div className="group-item222" />
+            <div className="group-inner222" />
+            <div className="ai222">채팅</div>
+          </div>
+          <div className="rectangle-parent2221">
+            <div className="group-item222" />
+            <div className="group-inner222" />
+            <div className="ai222">...</div>
           </div>
         </div>
+      </div>
+    </div>
     );
 };
