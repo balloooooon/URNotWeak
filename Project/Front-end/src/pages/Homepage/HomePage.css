@@ -1,9 +1,32 @@
 .display {
     height: 100%;
     width: 100vw;
+    overflow: hidden;
 }
 
 .homepages {
   display: flex;
   flex-direction: column;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  transition: transform 0.5s ease-in-out;
+  scroll-snap-align: start;
+}
+
+.section.active {
+  background-color: #f0f0f0;
+}
+
+.section:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+
+.section:nth-child(even) {
+  background-color: #e0e0e0;
 }
