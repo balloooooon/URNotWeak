@@ -1,8 +1,9 @@
 import React from "react";
-import {useNavigate} from "react-router-dom";
-import { BottomMenu } from "components/common/BottomMenu/BottomMenu";
+import {useLocation, useNavigate} from "react-router-dom";
 
 export const AI = () => {
+  const searchParams = new URLSearchParams(useLocation().search);
+  const score = searchParams.get('score');
   const navigate = useNavigate();
 
   const goUpload = () => {
@@ -15,8 +16,7 @@ export const AI = () => {
         className="uploadimg"
         src={null} 
         />
-      <div className="btn" onClick={goUpload}>다시해보기</div>
-      <BottomMenu></BottomMenu>
+      <div className="btn" onClick={goUpload}>{score}테스트결과페이지</div>
     </div>
   );
 };
