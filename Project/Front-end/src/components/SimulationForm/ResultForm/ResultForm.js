@@ -1,6 +1,7 @@
 // /* global Kakao */
 
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import SelectForm from "../SelectForm/SelecctForm";
 import axios from "axios";
 import line from "../../../assets/images/line.png";
@@ -13,6 +14,7 @@ const ResultForm = ({ selectedIndex }) => {
   const [resultData, setResultData] = useState(null);
   const [randomImagePair, setRandomImagePair] = useState(null);
   const [showSelectForm, setShowSelectForm] = useState(false);
+  // const history = useHistory();
 
   useEffect(() => {
     const fetchResultData = async () => {
@@ -179,10 +181,15 @@ const ResultForm = ({ selectedIndex }) => {
           </div>
           <div className="group-container222">
             <div className="group-parent222">
-              <div className="rectangle-parent222">
-                <div className="group-item222" />
+              <div
+                className="rectangle-parent222"
+                // onClick={handleARClick}
+              >
+                <div className="group-item222" /><Link to="/ar/filter2">
+
                 <div className="group-inner222" />
                 <div className="ai222">AR</div>
+                </Link>
               </div>
               <div className="rectangle-group222">
                 <div className="group-item222" />
