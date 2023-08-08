@@ -26,12 +26,13 @@ export const Home = () => {
 
   useEffect(() => {
     const handleScroll = (e) => {
-      const direction = e.deltaY > 0 ? 1 : -1;
+      const direction = e.deltaY > 0 ? 1 : -1;         
+      console.log('move');
+
 
       setCurrentSection((prevSection) => {
         const newSection = prevSection + direction;
         if (newSection >= 0 && newSection < sectionRefs.length) {
-          console.log('move');
           sectionRefs[newSection].current.scrollIntoView({
             behavior: 'smooth',
           });
