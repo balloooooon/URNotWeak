@@ -42,3 +42,9 @@
   height: auto;
   width: 100vw;
 }
+
+/* 파란색 선택창 없애기 */
+html {
+  -webkit-touch-callout:none;
+  -webkit-tap-highlight-color: transparent;
+}
