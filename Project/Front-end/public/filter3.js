@@ -99,13 +99,14 @@ function setupRenderer() {
 
 function setupCamera() {
   let res = window.innerWidth / window.innerHeight;
-  let z = 1 / size * 500;
+  let z = 1 / size * 300; //원래 500
   camera = new THREE.PerspectiveCamera(
   75,
   res,
   0.1,
   1000);
-  camera.position.set(nrOfCubesX / 2, nrOfCubesY / 2, z);
+  camera.position.set(nrOfCubesX / 2.2, nrOfCubesY / 2, z);
+  // camera.position.set(nrOfCubesX / 2, nrOfCubesY / 2, z);
 
   let controls = new THREE.OrbitControls(camera);
   controls.target.set(nrOfCubesX / 2, nrOfCubesY / 2, 0);
@@ -119,7 +120,7 @@ function setupCubes() {
   for (let x = 0; x < nrOfCubesX; x++) {
     for (let y = 0; y < nrOfCubesY; y++) {
       let material = new THREE.MeshStandardMaterial({
-        roughness: 0.5,
+        roughness: 0.3,
         color: color });
 
       let cube = new THREE.Mesh(geometry, material);

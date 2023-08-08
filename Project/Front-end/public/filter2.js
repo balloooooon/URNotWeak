@@ -13,8 +13,8 @@ const effectCtx = effectCanvas.getContext('2d');
 const MAX_DELAY = 100;
 
 const OPTIONS = {
-  delay: 55,
-  delayRandom: 0.65,
+  delay: 70,
+  delayRandom: 0.7,
   glitchFrequency: 74,
   glitchMultiply: true,
   specular: false,

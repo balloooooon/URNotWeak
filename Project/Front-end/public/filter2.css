@@ -26,7 +26,7 @@ video {
   width: 0;
 }
 
-.stuff {
+/* .stuff {
   position: absolute;
   left: 0;
   right: 0;
@@ -41,7 +41,7 @@ video {
   font-family: "ZCOOL KuaiLe";
   text-transform: uppercase;
   text-shadow: 2px 2px 0 rgba(255, 0, 0, 0.3), -2px -2px 0 rgba(0, 128, 0, 0.3), 2px -2px 0 rgba(0, 0, 255, 0.3);
-}
+} */
 
 button {
   text-transform: uppercase;
