@@ -1,0 +1,7 @@
+.simul {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  background-color: black;
+}
