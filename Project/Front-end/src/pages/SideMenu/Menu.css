@@ -1,0 +1,32 @@
+.bg {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+    height: 100%;
+    width: 250px;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+
+}
+
+.items {
+    margin-top: 40px;
+}
+
+.text-wrapper {
+    color: #000000;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    line-height: 50px;
+    white-space: nowrap;
+}
