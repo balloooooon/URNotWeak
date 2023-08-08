@@ -31,6 +31,7 @@ export const Home = () => {
       setCurrentSection((prevSection) => {
         const newSection = prevSection + direction;
         if (newSection >= 0 && newSection < sectionRefs.length) {
+          console.log('move');
           sectionRefs[newSection].current.scrollIntoView({
             behavior: 'smooth',
           });
