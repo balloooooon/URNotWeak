@@ -3,7 +3,6 @@
     right: 0;
     top: 0;
     background-color: white;
-    padding: 30px;
     display: flex;
     flex-direction: column;
     z-index: 99;
@@ -13,12 +12,14 @@
 
 .close {
     position: absolute;
-    right: 10px;
+    right: 20px;
+    top: 20px;
 
 }
 
 .items {
     margin-top: 40px;
+    padding: 30px;
 }
 
 .text-wrapper {
