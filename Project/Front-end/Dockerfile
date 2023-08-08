@@ -20,7 +20,7 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY ./nginx.conf /etc/nginx/conf.d
 
 # .env 파일을 이미지로 복사
-COPY .env /app/.env
+COPY /app/.env .env 
 
 # 80 포트 오픈
 EXPOSE 80
