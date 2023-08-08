@@ -13,7 +13,7 @@ export const Test = () => {
   const[question, setQuestion] = useState();
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_SERVER_API_URL}/test`)
+    axios.get(process.env.REACT_APP_SERVER_API_URL+'/test')
     .then(({data})=>{
       // question = data;
       setQuestion(Object.values(data)); //Object.entries
