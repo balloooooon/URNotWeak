@@ -6,6 +6,15 @@
     <script>
       Kakao.init('86ff9b9919878006c78e4eb9f7e12173'); // 사용하려는 앱의 JavaScript 키 입력
     </script>
+    <script type="text/javascript" language = "javascript">
+      // 모바일 웹 주소창 숨기기
+      window.addEventListener('load', function() {
+        // body의 height를 살짝 늘리는 코드
+        document.body.style.height = (document.documentElement.clientHeight + 5) + 'px';
+        // scroll를 제어 하는 코드
+        setTimeout(scrollTo, 0, 0, 1);
+      }, false);
+      </script>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
