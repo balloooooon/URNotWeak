@@ -23,28 +23,50 @@ export const Home = () => {
   // 스크롤 한번으로 섹션 이동하도록
   const [currentSection, setCurrentSection] = useState(0);
   const sectionRefs = Array.from({ length: 5 }, () => React.createRef());
+  const scrollThreshold = 600; // 스크롤 이벤트 필터링을 위한 임계값
 
   useEffect(() => {
+    let lastScrollTime = 0;
     const handleScroll = (e) => {
-      const direction = e.deltaY > 0 ? 1 : -1;
+      
+      //너무 자주 실행되지 않도록
+      const now = new Date().getTime();
+      if (now - lastScrollTime < scrollThreshold) return;
+      // 위로가는 스크롤에서 startY가 0인 수가 들어와서 dir이 1로 인식되는것을 막기위해
+      // 0으로 들어오는걸 그냥 막아버린다.(야매로 해결)
+      if(e.deltaY === undefined && startY === 0) return;
+
+      const delta = e.deltaY || e.touches[0].clientY - startY;
+      const direction = delta > 0 ? 1 : -1;
+
 
       setCurrentSection((prevSection) => {
         const newSection = prevSection + direction;
         if (newSection >= 0 && newSection < sectionRefs.length) {
           sectionRefs[newSection].current.scrollIntoView({
             behavior: 'smooth',
+            block: 'start',
           });
           return newSection;
         }
         return prevSection;
       });
+
+      lastScrollTime = now; // 마지막 스크롤 타임
+    };
+
+    let startY = 0;
+    const handleTouchStart = (e) => {
+      startY = e.touches[0].clientY;
     };
 
     // wheel은 마우스 휠, touchmove는 모바일에서 스크롤
-    window.addEventListener('wheel', handleScroll);
+    window.addEventListener('wheel', handleScroll);    
+    window.addEventListener('touchstart', handleTouchStart);
     window.addEventListener('touchmove', handleScroll);
     return () => {
-      window.removeEventListener('wheel', handleScroll);
+      window.removeEventListener('wheel', handleScroll);      
+      window.removeEventListener('touchstart', handleTouchStart);
       window.removeEventListener('touchmove', handleScroll);
     };
 
