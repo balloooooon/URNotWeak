@@ -36,7 +36,7 @@ export const Home = () => {
       // 0으로 들어오는걸 그냥 막아버린다.(야매로 해결)
       if(e.deltaY === undefined && startY === 0) return;
 
-      const delta = e.deltaY || e.touches[0].clientY - startY;
+      const delta = e.deltaY || startY - e.touches[0].clientY;
       const direction = delta > 0 ? 1 : -1;
 
 
