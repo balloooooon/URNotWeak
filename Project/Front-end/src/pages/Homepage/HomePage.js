@@ -40,10 +40,14 @@ export const Home = () => {
       });
     };
 
+    // wheel은 마우스 휠, touchmove는 모바일에서 스크롤
     window.addEventListener('wheel', handleScroll);
+    window.addEventListener('touchmove', handleScroll);
     return () => {
       window.removeEventListener('wheel', handleScroll);
+      window.removeEventListener('touchmove', handleScroll);
     };
+
   }, [sectionRefs]);
 
 
