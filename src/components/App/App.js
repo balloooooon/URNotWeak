@@ -23,6 +23,8 @@ function App() {
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
+    
+    setScreenSize();
 
     // 높이가 변경되었을때 다시 정의
     window.addEventListener('resize', () => setScreenSize());
