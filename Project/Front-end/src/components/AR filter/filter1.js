@@ -52,8 +52,8 @@ function App() {
         onFrame: async () => {
           await faceMesh.send({ image: webcamRef.current.video });
         },
-        width: 380,
-        height: 640,
+        width: 1080,
+        height: 720,
       });
       camera.start();
     }
@@ -73,8 +73,8 @@ function App() {
             right: 0,
             textAlign: "center",
             zIndex: 9,
-            width: 640,
-            height: 480,
+            width: 1080,
+            height: 600,
             filter: 'grayscale(30%) contrast(12) brightness(0.8)'
           }}
         />
@@ -90,8 +90,8 @@ function App() {
             right: 0,
             textAlign: "center",
             zIndex: 9,
-            width: 640,
-            height: 480,
+            width: 1080,
+            height: 600,
           }}
         />
       </div>
