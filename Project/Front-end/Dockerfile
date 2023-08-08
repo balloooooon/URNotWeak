@@ -19,9 +19,6 @@ RUN rm /etc/nginx/conf.d/default.conf
 # host pc 의 nginx.conf 를 아래 경로에 복사
 COPY ./nginx.conf /etc/nginx/conf.d
 
-# host pc 의 env를 아래 경로에 복사
-COPY ./ /home/ubuntu/env/front
-
 # 3000 포트 오픈
 EXPOSE 3000
 
