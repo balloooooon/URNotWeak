@@ -38,6 +38,7 @@
 }
 
 .display {
-  height: calc(var(--vh, 1vh) * 100);
+  min-height: calc(var(--vh, 1vh) * 100);
+  height: auto;
   width: 100vw;
 }
