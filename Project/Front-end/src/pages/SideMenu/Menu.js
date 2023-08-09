@@ -9,9 +9,9 @@ export const MenuBar = ({closebtn}) => {
             <svg
                 className="close"
                 fill="none"
-                height="28"
+                height="30"
                 viewBox="0 0 24 24"
-                width="28"
+                width="30"
                 xmlns="http://www.w3.org/2000/svg"
                 >
                 <path
@@ -21,12 +21,13 @@ export const MenuBar = ({closebtn}) => {
                 />
             </svg>
         </div>
+        <div className="line-1"></div>
         <div className="items">
-            <div className="item"><Link to="/" className="text-wrapper">Home </Link></div>
-            <div className="item"><Link to="/simul" className="text-wrapper">Simulation </Link></div>
-            <div className="item"><Link to="/ai/upload" className="text-wrapper">AI </Link></div>
-            <div className="item"><Link to="/test" className="text-wrapper">Test </Link></div>
-            <div className="item"><Link to="/" className="text-wrapper">AboutUs </Link></div>
+            <div className="item"><Link to="/" className="text-wrapper" style={{ textDecoration: "none" }}>Home </Link></div>
+            <div className="item"><Link to="/simul" className="text-wrapper" style={{ textDecoration: "none" }}>Simulation </Link></div>
+            <div className="item"><Link to="/ai/upload" className="text-wrapper" style={{ textDecoration: "none" }}>AI </Link></div>
+            <div className="item"><Link to="/test" className="text-wrapper" style={{ textDecoration: "none" }}>Test </Link></div>
+            <div className="item"><Link to="/" className="text-wrapper" style={{ textDecoration: "none" }}>AboutUs </Link></div>
         </div>
     </div>
   );
