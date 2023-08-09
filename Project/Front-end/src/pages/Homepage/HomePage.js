@@ -124,10 +124,10 @@ export const Home = () => {
         </div>
         <div ref={sectionRefs[4]} className={`section ${currentSection === 0 ? 'active' : ''}`}>
           <Frame
-            link="chatting"
+            link=""
             backimage="home5"
             text1={`궁금한 내용이 더 생겼나요?\n도움이 필요하신가요?`}
-            text2="chatting"
+            text2=""
             position={`p-top`}
           />
         </div>
