@@ -60,47 +60,47 @@ export const AI = () => {
       <Statistic></Statistic>
       <div className="frame-div222">
         <div className="group-container222">
-              <div className="group-parent222">
+          <div className="group-parent222">
+            <div className="rectangle-parent222">
+              <div className="group-item222" />
+              <Link to="/simul">
                 <div
-                  className="rectangle-parent222"
-                  // onClick={handleARClick}
-                >
-                  <div className="group-item222" />
-                  <Link to="/ar/filter2">
-                    <div
-                      className="group-inner222"
-                      style={{ backgroundImage: `url(${ar_img})` }}
-                    />
-                    <div className="ai222">AR</div>
-                  </Link>
-                </div>
-                <div className="rectangle-group222">
-                  <div className="group-item222" />
-                  <Link to="/ai/upload">
-                    <div
-                      className="group-inner222"
-                      style={{ backgroundImage: `url(${ai_img})` }}
-                    />
-                  <div className="ai222">AI</div>
-                  </Link>
-                </div>
-                <div className="rectangle-container222">
-                  <div className="group-item222" />
-                  <Link to="/simul">
-                    <div
-                      className="group-inner222"
-                      style={{ backgroundImage: `url(${simul_img})` }}
-                    />
-                    <div className="ai222">SIMULATION</div>
-                  </Link>
-                </div>
-                {/* <div className="rectangle-parent2221"> */}
-                {/* <div className="group-item222" />
-                  <div className="group-inner222" />
-                  <div className="ai222">...</div>
-                </div> */}
-              </div>
+                  className="group-inner222"
+                  style={{ backgroundImage: `url(${simul_img})` }}
+                />
+                <div className="ai222">SIMULATION</div>
+              </Link>
             </div>
+            <div
+              className="rectangle-container222"
+              // onClick={handleARClick}
+            >
+              <div className="group-item222" />
+              <Link to="/ar/filter2">
+                <div
+                  className="group-inner222"
+                  style={{ backgroundImage: `url(${ar_img})` }}
+                />
+                <div className="ai222">AR</div>
+              </Link>
+            </div>
+            <div className="rectangle-group222">
+              <div className="group-item222" />
+              <Link to="/ai/upload">
+                <div
+                  className="group-inner222"
+                  style={{ backgroundImage: `url(${ai_img})` }}
+                />
+              <div className="ai222">AI</div>
+              </Link>
+            </div>
+            {/* <div className="rectangle-parent2221"> */}
+            {/* <div className="group-item222" />
+              <div className="group-inner222" />
+              <div className="ai222">...</div>
+            </div> */}
+          </div>
+        </div>
       </div>
     </div>
   );
