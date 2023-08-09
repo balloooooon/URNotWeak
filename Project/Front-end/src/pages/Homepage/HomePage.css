@@ -30,3 +30,17 @@
 .section:nth-child(even) {
   background-color: #e0e0e0;
 }
+
+.scroll-img {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 3;
+  text-align: center;
+  color: #e0e0e0;
+}
+
+.nxtbtn {
+  width: 60px;
+}

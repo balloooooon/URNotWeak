@@ -54,4 +54,10 @@ public class SimulationDetail {
 
     @Column(name="ar_type")
     private Integer arType;
+
+    @Column(name="source_name")
+    private String sourceName;
+
+    @Column(name="source_url")
+    private String sourceUrl;
 }
