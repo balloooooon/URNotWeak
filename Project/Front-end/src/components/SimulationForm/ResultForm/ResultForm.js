@@ -10,7 +10,7 @@ import kakaoimg from "../../../assets/images/kakao.png";
 import link from "../../../assets/images/share.png";
 import ai_img from "../../../assets/images/rec_ai.png";
 import ar_img from "../../../assets/images/rec_ar.png";
-import test_img from "../../../assets/images/rec_.png";
+import test_img from "../../../assets/images/rec_test.png";
 import "./ResultForm.css";
 
 import {calculatePredictedDeaths} from '../../common/Statistic/DrugDeathStatistics';
@@ -193,7 +193,7 @@ const ResultForm = ({ selectedIndex }) => {
           <div className="group-container222">
             <div className="group-parent222">
               <div
-                className="rectangle-parent222"
+                className="rectangle-group222"
                 // onClick={handleARClick}
               >
                 <div className="group-item222" />
@@ -205,7 +205,7 @@ const ResultForm = ({ selectedIndex }) => {
                   <div className="ai222">AR</div>
                 </Link>
               </div>
-              <div className="rectangle-group222">
+              <div className="rectangle-container222">
                 <div className="group-item222" />
                 <Link to="/ai/upload">
                   <div
@@ -215,7 +215,7 @@ const ResultForm = ({ selectedIndex }) => {
                 <div className="ai222">AI</div>
                 </Link>
               </div>
-              <div className="rectangle-container222">
+              <div className="rectangle-parent222">
                 <div className="group-item222" />
                 <Link to="/test">
                   <div
