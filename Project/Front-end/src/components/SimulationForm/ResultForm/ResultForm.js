@@ -13,10 +13,15 @@ import ar_img from "../../../assets/images/rec_ar.png";
 import test_img from "../../../assets/images/rec_.png";
 import "./ResultForm.css";
 
+import {calculatePredictedDeaths} from '../../common/Statistic/DrugDeathStatistics';
+import useCountNum from '../../common/Statistic/UseCountUp';
+
+
 const ResultForm = ({ selectedIndex }) => {
   const [resultData, setResultData] = useState(null);
   const [randomImagePair, setRandomImagePair] = useState(null);
   const [showSelectForm, setShowSelectForm] = useState(false);
+  const count = useCountNum(calculatePredictedDeaths().predictedDeathsToday);
 
   useEffect(() => {
     const fetchResultData = async () => {
@@ -107,7 +112,7 @@ const ResultForm = ({ selectedIndex }) => {
         <div className="api-wrapper222">
           <div className="api-container222">
             <p className="api222">
-              매년 (api)명의 중독자와 사망자가 발생하고 있습니다.
+              지금도 {count} 명의 중독자와 사망자가 발생하고 있습니다.
             </p>
             <p className="api222">&nbsp;</p>
             <p className="api222">당신은 안전할까요?</p>

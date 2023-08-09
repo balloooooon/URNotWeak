@@ -28,7 +28,8 @@
   line-height: 30px;
   font-weight: 600;
   display: inline-block;
-  width: 229px;
+  word-break: keep-all;
+  width: 250px;
   height: 150px;
 }
 .api-wrapper222 {
