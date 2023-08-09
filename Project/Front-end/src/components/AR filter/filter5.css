@@ -1,0 +1,28 @@
+.centered-and-scaled {
+    /* 화면 중앙 정렬을 위한 스타일 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    /* 가로세로 2배 확대를 위한 스타일 */
+    width: 100% ;
+    zoom: 3.3;
+    height: 100% ;
+    overflow: hidden;
+  }
+  
+  /* 모바일 화면 크기에 따른 미디어 쿼리 */
+  @media screen and (max-width: 768px) {
+    .centered-and-scaled {
+      /* 모바일 화면에서도 중앙 정렬 및 확대 유지 */
+      justify-content: center;
+      align-items: center;
+      zoom: 1.7; /* 모바일에서는 다른 확대 비율로 조정 */
+    }
+  }
+  
+  
+  
+  .scroll {
+    overflow: hidden;
+  }
