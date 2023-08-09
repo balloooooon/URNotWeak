@@ -20,9 +20,9 @@
   align-items: center;
 }
 
-.element {
+.nav .element {
   color: whitesmoke;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.1px;
   line-height: 20px;
@@ -35,8 +35,8 @@
 
 .m-menu {
   margin-left: auto;
-  height: 24px ;
+  height: 27px ;
   position: relative ;
-  width: 24px ;
-  margin: 14px;
+  width: 27px ;
+  margin: 12px;
 }
