@@ -1,10 +1,14 @@
 import React, {useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import {useLocation} from "react-router-dom";
+import ai_img from "../../../assets/images/rec_ai.png";
+import ar_img from "../../../assets/images/rec_ar.png";
+import simul_img from "../../../assets/images/rec_.png";
 import './TestResult.css'
 
 import Statistic from 'components/common/Statistic/Statistic';
-import { BottomMenu } from "components/common/BottomMenu/BottomMenu";
+// import { BottomMenu } from "components/common/BottomMenu/BottomMenu";
 import { PercentBar } from 'components/common/Percentage/Percentage';
 
 export const AI = () => {
@@ -53,9 +57,51 @@ export const AI = () => {
 마약 중독 재발에 많은 영향을
 끼친다는 사실이 밝혀졌습니다.</p>
       </div>
-
       <Statistic></Statistic>
-      <BottomMenu />
+      <div className="frame-div222">
+        <div className="group-container222">
+              <div className="group-parent222">
+                <div
+                  className="rectangle-parent222"
+                  // onClick={handleARClick}
+                >
+                  <div className="group-item222" />
+                  <Link to="/ar/filter2">
+                    <div
+                      className="group-inner222"
+                      style={{ backgroundImage: `url(${ar_img})` }}
+                    />
+                    <div className="ai222">AR</div>
+                  </Link>
+                </div>
+                <div className="rectangle-group222">
+                  <div className="group-item222" />
+                  <Link to="/ai/upload">
+                    <div
+                      className="group-inner222"
+                      style={{ backgroundImage: `url(${ai_img})` }}
+                    />
+                  <div className="ai222">AI</div>
+                  </Link>
+                </div>
+                <div className="rectangle-container222">
+                  <div className="group-item222" />
+                  <Link to="/simul">
+                    <div
+                      className="group-inner222"
+                      style={{ backgroundImage: `url(${simul_img})` }}
+                    />
+                    <div className="ai222">SIMULATION</div>
+                  </Link>
+                </div>
+                {/* <div className="rectangle-parent2221"> */}
+                {/* <div className="group-item222" />
+                  <div className="group-inner222" />
+                  <div className="ai222">...</div>
+                </div> */}
+              </div>
+            </div>
+      </div>
     </div>
   );
 };
