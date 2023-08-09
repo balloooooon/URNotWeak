@@ -2,11 +2,14 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import {useLocation, useNavigate} from "react-router-dom";
 import './Statistic.css'
+import useCountNum from './UseCountUp';
+import { calculatePredictedDeaths } from './DrugDeathStatistics';
 
 export const AI = () => {
   const searchParams = new URLSearchParams(useLocation().search);
   const score = searchParams.get('score');
   const navigate = useNavigate();
+  const count = useCountNum(calculatePredictedDeaths().predictedDeathsToday);
 
   useEffect(() => {
     // axios.get(process.env.REACT_APP_SERVER_API_URL+'/test/result?score='+score)
@@ -23,6 +26,8 @@ export const AI = () => {
     // .catch((Error)=>{console.log(Error)});
   }, []);
 
+  
+
   return (
     <div className="statistic mt">
       <div className="line"></div>
@@ -30,7 +35,7 @@ export const AI = () => {
       <div className="flex">
         <div className="st-item">
           <p className="text-n">마약으로 인한 <br/>사망자수</p>
-          <p className="text-m">1명</p>
+          <p className="text-m">{count}명</p>
         </div>
         <div className="st-item">
           <p className="text-n">마약 사건<br/>발생 건수</p>
