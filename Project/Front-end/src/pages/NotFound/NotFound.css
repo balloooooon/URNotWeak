@@ -1,0 +1,39 @@
+.notfound {
+    background-color: #0f0f0f;
+    height: 100%;
+}
+
+.notfound .wrapper {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    width: 80%;
+    max-width: 500px;
+    height: 80%;
+    text-align: center;
+    background-color: #ededed2c;
+    padding: 10px;
+    border-radius: 12%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.notfound .blank {
+    height: 100% ;
+}
+
+.notfound-img {
+    width: 100%;
+}
+
+.notfound .txt {
+    color: white;
+    margin: 10px;
+}
+
+.notfound .btn {
+    margin: 30px;
+}
