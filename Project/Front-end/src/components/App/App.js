@@ -12,6 +12,7 @@ import AI from 'pages/AI/AI'
 import AR from 'pages/AR/AR'
 import Test from 'pages/Test/Test'
 import NotFound from 'pages/NotFound/NotFound'
+import 'fonts/font.css'
 
 
 function App() {
