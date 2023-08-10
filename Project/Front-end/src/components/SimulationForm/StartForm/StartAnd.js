@@ -4,7 +4,6 @@ import RejectBtn from "../../../assets/images/reject_btn.png";
 import CallingImg from "../../../assets/images/white_phone.png";
 import RedBtn from "../../../assets/images/redBtn.png";
 import VideoForm from "../StoryForm/VideoForm";
-import Nav from "components/Nav/Nav";
 import "./StartAnd.css";
 
 const StartAnd = ({ selectedIndex }) => {
@@ -44,7 +43,6 @@ const StartAnd = ({ selectedIndex }) => {
 
   return (
     <div className="start1">
-      <Nav />
       {showVideoForm ? null : (
         <div className="call-wrapper">
           {isCallBtn ? (
