@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
+import './TestContent.css'
 
 export const Content = ({list}) => {
   const [index, setIndex] = useState(1);
@@ -79,8 +80,8 @@ export const Content = ({list}) => {
         className="uploadimg"
         src={img} 
         />
-      <div className="btn" onClick={btn0}>{ans0.testAContent}</div>
-      <div className="btn" onClick={btn1}>{ans1.testAContent}</div>
+      <div className="btn test-btn" onClick={btn0}>{ans0.testAContent}</div>
+      <div className="btn test-btn" onClick={btn1}>{ans1.testAContent}</div>
     </div>
   );
 };
