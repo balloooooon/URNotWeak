@@ -1,25 +1,37 @@
-import React from "react";
-import {useNavigate} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { BottomMenu } from "components/common/BottomMenu/BottomMenu";
-import './aiResult.css'
+import "./aiResult.css";
+import { useLocation } from "react-router-dom";
 
 export const AI = () => {
+  const [imageSrc, setImageSrc] = useState(null);
+
   const navigate = useNavigate();
 
   const goUpload = () => {
-    navigate('/ai/upload');
-  }
+    navigate("/ai/upload");
+  };
+
+  // navigator에서 보낸 마약전후 이미지 가져오기
+  const location = useLocation();
+  const aiFile = location.state.aiImg;
+
+  useEffect(() => {
+    setImageSrc(aiFile || null);
+  }, []);
 
   return (
     <div className="upload">
-      <img 
-        className="uploadimg"
-        src={null} 
-        />
-      <div className="btn" onClick={goUpload}>다시해보기</div>
+      <div className="resultimg">
+        <img className="uploadimg" src={imageSrc} />
+      </div>
+      <div className="btn" onClick={goUpload}>
+        다시해보기
+      </div>
       <BottomMenu></BottomMenu>
     </div>
   );
 };
-    
+
 export default AI;
