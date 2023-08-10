@@ -5,17 +5,17 @@ import NxtBtnImg from "assets/images/arrow right.svg";
 export const Footer = ({goTop}) => {
     return (
         <div className={`homeFrame`}>
-            <div className={`big-top black `}/>
+            <div className={`big-top `}/>
             <div className="group p-ftop">
                 <div className="tx-xb">당신은</div>
                 <div className="tx-xb">약하지 않습니다.</div>
             </div>
-            <div className='group p-middle'>
+            <div className='p-middle'>
                 <div className='item'>
                     <div className='tx-r'>Site Map</div>
-                    <div></div><Link to={`simul`} className="tx-t" style={{ textDecoration: "none" }}>__ simulation</Link>
-                    <div></div><Link to={`test`} className="tx-t" style={{ textDecoration: "none" }}>__ test</Link>
-                    <div></div><Link to={`ai/upload`} className="tx-t" style={{ textDecoration: "none" }}>__ simulation</Link>
+                    <div></div><Link to={`simul`} className="tx-t" style={{ textDecoration: "none" }}>_ simulation</Link>
+                    <div></div><Link to={`test`} className="tx-t" style={{ textDecoration: "none" }}>_ test</Link>
+                    <div></div><Link to={`ai/upload`} className="tx-t" style={{ textDecoration: "none" }}>_ AI</Link>
                 </div>
                 <div className='item'>
                     <div className='tx-r'>관련 사이트</div>

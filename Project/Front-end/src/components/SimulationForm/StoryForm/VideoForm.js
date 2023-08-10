@@ -19,7 +19,6 @@ const VideoForm = ({ selectedIndex }) => {
   const [videoRef, setVideoRef] = useState(null);
   const [showResultForm, setShowResultForm] = useState(false);
   const arComponents = [AR1, AR2, AR3, AR4, AR5];
-  
 
   useEffect(() => {
     const fetchSimulData = async () => {
@@ -36,8 +35,6 @@ const VideoForm = ({ selectedIndex }) => {
     fetchSimulData();
   }, [selectedIndex]);
   //  selectedIndex가 변경될 때마다 simulData를 새로 가져옴
-
-
 
   useEffect(() => {
     const fetchSimulTxt = async () => {
@@ -73,6 +70,8 @@ const VideoForm = ({ selectedIndex }) => {
       video.onloadeddata = () => {
         video.play();
       };
+
+      video.onended = handleNextClick;
     }
   }, [videoRef, currentStep, simulData]);
 
@@ -91,7 +90,6 @@ const VideoForm = ({ selectedIndex }) => {
               <video
                 ref={(ref) => setVideoRef(ref)}
                 autoPlay
-                loop
                 style={{
                   objectFit: "cover",
                   width: "100%",
@@ -136,7 +134,7 @@ const VideoForm = ({ selectedIndex }) => {
       content = <MonoForm text={simulTxt} onNext={handleNextClick} />;
     } else if (currentStepData.simulContentType === 4) {
       console.log("ar으로 이동");
-      const newRandomIndex = Math.floor(Math.random() * 5) + 1; 
+      const newRandomIndex = Math.floor(Math.random() * 4) + 2;
       let ARComponent;
       if (newRandomIndex === 1) {
         ARComponent = AR1;
@@ -149,7 +147,7 @@ const VideoForm = ({ selectedIndex }) => {
       } else if (newRandomIndex === 5) {
         ARComponent = AR5;
       }
-      content =  React.createElement(ARComponent, { onNext: handleNextClick });
+      content = React.createElement(ARComponent, { onNext: handleNextClick });
     } else if (currentStepData.simulContentType === 5) {
       content = <HandForm onNext={handleNextClick} currentStep={currentStep} />;
     }

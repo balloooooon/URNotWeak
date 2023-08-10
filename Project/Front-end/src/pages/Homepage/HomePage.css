@@ -44,12 +44,18 @@ text-align: center;
 width: 60px;
 }
 
-.black {
-  background-color: black;
-}
-
 .long-line {
   background-color: white;
   height: 1px;
   margin: 1px;
+}
+
+.p-center {
+  top: 40%;
+  text-align: center;
+  height: fit-content;
+  position: absolute;
+  width: 100%;
+  min-width: 250px;
+  z-index: 2;
 }
