@@ -4,6 +4,8 @@ import ImageSlider from "components/common/BeforeAfterImg/ImageSlider";
 import "./aiUpload.css";
 import axios from "axios";
 import Loading from "components/common/Loading/Loading";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const AI = () => {
   const [imageSrc, setImageSrc] = useState(null);
@@ -60,22 +62,42 @@ export const AI = () => {
       responseType: "blob",
     })
       .then((response) => {
+        console.log(response);
         const result = URL.createObjectURL(response.data);
         navigate("/ai/result", {
           state: {
             aiImg: result,
           },
         });
-        setTimeout(function () {}, 10000);
       })
       .catch((Error) => {
-        console.log(Error);
+        toast.error(
+          <div>
+            얼굴을 인식하지 못했습니다!
+            <br />
+            얼굴이 잘 보이는 사진으로 업로드 해주세요.
+          </div>
+        );
       });
     setLoading(false);
   };
 
   return (
     <div className="upload">
+      <ToastContainer
+        className="toast"
+        autoClose={30000}
+        position="top-right" // 알람 위치 지정
+        hideProgressBar={true} // 진행시간바 숨김
+        closeOnClick // 클릭으로 알람 닫기
+        rtl={false} // 알림 좌우 반전
+        pauseOnFocusLoss // 화면을 벗어나면 알람 정지
+        draggable // 드래그 가능
+        pauseOnHover // 마우스를 올리면 알람 정지
+        theme="light"
+        // limit={1} // 알람 개수 제한
+      />
+
       {loading ? <Loading /> : null}
       <div>
         <p className="st">예시</p>
