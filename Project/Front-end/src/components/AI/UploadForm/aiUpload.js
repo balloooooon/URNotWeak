@@ -3,10 +3,12 @@ import { useNavigate } from "react-router-dom";
 import ImageSlider from "components/common/BeforeAfterImg/ImageSlider";
 import "./aiUpload.css";
 import axios from "axios";
+import Loading from "components/common/Loading/Loading";
 
 export const AI = () => {
   const [imageSrc, setImageSrc] = useState(null);
   const [selectedFiles, setSelectedFiles] = useState(null);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   // 사진 올렸을 때 실행
@@ -31,14 +33,15 @@ export const AI = () => {
 
   // 생성하기 눌렀을때
   const createResult = async () => {
+    setLoading(true);
     // AI Server 주소 가져오기
     let apiUrl;
-    const result = await axios({
+    const urlResult = await axios({
       method: "GET",
       url: "https://urnotweak.site:8589/aiurl",
       responseType: "type",
     });
-    apiUrl = result.data;
+    apiUrl = urlResult.data;
     apiUrl = apiUrl + "/AI";
     console.log("AI Server 주소 : ", apiUrl);
 
@@ -47,7 +50,7 @@ export const AI = () => {
     formData.append("file", selectedFiles);
 
     // AI Server로 업로드한 이미지 전송
-    axios({
+    const result = await axios({
       method: "POST",
       url: apiUrl,
       headers: {
@@ -63,14 +66,17 @@ export const AI = () => {
             aiImg: result,
           },
         });
+        setTimeout(function () {}, 10000);
       })
       .catch((Error) => {
         console.log(Error);
       });
+    setLoading(false);
   };
 
   return (
     <div className="upload">
+      {loading ? <Loading /> : null}
       <div>
         <p className="st">예시</p>
         <ImageSlider />
