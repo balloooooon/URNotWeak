@@ -1,0 +1,41 @@
+.bottom-footer {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.bottom-footer .left {
+    min-width: fit-content;
+}
+
+.bottom-footer .right {
+    min-width: fit-content;
+    margin-top: 5px;
+}
+
+.up-btn {
+    position: absolute;
+    bottom: 120px;
+    right: 0;
+    margin: 25px;
+    border: 1px solid white;
+    height: 50px;
+}
+
+.up-btn img {
+    transform: rotate(270deg);
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+.group .item {
+    min-width: 200px;
+    padding-bottom: 70px;
+}

@@ -11,7 +11,7 @@ export const Frame = ({ backimage, text1, text2, link, position }) => {
                 <div className="rectangle big-top" />
                 <img className={`big-top img ${backimage}`}></img>
                 <div className={`group ${position}`}>
-                    <div className="title btx">
+                    <div className="title tx-b">
                         {text1}
                     </div>
                     {text2==""?
@@ -19,7 +19,7 @@ export const Frame = ({ backimage, text1, text2, link, position }) => {
                         :
                         <Link to={`/${link}`} className="overlap-group" style={{ textDecoration: "none" }}>
                             <div className="home-btn">
-                                <div className="subtitle stx">{text2}</div> 
+                                <div className="subtitle tx-t">{text2}</div> 
                                 <img className="nxtbtn" alt={text2} src={NxtBtnImg}/>
                             </div>
                         </Link>

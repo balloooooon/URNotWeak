@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from "react";
 import { Frame } from "components/Home/HomeFrame";
+import { Footer } from 'components/Home/Footer/Footer';
 import { Nav } from "components/Nav/Nav";
 import Chatting from "pages/Chatting/Chatting";
 import './HomePage.css'
 
 import scrollImg from 'assets/images/scrollimg.gif'
+import { Background } from "components/common/Loading/LoadingStyle";
 
 export const Home = () => {
   // 채팅 최초 1번 로딩
@@ -24,7 +26,7 @@ export const Home = () => {
 
   // 스크롤 한번으로 섹션 이동하도록
   const [currentSection, setCurrentSection] = useState(0);
-  const sectionRefs = Array.from({ length: 5 }, () => React.createRef());
+  const sectionRefs = Array.from({ length: 6 }, () => React.createRef());
   const scrollThreshold = 600; // 스크롤 이벤트 필터링을 위한 임계값
 
   useEffect(() => {
@@ -73,26 +75,31 @@ export const Home = () => {
 
   }, [sectionRefs]);
 
+  // 제일 위로 클릭하는 함수
+  const goTop = () => {
+    setCurrentSection(0)
+  }
 
   return (
     <div className="display">
       <Nav className="nav-instance" />
       {currentSection===0?
         <div className="scroll-img">
-          <div>아래로 스크롤하세요.</div>
+          <div className="tx-s">아래로 스크롤하세요.</div>
           <img className="nxtbtn" src={scrollImg}/>
         </div>:<></>
       }
 
       <div className="homepages">
         <div ref={sectionRefs[0]} className={`section ${currentSection === 0 ? 'active' : ''}`}>
-          <Frame
-            link=""
-            backimage="home1"
-            text1={`대한민국의\n마약 근절을 위해 노력합니다.`}
-            text2=""
-            position={`p-center`}
-          />
+          <div className={`homeFrame`}>
+            <div className="rectangle big-top" />
+            <img className={`big-top img home1`}></img>
+            <div className={`group p-center`}>
+              <div className="tx-xb">약해지지마</div>
+              <div className="tx-r">{"대한민국의\n마약 근절을 위해 노력합니다."}</div>
+            </div>
+          </div>
         </div>
         <div ref={sectionRefs[1]} className={`section ${currentSection === 0 ? 'active' : ''}`}>
           <Frame
@@ -129,6 +136,9 @@ export const Home = () => {
             text2=""
             position={`p-top`}
           />
+        </div>
+        <div ref={sectionRefs[5]} className={`section ${currentSection === 0 ? 'active' : ''}`}>
+          <Footer goTop={goTop}></Footer>
         </div>
       </div>
     </div>
