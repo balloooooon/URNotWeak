@@ -103,6 +103,14 @@ const VideoForm = ({ selectedIndex }) => {
           <div className="frame-child001">
             <div className="chapter1-txt">{`${currentStepData.simulText}. ${currentStepData.simulAnswer1}`}</div>
           </div>
+          <div className="url-group">
+            {currentStepData.sourceName && (
+              <p className="video_url">{`${currentStepData.sourceName}`}</p>
+            )}
+            {currentStepData.sourceUrl && (
+              <p className="video_url2">{`${currentStepData.sourceUrl}`}</p>
+            )}
+          </div>
         </div>
       );
     } else if (currentStepData.simulContentType === 2) {

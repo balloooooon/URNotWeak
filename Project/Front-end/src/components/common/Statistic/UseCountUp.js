@@ -4,7 +4,7 @@ function easeOutExpo(t) {
   return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
 }
 
-function useCountNum(end, start = 0, duration = 2000) {
+function useCountNum(end, start = 0, duration = 4000) {
   const [count, setCount] = useState(start);
   const frameRate = 1000 / 60;
   const totalFrame = Math.round(duration / frameRate);
