@@ -2,21 +2,22 @@ import { FaceMesh } from "@mediapipe/face_mesh";
 import React, { useRef, useEffect } from "react";
 import * as cam from "@mediapipe/camera_utils";
 import Webcam from "react-webcam";
+import NextBtn from "components/SimulationForm/NextBtn";
 
-import ant2 from "../../assets/images/ant2.png"
+import ant2 from "../../assets/images/ant2.png";
 import ant7 from "../../assets/images//ant7.png"; // 첫 번째 이미지의 경로를 입력해주세요.
 import ant9 from "../../assets/images//ant9.png"; // 두 번째 이미지의 경로를 입력해주세요.
 import ant10 from "../../assets/images//ant10.png"; // 세 번째 이미지의 경로를 입력해주세요.
 import ant12 from "../../assets/images//ant12.png"; // 세 번째 이미지의 경로를 입력해주세요.
 
-function App() {
+function App({ onNext }) {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
   const bgCanvasRef = useRef(null);
 
   function drawImageOnLandmark(canvasCtx, image, landmark) {
-    const imageWidth = image.width/2.2; // 이미지의 너비
-    const imageHeight = image.height/2.2; // 이미지의 높이
+    const imageWidth = image.width / 2.2; // 이미지의 너비
+    const imageHeight = image.height / 2.2; // 이미지의 높이
     const imageX = landmark.x * canvasRef.current.width - imageWidth / 2; // 이미지의 x 좌표
     const imageY = landmark.y * canvasRef.current.height - imageHeight / 2; // 이미지의 y 좌표
     canvasCtx.clearRect(image, imageX, imageY, imageWidth, imageHeight);
@@ -107,21 +108,37 @@ function App() {
 
     faceMesh.onResults(onResults);
 
-    if (
-      typeof webcamRef.current !== "undefined" &&
-      webcamRef.current !== null
-    ) {
-      const camera = new cam.Camera(webcamRef.current.video, {
-        onFrame: async () => {
-          await faceMesh.send({ image: webcamRef.current.video });
-        },
-        width: 640,
-        height: 480,
-      });
-      camera.start();
-    }
-  }, []);
+    // if (
+    //     if (webcamRef.current && webcamRef.current.video) {
+    //   //   typeof webcamRef.current !== "undefined" &&
+    //   //   webcamRef.current !== null
+    //   // ) {
+    //     const camera = new cam.Camera(webcamRef.current.video, {
+    //       onFrame: async () => {
+    //         await faceMesh.send({ image: webcamRef.current.video });
+    //       },
+    //       width: 640,
+    //       height: 480,
+    //     });
+    //     camera.start();
+    //   }
+    // }, [webcamRef]);
+    const startCamera = async () => {
+      if (webcamRef.current && webcamRef.current.video) {
+        const camera = new cam.Camera(webcamRef.current.video, {
+          onFrame: async () => {
+            await faceMesh.send({ image: webcamRef.current.video });
+          },
+          width: 640,
+          height: 480,
+        });
+        camera.start();
+      }
+    };
 
+    // startCamera 함수 호출하여 웹캠 및 faceMesh 시작
+    startCamera();
+  }, [webcamRef]); // web
   return (
     <center>
       <div className="App">
