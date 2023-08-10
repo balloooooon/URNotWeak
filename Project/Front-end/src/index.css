@@ -6,9 +6,30 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  
+  overflow: auto;
+  scrollbar-width: thin; /* 스크롤바 너비 설정 (크롬 브라우저) */
+  scrollbar-color: #888888 #f0f0f0; /* 스크롤바 색상 설정 (크롬 브라우저) */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* 스크롤바 */
+body::-webkit-scrollbar {
+  width: 8px;  /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: #e5e5e5; /* 스크롤바의 색상 */
+  
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(207, 207, 207, 0.1);  /*스크롤바 뒷 배경 색상*/
 }
