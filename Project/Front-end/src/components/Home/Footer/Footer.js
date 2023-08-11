@@ -28,7 +28,7 @@ export const Footer = ({goTop}) => {
             </div>
             <div className="bottom-footer">
                 <div className='left'>
-                    <div className="tx-b">URNotWeek</div>
+                    <div className="tx-b">URNotWeak</div>
                     <div className="long-line"></div>
                     <div className="tx-t">대한민국 마약 근절 프로젝트</div>
                 </div>
