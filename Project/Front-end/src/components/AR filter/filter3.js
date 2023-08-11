@@ -5,7 +5,7 @@ import './filter3.css';
 function ExternalPage({ onNext }) {
   return (
     <>
-    <div className="centered-and-scaled">
+    <div className='filter-container'>
       <object data="/filter3.html" />
     </div>
     {onNext && <NextBtn onClick={onNext} />}

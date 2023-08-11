@@ -5,7 +5,7 @@ import NextBtn from 'components/SimulationForm/NextBtn';
 function ExternalPage({ onNext }) {
   return (
     <>
-    <div className="centered-and-scaled">
+    <div>
       <object data="/filter4.html" />
     </div>
     {onNext && <NextBtn onClick={onNext} />}
