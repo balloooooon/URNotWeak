@@ -1,0 +1,44 @@
+.black {
+    color: black;
+}
+
+.contents {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.contents .title {
+    text-align: center;
+    margin-top: 20%;
+    margin-bottom: 10%;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.items .item {
+    width: 94%;
+    margin-left: 3%;
+}
+
+.image-wrapper {
+    position: relative;
+    padding-top: 100%;
+    margin: 0;
+}
+.image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}

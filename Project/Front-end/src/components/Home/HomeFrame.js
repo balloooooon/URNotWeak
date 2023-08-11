@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Content } from './Content/Content'
 import "./HomeFrame.css";
 import NxtBtnImg from "assets/images/arrow right.svg";
 
 export const Frame = ({ backimage, text1, text2, link }) => {
 
     return (
+
         <div className={`homeFrame`}>
             <div className={`overlap `}>
                 <div className="rectangle big-tophalf" />
@@ -22,6 +24,8 @@ export const Frame = ({ backimage, text1, text2, link }) => {
                     </Link>
                 }
             </div>
+            
+            {backimage==="home5"?<Content></Content>: <></>}
         </div>
     );
 };
