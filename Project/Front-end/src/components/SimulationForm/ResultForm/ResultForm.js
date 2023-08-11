@@ -161,17 +161,20 @@ const ResultForm = ({ selectedIndex }) => {
               <source src={resultData.news} type="video/mp4" />
               Your browser does not support the video tag.
             </video> */}
-            <p className="api222">{`이 시뮬레이션은 허구가 아닌 `}</p>
+            <div className="empty"></div>
+            <p className="api222">이 시뮬레이션은 허구가 아닌</p>
+            <p className="api222">위 뉴스에 보도된</p>
             <p className="api222">사실기반의 체험입니다.</p>
           </div>
           <div className="frame-child222" />
           {/* <img className="frame-item222" alt="" src={line} /> */}
         </div>
         <div className="container222">
-          <div className="div2223">마약을하면..</div>
+          <div className="div2223">마약을 하면..</div>
           <img className="frame-inner222" alt="" src={line} />
           <img className="icon222" alt="" src={randomImagePair.drugBeforeImg} />
           <img className="icon223" alt="" src={randomImagePair.drugAfterImg} />
+
           <div className="buttonslight-parent222">
             <div className="buttonslight222" style={{ pointerEvents: "none" }}>
               <Link
