@@ -17,6 +17,10 @@
   font-weight: 500;
 }
 
+.empty {
+  height: 30px;
+}
+
 .api222 {
   margin: 0;
 }
@@ -70,14 +74,14 @@
 }
 .div2223 {
   position: absolute;
-  top: 19px;
+  top: 22px;
   left: 107px;
   letter-spacing: 0.1px;
   line-height: 30px;
-  font-weight: 300;
+  font-weight: 500;
   display: inline-block;
   width: 178px;
-  height: 22px;
+  height: 50px;
 }
 .frame-inner222,
 .icon222,
@@ -155,7 +159,7 @@
 .container222 {
   position: relative;
   width: 392px;
-  height: 422px;
+  height: 450px;
 }
 .div2224 {
   position: absolute;
