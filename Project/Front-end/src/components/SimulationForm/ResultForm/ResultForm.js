@@ -10,19 +10,29 @@ import kakaoimg from "../../../assets/images/kakao.png";
 import link from "../../../assets/images/share.png";
 import ai_img from "../../../assets/images/rec_ai.png";
 import ar_img from "../../../assets/images/rec_ar.png";
-import test_img from "../../../assets/images/rec_.png";
+import test_img from "../../../assets/images/rec_test.png";
+// import news_3 from "../../../assets/images/news_club.jpg";
+// import news_2 from "../../../assets/images/news_pregnant.jpg";
+import news1 from "../../../assets/images/news_teen.JPG";
 import "./ResultForm.css";
 
-import {calculatePredictedDeaths} from '../../common/Statistic/DrugDeathStatistics';
-import useCountNum from '../../common/Statistic/UseCountUp';
-
+import { calculatePredictedDeaths } from "../../common/Statistic/DrugDeathStatistics";
+import useCountNum from "../../common/Statistic/UseCountUp";
 
 const ResultForm = ({ selectedIndex }) => {
   const [resultData, setResultData] = useState(null);
   const [randomImagePair, setRandomImagePair] = useState(null);
   const [showSelectForm, setShowSelectForm] = useState(false);
   const count = useCountNum(calculatePredictedDeaths().predictedDeathsToday);
-
+  const [isNewsImgVisible, setIsNewsImgVisible] = useState(true);
+  const handleNewsClick = () => {
+    console.log("뉴스클릭확인");
+    setIsNewsImgVisible(!isNewsImgVisible);
+  };
+  const getRandomArFilterPage = () => {
+    const randomIndex = Math.floor(Math.random() * 5) + 1;
+    return `/ar/filter${randomIndex}`;
+  };
   useEffect(() => {
     const fetchResultData = async () => {
       try {
@@ -119,11 +129,30 @@ const ResultForm = ({ selectedIndex }) => {
           </div>
         </div>
         <div className="group222">
+          {/* <div className="div2222"> */}
           <div className="div2222">
-            <video className="result-video" autoPlay loop controls>
+            {isNewsImgVisible ? (
+              <img
+                className="result-img"
+                src={news1}
+                alt="News 1"
+                onClick={handleNewsClick}
+              />
+            ) : (
+              <video
+                className="result-video"
+                autoPlay
+                onClick={handleNewsClick}
+              >
+                <source src={resultData.news} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            )}
+
+            {/* <video className="result-video" autoPlay loop controls>
               <source src={resultData.news} type="video/mp4" />
               Your browser does not support the video tag.
-            </video>
+            </video> */}
             <p className="api222">{`이 시뮬레이션은 허구가 아닌 `}</p>
             <p className="api222">사실기반의 체험입니다.</p>
           </div>
@@ -193,11 +222,11 @@ const ResultForm = ({ selectedIndex }) => {
           <div className="group-container222">
             <div className="group-parent222">
               <div
-                className="rectangle-parent222"
+                className="rectangle-group222"
                 // onClick={handleARClick}
               >
                 <div className="group-item222" />
-                <Link to="/ar/filter2">
+                <Link to={getRandomArFilterPage()}>
                   <div
                     className="group-inner222"
                     style={{ backgroundImage: `url(${ar_img})` }}
@@ -205,17 +234,17 @@ const ResultForm = ({ selectedIndex }) => {
                   <div className="ai222">AR</div>
                 </Link>
               </div>
-              <div className="rectangle-group222">
+              <div className="rectangle-container222">
                 <div className="group-item222" />
                 <Link to="/ai/upload">
                   <div
                     className="group-inner222"
                     style={{ backgroundImage: `url(${ai_img})` }}
                   />
-                <div className="ai222">AI</div>
+                  <div className="ai222">AI</div>
                 </Link>
               </div>
-              <div className="rectangle-container222">
+              <div className="rectangle-parent222">
                 <div className="group-item222" />
                 <Link to="/test">
                   <div

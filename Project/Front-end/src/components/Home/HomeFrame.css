@@ -5,10 +5,12 @@
   width: 100%;
   height: calc(var(--vh, 1vh) * 100);
   position: relative;
+  background-color: black;
 }
 
 img {
   object-fit: cover;
+  z-index: 0;
 }
 
 .home1 {
@@ -35,6 +37,13 @@ img {
   top: 0;
 }
 
+.big-tophalf {
+  height: 72%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 
 .homeFrame .rectangle {
   background: linear-gradient(
@@ -44,44 +53,21 @@ img {
       rgba(0, 0, 0, 0.47) 80.66%,
       rgba(0, 0, 0, 0.5) 100%
   );
-}
-
-.p-bottom {
-  bottom: 100px;
-}
-
-.p-top {
-  top: 200px;
-}
-
-.p-middle {
-  top: 300px;
-}
-
-.p-center {
-  top: 40%;
-  text-align: center;
+  z-index: 1;
 }
 
 .homeFrame .group {
-  height: 101px;
-  padding-left: 5%;
+  height: fit-content;
+  padding-left: 3%;
   position: absolute;
   width: 90%;
   min-width: 250px;
-}
-
-.homeFrame .overlap-group {
-  position: static;
+  z-index: 2;
+  top: 12%;
 }
 
 .homeFrame .title {
-  color: #ffffff;
-  font-family: "Roboto-SemiBold", Helvetica;
-  font-size: 26px;
-  font-weight: 600;
   left: 0;
-  letter-spacing: 0.1px;
   line-height: 30px;
   min-width: 230px;
   width: 100%;
@@ -90,20 +76,13 @@ img {
   padding-bottom: 20px;
 }
 
-.homeFrame .subtitle {
-  color: white;
-  font-family: "Roboto-Regular", Helvetica;
-  font-size: 16px;
-  font-weight: 600;
-  left: 0;
-  letter-spacing: 0.1px;
-  line-height: 30px;
-  width: 100%;
-  text-align: center;
-  margin-left: 10px;
-}
-
-.home-btn {
+.link-btn {
+  position: absolute;
+  top: 72%;
+  width: 94%;
+  max-width: 500px;
+  margin: 3%;
+  margin-top: 10%;
   border: 2px solid #ffffff;
   background-color: transparent;
   height: 44px;
@@ -112,8 +91,15 @@ img {
   align-items: center;
 }
 
-.home-btn .nxtbtn {
-  width: 35px;
+.link-btn .subtitle {
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.link-btn .nxtbtn {
+  width: 32px;
   color: white;
   margin-right: 10px;
 }

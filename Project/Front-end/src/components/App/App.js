@@ -5,7 +5,6 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import scrollbar from 'smooth-scrollbar'
 
 import Home from "pages/Homepage/HomePage"
 import Simulation from "pages/Simulation/Simulation"
@@ -13,8 +12,8 @@ import AI from 'pages/AI/AI'
 import AR from 'pages/AR/AR'
 import Test from 'pages/Test/Test'
 import NotFound from 'pages/NotFound/NotFound'
+import 'fonts/font.css'
 
-scrollbar.init(document.querySelector('#smooth-scroll'));
 
 function App() {
 
