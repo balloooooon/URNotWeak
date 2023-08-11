@@ -8,7 +8,7 @@ function ExternalPage({ onNext }) {
     <div className="centered-and-scaled">
       <object data="/filter4.html" />
     </div>
-    <NextBtn/>
+    {onNext && <NextBtn onClick={onNext} />}
     </>
   );
 }
