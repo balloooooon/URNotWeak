@@ -11,8 +11,8 @@ import link from "../../../assets/images/share.png";
 import ai_img from "../../../assets/images/rec_ai.png";
 import ar_img from "../../../assets/images/rec_ar.png";
 import test_img from "../../../assets/images/rec_test.png";
-// import news_3 from "../../../assets/images/news_club.jpg";
-// import news_2 from "../../../assets/images/news_pregnant.jpg";
+import news3 from "../../../assets/images/news_club.JPG";
+import news2 from "../../../assets/images/news_pregnant.JPG";
 import news1 from "../../../assets/images/news_teen.JPG";
 import "./ResultForm.css";
 
@@ -134,8 +134,16 @@ const ResultForm = ({ selectedIndex }) => {
             {isNewsImgVisible ? (
               <img
                 className="result-img"
-                src={news1}
-                alt="News 1"
+                src={
+                  selectedIndex === 1
+                    ? news1
+                    : selectedIndex === 2
+                    ? news2
+                    : selectedIndex === 3
+                    ? news3
+                    : null
+                }
+                alt={`news${selectedIndex}`}
                 onClick={handleNewsClick}
               />
             ) : (
@@ -166,15 +174,25 @@ const ResultForm = ({ selectedIndex }) => {
           <img className="icon223" alt="" src={randomImagePair.drugAfterImg} />
           <div className="buttonslight-parent222">
             <div className="buttonslight222" style={{ pointerEvents: "none" }}>
-              <div
-                className="button-wrapper2221"
-                style={{ pointerEvents: "none" }}
+              <Link
+                to="/ai/upload"
+                style={{ textDecoration: "none", color: "white" }}
               >
-                <div className="div2221" style={{ pointerEvents: "none" }}>
-                  전, 후 사진 AI 체험하기
+                <div
+                  className="button-wrapper2221"
+                  style={{ pointerEvents: "auto" }}
+                >
+                  <div className="div2221">전, 후 사진 AI 체험하기</div>
                 </div>
-              </div>
+              </Link>
             </div>
+            {/* <div className="buttonslight222" style={{ pointerEvents: "none" }}>
+              
+                <Link to="/ai/upload" className="button-wrapper2221">
+                  <div className="div2221">전, 후 사진 AI 체험하기</div>
+                </Link>
+            
+            </div> */}
             <div className="buttonslight2221">
               <div className="button-wrapper222">
                 <div className="div222" onClick={() => setShowSelectForm(true)}>
@@ -226,7 +244,10 @@ const ResultForm = ({ selectedIndex }) => {
                 // onClick={handleARClick}
               >
                 <div className="group-item222" />
-                <Link to={getRandomArFilterPage()}>
+                <Link
+                  to={getRandomArFilterPage()}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <div
                     className="group-inner222"
                     style={{ backgroundImage: `url(${ar_img})` }}
@@ -236,7 +257,10 @@ const ResultForm = ({ selectedIndex }) => {
               </div>
               <div className="rectangle-container222">
                 <div className="group-item222" />
-                <Link to="/ai/upload">
+                <Link
+                  to="/ai/upload"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <div
                     className="group-inner222"
                     style={{ backgroundImage: `url(${ai_img})` }}
@@ -246,7 +270,10 @@ const ResultForm = ({ selectedIndex }) => {
               </div>
               <div className="rectangle-parent222">
                 <div className="group-item222" />
-                <Link to="/test">
+                <Link
+                  to="/test"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <div
                     className="group-inner222"
                     style={{ backgroundImage: `url(${test_img})` }}
