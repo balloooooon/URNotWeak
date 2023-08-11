@@ -12,7 +12,6 @@
 
   .some-element {
     width: 600;
-    overflow: hidden;
     max-width: 1200px; /* 원하는 최대 너비로 설정 */
 
     /* padding: 20px; */
