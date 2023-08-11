@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {ImageSlider} from './ImageSlider'
 import "react-toastify/dist/ReactToastify.css";
 import './List.css'
 
@@ -7,23 +8,17 @@ export const ContentList = () => {
     const list = [
         {
             id:1,
-            img:"https://img.freepik.com/free-photo/cute-little-dog-isolated-on-yellow_23-2148985931.jpg",
-            like:10,//좋아요수
-            view:100, //조회수
+            imgs:["https://img.freepik.com/free-photo/cute-little-dog-isolated-on-yellow_23-2148985931.jpg","https://image.utoimage.com/preview/cp872722/2022/12/202212008462_500.jpg","https://img.freepik.com/free-photo/front-view-adorable-shiba-inu-dog_23-2149457807.jpg?w=360&t=st=1691718094~exp=1691718694~hmac=06fdac5e70ad01f4bac6b23f4d5de158656fd9d0c99fbea5f77cc18ddec9dfd7"],
             tag:["#약물정보","#펜타닐"] //태그들
         },
         {
             id:2,
-            img:"https://image.utoimage.com/preview/cp872722/2022/12/202212008462_500.jpg",
-            like:20,//좋아요수
-            view:200, //조회수
+            imgs:["https://image.utoimage.com/preview/cp872722/2022/12/202212008462_500.jpg","https://image.utoimage.com/preview/cp872722/2022/12/202212008462_500.jpg"],
             tag:["#약물정보","#펜타닐"] //태그들
         },
         {
             id:3,
-            img:"https://img.freepik.com/free-photo/front-view-adorable-shiba-inu-dog_23-2149457807.jpg?w=360&t=st=1691718094~exp=1691718694~hmac=06fdac5e70ad01f4bac6b23f4d5de158656fd9d0c99fbea5f77cc18ddec9dfd7",
-            like:30,//좋아요수
-            view:300, //조회수
+            imgs:["https://img.freepik.com/free-photo/front-view-adorable-shiba-inu-dog_23-2149457807.jpg?w=360&t=st=1691718094~exp=1691718694~hmac=06fdac5e70ad01f4bac6b23f4d5de158656fd9d0c99fbea5f77cc18ddec9dfd7"],
             tag:["#약물정보","#펜타닐"] //태그들
         }
     ]
@@ -35,16 +30,12 @@ export const ContentList = () => {
         {list.map(item => {
             return (
                 <div className="item" key={item.id}>
-                    <figure className="image-wrapper">
-                        <img src={item.img}></img>
-                    </figure>
-                    <div>{item.like}</div>
-                    <div>{item.view}</div>
+                    <ImageSlider images={item.imgs}></ImageSlider>
                     
                     <div className="tags">
                     {item.tag.map(t => {
                         return(
-                            <div>{t}</div>
+                            <a>{t} </a>
                         )
                     })}
                     </div>

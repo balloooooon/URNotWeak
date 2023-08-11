@@ -1,6 +1,6 @@
 .img-content {
     width: 100%;
-    height: fit-content;
+    height: 45%;
     position: absolute;
     top: 28%;
     align-items: center;
@@ -21,13 +21,13 @@ img-content::-webkit-scrollbar {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    height: 98%;
 }
 
 
 .img-content .wrapp {
-    position: relative;
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
     margin: 5px;
 }
 
