@@ -140,7 +140,7 @@ function App({ onNext }) {
     startCamera();
   }, [webcamRef]); // web
   return (
-    <center>
+    <center style={{overflow:'hidden'}}>
       <div className="App some-element">
         {/* 웹캠 비디오를 표시합니다. */}
         <Webcam
