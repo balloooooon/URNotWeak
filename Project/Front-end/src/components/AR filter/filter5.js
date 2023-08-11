@@ -5,10 +5,10 @@ import NextBtn from "components/SimulationForm/NextBtn";
 function ExternalPage({ onNext }) {
   return (
     <>
-       {onNext && <NextBtn onClick={onNext} />}
       <div className="centered-and-scaled">
         <object data="/filter5.html" />
       </div>
+      {onNext && <NextBtn onClick={onNext} />}
     </>
   );
 }
