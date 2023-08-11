@@ -1,14 +1,68 @@
 body {
   margin: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'LINESeedKR';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  
+  overflow: auto;
+  scrollbar-width: thin; /* 스크롤바 너비 설정 (크롬 브라우저) */
+  scrollbar-color: #888888 #f0f0f0; /* 스크롤바 색상 설정 (크롬 브라우저) */
+}
+
+@media (max-width: 767px) {
+  body {
+      font-size: 10px;
+      /* 모바일에 맞는 스타일 속성들 */
+  }
+}
+
+/* PC 화면 스타일 */
+@media (min-width: 768px) {
+  body {
+      font-size: 50px;
+      /* PC에 맞는 스타일 속성들 적용되는건지 잘 모르겠다!!!*/
+  }
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* 스크롤바 */
+body::-webkit-scrollbar {
+  width: 8px;  /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: #e5e5e5; /* 스크롤바의 색상 */
+  
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(207, 207, 207, 0.1);  /*스크롤바 뒷 배경 색상*/
+}
+
+
+
+@font-face {
+  font-family: "LINESeedKR";
+  src: url("fonts/LINESeedKR-Th.ttf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "LINESeedKR";
+  src: url("fonts/LINESeedKR-Rg.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "LINESeedKR";
+  src: url("fonts/LINESeedKR-Bd.ttf");
+  font-weight: 700;
 }

@@ -1,34 +1,65 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import { Link } from "react-router-dom";
 import { Menu } from './Menu'
 import "./Nav.css";
 import SideMenu from 'pages/SideMenu/Menu';
 
-export const Nav = () => {
+export const Nav = ({width=270}) => {
   //sidebar menu를 위한 state
-  const [isMenu,setMenu] = useState(false)
+  const [css, setCss] = useState("back-default");
+  const [isOpen, _setOpen] = useState(false);
+  const [xPosition, setX] = useState(-width);
+  const side = useRef();
 
-  // useEffect(() => {
-  //   console.log(isMenu);
-  // })
-
-  // 바로 setMenu를 이용하면 무한루프렌더링이 걸린다.
-  // 함수를 거쳐가도록 만듬.
-  function changeMenu() {
-    setMenu(!isMenu);
+  // button 클릭 시 토글
+  const toggleMenu = (e) => {
+    if (isOpen) { // 열림 -> 닫힘
+      setX(-width);
+      setCss("back-default");
+      console.log('닫기')
+    } else {
+      setX(0);
+      setCss("back-white");
+      console.log('열기')
+    }
+    _setOpen(pre => !pre);
+    // 이벤트 버블링을 막기위함.
+    if(e!= undefined) e.stopPropagation();
+  };
+  
+  // 사이드바 외부 클릭시 닫히는 함수
+  const handleClose = e => {
+    let sideArea = side.current;
+    let sideCildren = side.current.contains(e.target);
+    if (isOpen && (!sideArea || !sideCildren)) {
+      console.log('외부클릭')
+      toggleMenu();
+    }
   }
+
+  // 여기 개념 정리하기!
+  // 이벤트 캡쳐링, 버블링
+  useEffect(()=> {
+    window.addEventListener('click', handleClose);  //클로저
+    return () => {
+      window.removeEventListener('click', handleClose);
+    };
+  }, [isOpen])
 
   return (
     <div className="nav">
-      <div className="navbar">
+      <div className={`navbar ${css}`}>
         <Link to="/" className="element" style={{ textDecoration: "none" }}>약해지지마</Link>
-        <div className="menu-screen" onClick={changeMenu}>
-          <Menu className="m-menu" color="white"></Menu>
+        <div className="menu-screen" onClick={(e)=>toggleMenu(e)}>
+          <Menu className="m-menu"></Menu>
         </div>
       </div>
-      {isMenu ?
-        <SideMenu closebtn={changeMenu}/>: <></>
-      }
+
+      {isOpen? <div className={`non-background ${css}`}></div>: <></>}
+      <div ref={side}  className="sidebar" style={{ width: `${width}px`, transform: `translatex(${-xPosition}px)`}}>
+        <SideMenu closebtn={(e)=>toggleMenu(e)}/>
+      </div>
+      
     </div>
   );
 };
