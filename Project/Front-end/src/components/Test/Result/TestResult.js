@@ -71,7 +71,7 @@ export const AI = () => {
   }, []);
 
   return (
-    <div className="result-page">
+    <div className="test-result-page">
       <img className="result" src={img} />
       <div className="text-content">
         <p className="text1 title">{title}</p>
@@ -81,25 +81,30 @@ export const AI = () => {
 
       <div className="percent mt">
         <PercentBar bgcolor="#ef6c00" completed={percent}></PercentBar>
-        <p className="text-s">{percent}의 사용자가 같은 결과를 가지고 있습니다.</p>
+        <p className="text-s">
+          {percent}의 사용자가 같은 결과를 가지고 있습니다.
+        </p>
       </div>
 
       <div className="text-content mt">
         <div className="line"></div>
         <p className="text1">마약과 스트레스</p>
         <p className="text1">
-          고려대학교 생명과학부 백자현 교수팀과 최세영 교수의 공동연구에 의해 스트레스는 마약 중독
-          재발에 많은 영향을 끼친다는 사실이 밝혀졌습니다.
+          고려대학교 생명과학부 백자현 교수팀과 최세영 교수의 공동연구에 의해
+          스트레스는 마약 중독 재발에 많은 영향을 끼친다는 사실이 밝혀졌습니다.
         </p>
       </div>
       <Statistic></Statistic>
-      <div className="frame-div222">
-        <div className="group-container222">
-          <div className="group-parent222">
+      <div className="test-frame-div222">
+        <div className="test-group-container222">
+          <div className="test-group-parent222">
             <div className="rectangle-parent222">
               <div className="group-item222" />
               <Link to="/simul">
-                <div className="group-inner222" style={{ backgroundImage: `url(${simul_img})` }} />
+                <div
+                  className="group-inner222"
+                  style={{ backgroundImage: `url(${simul_img})` }}
+                />
                 <div className="ai222">SIMULATION</div>
               </Link>
             </div>
@@ -109,14 +114,20 @@ export const AI = () => {
             >
               <div className="group-item222" />
               <Link to="/ar/filter2">
-                <div className="group-inner222" style={{ backgroundImage: `url(${ar_img})` }} />
+                <div
+                  className="group-inner222"
+                  style={{ backgroundImage: `url(${ar_img})` }}
+                />
                 <div className="ai222">AR</div>
               </Link>
             </div>
             <div className="rectangle-group222">
               <div className="group-item222" />
               <Link to="/ai/upload">
-                <div className="group-inner222" style={{ backgroundImage: `url(${ai_img})` }} />
+                <div
+                  className="group-inner222"
+                  style={{ backgroundImage: `url(${ai_img})` }}
+                />
                 <div className="ai222">AI</div>
               </Link>
             </div>

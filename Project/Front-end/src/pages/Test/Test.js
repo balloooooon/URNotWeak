@@ -22,7 +22,7 @@ export const Test = () => {
   }, []);
 
   return(
-    <div className="display">
+    <div className="display-test">
         <Nav className="nav-instance" />
         <div className="rectangle7 big-top" />
         <img className='big-top back' src={backimg}></img>
