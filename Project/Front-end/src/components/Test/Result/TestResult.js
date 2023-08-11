@@ -100,7 +100,10 @@ export const AI = () => {
           <div className="test-group-parent222">
             <div className="rectangle-parent222">
               <div className="group-item222" />
-              <Link to="/simul">
+              <Link
+                to="/simul"
+                style={{ textDecoration: "none", color: "black" }}
+              >
                 <div
                   className="group-inner222"
                   style={{ backgroundImage: `url(${simul_img})` }}
@@ -113,7 +116,10 @@ export const AI = () => {
               // onClick={handleARClick}
             >
               <div className="group-item222" />
-              <Link to="/ar/filter2">
+              <Link
+                to="/ar/filter2"
+                style={{ textDecoration: "none", color: "black" }}
+              >
                 <div
                   className="group-inner222"
                   style={{ backgroundImage: `url(${ar_img})` }}
@@ -123,7 +129,10 @@ export const AI = () => {
             </div>
             <div className="rectangle-group222">
               <div className="group-item222" />
-              <Link to="/ai/upload">
+              <Link
+                to="/ai/upload"
+                style={{ textDecoration: "none", color: "black" }}
+              >
                 <div
                   className="group-inner222"
                   style={{ backgroundImage: `url(${ai_img})` }}
