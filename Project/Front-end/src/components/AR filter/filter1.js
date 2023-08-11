@@ -129,7 +129,7 @@ function App({ onNext }) {
           onFrame: async () => {
             await faceMesh.send({ image: webcamRef.current.video });
           },
-          width: 640,
+          width: 320,
           height: 480,
         });
         camera.start();
@@ -141,7 +141,7 @@ function App({ onNext }) {
   }, [webcamRef]); // web
   return (
     <center>
-      <div className="App">
+      <div className="App some-element">
         {/* 웹캠 비디오를 표시합니다. */}
         <Webcam
           ref={webcamRef}
@@ -153,7 +153,7 @@ function App({ onNext }) {
             right: 0,
             textAlign: "center",
             zIndex: 9,
-            width: 640,
+            width: 320,
             height: 480,
             filter: 'grayscale(30%) contrast(12) brightness(0.8)'
           }}
@@ -161,7 +161,7 @@ function App({ onNext }) {
         {/* 이미지를 그릴 캔버스입니다. */}
         <canvas
           ref={canvasRef}
-          className="output_canvas"
+          className="output_canvas some-element"
           style={{
             position: "absolute",
             marginLeft: "auto",
@@ -170,14 +170,14 @@ function App({ onNext }) {
             right: 0,
             textAlign: "center",
             zIndex: 9,
-            width: 640,
+            width: 320,
             height: 480,
           }}
         />
         {/* Back 캔버스입니다. */}
         <canvas
           ref={bgCanvasRef}
-          className="output_canvas"
+          className="output_canvas some-element"
           style={{
             position: "absolute",
             marginLeft: "auto",
@@ -186,7 +186,7 @@ function App({ onNext }) {
             right: 0,
             textAlign: "center",
             zIndex: 9,
-            width: 640,
+            width: 320,
             height: 480,
           }}
         />
