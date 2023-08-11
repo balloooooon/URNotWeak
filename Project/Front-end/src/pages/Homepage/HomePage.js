@@ -128,10 +128,10 @@ export const Home = () => {
         </div>
         <div ref={sectionRefs[4]} className={`section ${currentSection === 0 ? 'active' : ''}`}>
           <Frame
-            link=""
+            link="content/list"
             backimage="home5"
-            text1={`궁금한 내용이 더 생겼나요?\n도움이 필요하신가요?`}
-            text2=""
+            text1={`마약에 대해 얼마나 알고 있나요?\n정확한 정보를 알려드릴게요`}
+            text2="컨텐츠"
           />
         </div>
         <div ref={sectionRefs[5]} className={`section ${currentSection === 0 ? 'active' : ''}`}>

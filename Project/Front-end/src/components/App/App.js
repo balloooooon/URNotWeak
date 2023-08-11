@@ -12,6 +12,7 @@ import AI from 'pages/AI/AI'
 import AR from 'pages/AR/AR'
 import Test from 'pages/Test/Test'
 import NotFound from 'pages/NotFound/NotFound'
+import Content from 'pages/Content/Content'
 import 'fonts/font.css'
 
 
@@ -40,6 +41,7 @@ function App() {
             <Route path="ai/*" element={<AI/> } />
             <Route path="ar/*" element={<AR />} />
             <Route path="test/*" element={<Test />} />
+            <Route path="content/*" element={<Content/>} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
