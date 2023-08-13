@@ -70,7 +70,7 @@
 .group222 {
   align-self: stretch;
   position: relative;
-  height: 270px;
+  height: 150px;
 }
 .div2223 {
   position: absolute;
@@ -83,15 +83,18 @@
   width: 178px;
   height: 50px;
 }
-.frame-inner222,
+
 .icon222,
 .icon223 {
   position: absolute;
-  top: 440.5px;
+  top: 500px;
   left: 161.5px;
   width: 67px;
   height: 2px;
 }
+/* .frame-inner222 {
+
+} */
 .icon222 {
   top: 59px;
   left: 17px;
@@ -143,7 +146,7 @@
 .buttonslight-parent222 {
   position: absolute;
   width: 62.24%;
-  top: 302px;
+  top: 350px;
   right: 19.13%;
   left: 18.62%;
   height: 95px;
@@ -151,7 +154,7 @@
 }
 .vector-icon222 {
   position: absolute;
-  top: 12px;
+  top: 10px;
   left: 155px;
   width: 67px;
   height: 2px;
@@ -337,8 +340,9 @@
   pointer-events: auto;
 }
 .result-video {
-  width: 100%;
-  height: 100%;
+  width: 270px;
+  height: 152px;
+  pointer-events: auto;
 }
 
 .result-img {
@@ -348,4 +352,5 @@
   width: 270px;
   height: 152px;
   position: relative;
+  pointer-events: auto;
 }

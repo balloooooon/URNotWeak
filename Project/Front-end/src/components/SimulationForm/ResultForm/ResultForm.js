@@ -78,10 +78,8 @@ const ResultForm = ({ selectedIndex }) => {
     const twitterUrl = `https://twitter.com/intent/tweet?url=https://urnotweak.site/ 약해지지마 시뮬레이션 체험해보기 !`;
     window.open(twitterUrl, "_blank");
   };
-
   const urlToShare = "https://urnotweak.site/";
   console.log(urlToShare);
-
   const handleKakaoShare = () => {
     if (window.Kakao) {
       window.Kakao.Link.sendDefault({
@@ -107,15 +105,12 @@ const ResultForm = ({ selectedIndex }) => {
       });
     }
   };
-
   if (!resultData || !randomImagePair) {
     return null;
   }
-
   if (showSelectForm) {
     return <SelectForm />;
   }
-
   return (
     <div className="result222">
       <div className="frame-parent222">
@@ -128,50 +123,41 @@ const ResultForm = ({ selectedIndex }) => {
             <p className="api222">당신은 안전할까요?</p>
           </div>
         </div>
+        {/* 새 비디오 */}
+        {isNewsImgVisible ? (
+          <img
+            className="result-img"
+            src={
+              selectedIndex === 1
+                ? news1
+                : selectedIndex === 2
+                ? news2
+                : selectedIndex === 3
+                ? news3
+                : null
+            }
+            alt={`news${selectedIndex}`}
+            onClick={handleNewsClick}
+          />
+        ) : (
+          <video className="result-video" autoPlay onClick={handleNewsClick}>
+            <source src={resultData.news} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        )}
         <div className="group222">
-          {/* <div className="div2222"> */}
-          <div className="div2222">
-            {isNewsImgVisible ? (
-              <img
-                className="result-img"
-                src={
-                  selectedIndex === 1
-                    ? news1
-                    : selectedIndex === 2
-                    ? news2
-                    : selectedIndex === 3
-                    ? news3
-                    : null
-                }
-                alt={`news${selectedIndex}`}
-                onClick={handleNewsClick}
-              />
-            ) : (
-              <video
-                className="result-video"
-                autoPlay
-                onClick={handleNewsClick}
-              >
-                <source src={resultData.news} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            )}
+          <div className="empty"></div>
+          <p className="api222">이 시뮬레이션은 허구가 아닌</p>
+          <p className="api222">위 뉴스에 보도된</p>
+          <p className="api222">사실기반의 체험입니다.</p>
 
-            {/* <video className="result-video" autoPlay loop controls>
-              <source src={resultData.news} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video> */}
-            <div className="empty"></div>
-            <p className="api222">이 시뮬레이션은 허구가 아닌</p>
-            <p className="api222">위 뉴스에 보도된</p>
-            <p className="api222">사실기반의 체험입니다.</p>
-          </div>
           <div className="frame-child222" />
           {/* <img className="frame-item222" alt="" src={line} /> */}
         </div>
+
         <div className="container222">
           <div className="div2223">마약을 하면..</div>
-          <img className="frame-inner222" alt="" src={line} />
+
           <img className="icon222" alt="" src={randomImagePair.drugBeforeImg} />
           <img className="icon223" alt="" src={randomImagePair.drugAfterImg} />
 
@@ -207,6 +193,7 @@ const ResultForm = ({ selectedIndex }) => {
           <img className="vector-icon222" alt="" src={line} />
         </div>
         <div className="group-wrapper222">
+          <img className="frame-inner222" alt="" src={line} />
           <div className="group-div222">
             <div className="div2224">친구에게 공유하기</div>
             <img
