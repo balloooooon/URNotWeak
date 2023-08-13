@@ -3,8 +3,11 @@ import axios from "axios";
 import SelectTxt from "./SelectTxt";
 import MonoForm from "./MonoForm";
 import HandForm from "./HandForm";
-// import AR from "../AR";
+import AR1 from "components/AR filter/filter1";
 import AR2 from "components/AR filter/filter2";
+import AR3 from "components/AR filter/filter3";
+import AR4 from "components/AR filter/filter4";
+import AR5 from "components/AR filter/filter5";
 import ResultForm from "../ResultForm/ResultForm";
 import NextBtn from "../NextBtn";
 import "./VideoForm.css";
@@ -15,6 +18,7 @@ const VideoForm = ({ selectedIndex }) => {
   const [simulTxt, setSimulTxt] = useState([]);
   const [videoRef, setVideoRef] = useState(null);
   const [showResultForm, setShowResultForm] = useState(false);
+  const arComponents = [AR1, AR2, AR3, AR4, AR5];
 
   useEffect(() => {
     const fetchSimulData = async () => {
@@ -66,6 +70,8 @@ const VideoForm = ({ selectedIndex }) => {
       video.onloadeddata = () => {
         video.play();
       };
+
+      video.onended = handleNextClick;
     }
   }, [videoRef, currentStep, simulData]);
 
@@ -84,7 +90,6 @@ const VideoForm = ({ selectedIndex }) => {
               <video
                 ref={(ref) => setVideoRef(ref)}
                 autoPlay
-                loop
                 style={{
                   objectFit: "cover",
                   width: "100%",
@@ -129,7 +134,20 @@ const VideoForm = ({ selectedIndex }) => {
       content = <MonoForm text={simulTxt} onNext={handleNextClick} />;
     } else if (currentStepData.simulContentType === 4) {
       console.log("ar으로 이동");
-      content = <AR2 onNext={handleNextClick} />;
+      const newRandomIndex = Math.floor(Math.random() * 4) + 2;
+      let ARComponent;
+      if (newRandomIndex === 1) {
+        ARComponent = AR1;
+      } else if (newRandomIndex === 2) {
+        ARComponent = AR2;
+      } else if (newRandomIndex === 3) {
+        ARComponent = AR3;
+      } else if (newRandomIndex === 4) {
+        ARComponent = AR4;
+      } else if (newRandomIndex === 5) {
+        ARComponent = AR5;
+      }
+      content = React.createElement(ARComponent, { onNext: handleNextClick });
     } else if (currentStepData.simulContentType === 5) {
       content = <HandForm onNext={handleNextClick} currentStep={currentStep} />;
     }

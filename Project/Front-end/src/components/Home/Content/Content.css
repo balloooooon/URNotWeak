@@ -1,0 +1,39 @@
+.img-content {
+    width: 100%;
+    height: 45%;
+    position: absolute;
+    top: 28%;
+    align-items: center;
+    z-index: 2;
+    scrollbar-width: thin;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+}
+
+img-content::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+}
+
+.img-content .flex-box {
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 98%;
+}
+
+
+.img-content .wrapp {
+    width: 100%;
+    height: 100%;
+    margin: 5px;
+}
+
+.img-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}

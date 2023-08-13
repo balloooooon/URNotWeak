@@ -1,29 +1,41 @@
-import React from "react";
-import {useNavigate} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+// import { BottomMenu } from "components/common/BottomMenu/BottomMenu";
 import { Link } from "react-router-dom";
 import test_img from "../../../assets/images/rec_test.png";
 import ar_img from "../../../assets/images/rec_ar.png";
 import simul_img from "../../../assets/images/rec_.png";
 
-// import { BottomMenu } from "components/common/BottomMenu/BottomMenu";
-import './aiResult.css'
+import "./aiResult.css";
+import { useLocation } from "react-router-dom";
 
 export const AI = () => {
+  const [imageSrc, setImageSrc] = useState(null);
+
   const navigate = useNavigate();
 
   const goUpload = () => {
-    navigate('/ai/upload');
-  }
+    navigate("/ai/upload");
+  };
+
+  // navigator에서 보낸 마약전후 이미지 가져오기
+  const location = useLocation();
+  const aiFile = location.state.aiImg;
+
+  useEffect(() => {
+    setImageSrc(aiFile || null);
+  }, []);
 
   return (
     <div className="upload">
-      <img 
-        className="uploadimg"
-        src={null} 
-        />
-      <div className="btn" onClick={goUpload}>다시해보기</div>
-        <div className="frame-div222">
-          <div className="group-container222">
+      <div className="resultimg">
+        <img className="uploadimg" src={imageSrc} />
+      </div>
+      <div className="btn" onClick={goUpload}>
+        다시해보기
+      </div>
+      <div className="frame-div222">
+        <div className="group-container222">
           <div className="group-parent222">
             <div
               className="rectangle-group222"
@@ -64,5 +76,5 @@ export const AI = () => {
     </div>
   );
 };
-    
+
 export default AI;

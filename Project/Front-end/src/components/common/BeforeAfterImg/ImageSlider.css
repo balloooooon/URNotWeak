@@ -1,12 +1,12 @@
 
 .exampleimg {
     width: 90%;
-    height: 130px;
+    height: 230px;
     margin: 0 auto;
 }
 
 .imgitem {
     width: 50%;
-    height: 120px;
+    height: 220px;
     object-fit: cover;
 }

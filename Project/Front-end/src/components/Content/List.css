@@ -1,0 +1,36 @@
+.black {
+    color: black;
+}
+
+.contents {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.contents .title {
+    text-align: center;
+    margin-top: 20%;
+    margin-bottom: 10%;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.items .item {
+    width: 94%;
+    margin-left: 3%;
+    margin-bottom: 70px;
+    margin-top: 20px;
+}
+
+.tags {
+    margin-top: 10px;
+    color: rgb(0, 98, 255);
+    font-size: 1rem;
+    font-weight: 100;
+}
