@@ -22,7 +22,7 @@ export const MenuBar = ({closebtn}) => {
             </svg>
         </div>
         <div className="line-1"></div>
-        <div className="items">
+        <div className="menu-items">
             <div className="item"><Link to="/" className="text-wrapper" style={{ textDecoration: "none" }}>Home </Link></div>
             <div className="item"><Link to="/simul" className="text-wrapper" style={{ textDecoration: "none" }}>Simulation </Link></div>
             <div className="item"><Link to="/ai/upload" className="text-wrapper" style={{ textDecoration: "none" }}>AI </Link></div>

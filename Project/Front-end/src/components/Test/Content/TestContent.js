@@ -80,8 +80,8 @@ export const Content = ({list}) => {
         className="uploadimg"
         src={img} 
         />
-      <div className="btn test-btn" onClick={btn0}>{ans0.testAContent}</div>
-      <div className="btn test-btn" onClick={btn1}>{ans1.testAContent}</div>
+      <div className="btn test-btn tx-t" onClick={btn0}>{ans0.testAContent}</div>
+      <div className="btn test-btn tx-t" onClick={btn1}>{ans1.testAContent}</div>
     </div>
   );
 };
