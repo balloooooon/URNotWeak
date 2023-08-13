@@ -83,7 +83,7 @@ export const AI = () => {
   };
 
   return (
-    <div className="upload">
+    <div className="ai-upload">
       <ToastContainer
         className="toast"
         autoClose={30000}
@@ -100,12 +100,12 @@ export const AI = () => {
 
       {loading ? <Loading /> : null}
       <div>
-        <p className="st">예시</p>
+        <p className="st tx-t">예시</p>
         <ImageSlider />
       </div>
       <div className="split">
         <label htmlFor="file">
-          <div className="btn">파일 업로드하기</div>
+          <div className="btn tx-t">파일 업로드하기</div>
         </label>
         <input
           name="file"
@@ -115,11 +115,11 @@ export const AI = () => {
           type="file"
           onChange={(e) => onUpload(e)}
         ></input>
-        <div className="btn" onClick={createResult}>
+        <div className="btn tx-t" onClick={createResult}>
           사진 생성하기
         </div>
       </div>
-      <img className="uploadimg" src={imageSrc} />
+      <img className="ai-uploadimg" src={imageSrc} />
     </div>
   );
 };

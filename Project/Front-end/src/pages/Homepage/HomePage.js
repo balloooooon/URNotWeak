@@ -78,7 +78,17 @@ export const Home = () => {
 
   // 제일 위로 클릭하는 함수
   const goTop = () => {
-    setCurrentSection(0)
+    setCurrentSection((prevSection) => {
+      const newSection = 0;
+      if (newSection >= 0 && newSection < sectionRefs.length) {
+        sectionRefs[newSection].current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+        return newSection;
+      }
+      return prevSection;
+    });
   }
 
   return (
@@ -114,15 +124,15 @@ export const Home = () => {
           <Frame
             link="test"
             backimage="home3"
-            text1={`누구든 시작할 수 있습니다.\n하지만 벗어날 수 없습니다.`}
-            text2="마약 취약성"
+            text1={`누구든 벗어날 수 없습니다.\n특히 스트레스는 마약 중독 재발에 영향을 끼치는 것으로 밝혀졌습니다.`}
+            text2="마약 취약성 테스트"
           />
         </div>
         <div ref={sectionRefs[3]} className={`section ${currentSection === 0 ? 'active' : ''}`}>
           <Frame
             link="ai/upload"
             backimage="home4"
-            text1={`망가져 가는 내모습\n유지할 수 없는 일상`}
+            text1={`망가져가는 일상, 망가져가는 모습\n내 사진으로 Before&After 확인해보세요.`}
             text2="얼굴AI"
           />
         </div>
@@ -130,8 +140,8 @@ export const Home = () => {
           <Frame
             link="content/list"
             backimage="home5"
-            text1={`마약에 대해 얼마나 알고 있나요?\n정확한 정보를 알려드릴게요`}
-            text2="컨텐츠"
+            text1={`마약에 대해 얼마나 알고 있나요?\n정확한 정보를 알려드릴게요.`}
+            text2="마약 컨텐츠"
           />
         </div>
         <div ref={sectionRefs[5]} className={`section ${currentSection === 0 ? 'active' : ''}`}>

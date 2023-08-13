@@ -46,7 +46,7 @@ export const AI = () => {
   return (
     <div className="statistic mt">
       <div className="line"></div>
-      <p className="text1">통계자료</p>
+      <p className="tx-s">2023년 통계자료</p>
       <div className="flex">
         <div className="st-item">
           <p className="text-n">마약으로 인한 <br/>사망자수</p>

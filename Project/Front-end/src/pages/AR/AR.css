@@ -27,23 +27,3 @@
 }
 
 
-.big-top {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-.main {
-    color: white;
-    font-family: "Roboto-SemiBold", Helvetica;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: 0.1px;
-    line-height: 20px;
-    text-align: center;
-    padding-top: 80px;
-    padding-bottom: 50px;
-    margin: 0;
-}

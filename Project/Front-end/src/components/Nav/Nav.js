@@ -49,7 +49,7 @@ export const Nav = ({width=270}) => {
   return (
     <div className="nav">
       <div className={`navbar ${css}`}>
-        <Link to="/" className="element" style={{ textDecoration: "none" }}>약해지지마</Link>
+        <Link to="/" className="element tx-rt" style={{ textDecoration: "none" }}>URNotWeak</Link>
         <div className="menu-screen" onClick={(e)=>toggleMenu(e)}>
           <Menu className="m-menu"></Menu>
         </div>
