@@ -15,7 +15,6 @@
 
 .text-n {
     color: white;
-    font-family: "Roboto-SemiBold", Helvetica;
     font-size: 19px;
     font-weight: 600;
     margin-bottom: 0;
@@ -23,7 +22,6 @@
 
 .text-m {
     color: white;
-    font-family: "Roboto-SemiBold", Helvetica;
     font-size: 24px;
     font-weight: 600;
     margin-top: 0;

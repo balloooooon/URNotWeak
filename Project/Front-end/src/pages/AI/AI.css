@@ -3,17 +3,6 @@
     width: 100vw;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-}
-
-.back {
-    z-index: -2;
-}
-
 .rectangle {
     background: linear-gradient(
         180deg,
@@ -34,15 +23,9 @@
     top: 0;
   }
 
-.main {
+.content .main {
     color: white;
-    font-family: "Roboto-SemiBold", Helvetica;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: 0.1px;
-    line-height: 20px;
     text-align: center;
-    padding-top: 80px;
     padding-bottom: 50px;
     margin: 0;
 }

@@ -16,7 +16,7 @@ export const AI = () => {
         <img className='big-top back' src={backimg}></img>
 
         <div className="content">
-            <p className="main">전,후 사진 AI 체험하기</p>
+            <p className="main tx-b">전,후 사진 AI 체험하기</p>
             <Routes>
                 <Route path="/upload" element={<AiUpload />}></Route>
                 <Route path="/result" element={<AiResult />}></Route>
