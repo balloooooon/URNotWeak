@@ -61,8 +61,8 @@ export const AI = () => {
         <div className="line"></div>
         <p className="tx-s">마약과 스트레스</p>
         <p className="tx-t">
-          고려대학교 생명과학부 백자현 교수팀과 최세영 교수의 공동연구에 의해
-          스트레스는 마약 중독 재발에 많은 영향을 끼친다는 사실이 밝혀졌습니다.
+          스트레스는 마약 중독 재발에 많은 영향을 끼친다는 연구 결과가 있습니다. 
+          스트레스에 대한 대처 방법을 찾아 마약에 의존하지 않도록 주의하세요.
         </p>
       </div>
       <Statistic></Statistic>
