@@ -4,6 +4,8 @@ import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import './List.css'
 
+import { Loading } from 'pages/Loading/Loading'
+
 import thumb0 from 'assets/images/icon-thumb0.svg'
 import thumb1 from 'assets/images/icon-thumb1.svg'
 
@@ -46,10 +48,15 @@ export const ContentList = () => {
         setLocal(arr);
 
         // 좋아요 누르는 axios 코드 필요
+        const response = axios.post(process.env.REACT_APP_SERVER_API_URL + `/content/like/${id}`);
+
     }
 
   return (
     <div className="contents">
+        {loading?
+        <Loading></Loading>:null
+        }
       <div className="tx-b-b title">컨텐츠</div>
       <div className="items">
         {list.map(item => {
@@ -62,7 +69,7 @@ export const ContentList = () => {
                         <img src={thumb1}></img>:
                         <div onClick={()=>clickThumb(item.contentId)}><img src={thumb0}></img></div>
                         }
-                        <p className="tx-s-b">{item.contentLike}</p>
+                        <p className="tx-s-b num">{item.contentLike}</p>
                     </div>
 
                     <div className="tags">
