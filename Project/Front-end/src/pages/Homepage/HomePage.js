@@ -21,6 +21,10 @@ export const Home = () => {
     })
     console.log('boot')
 
+    // 홈화면 나가면 채팅 없어지도록
+    return() => {
+      Chatting.shutdown();
+    }
   }, [])
   
 

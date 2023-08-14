@@ -23,4 +23,8 @@ public class ContentService {
         Content content = contentRepository.findByContentId(contentId);
         content.plusCount();
     }
+
+    public List<ContentDto> searchTag(String tag) {
+        return contentRepository.searchTag(tag);
+    }
 }
