@@ -6,5 +6,4 @@ import java.util.List;
 
 public interface ContentRepositoryCustom {
     public List<ContentDto> selectContents();
-    public List<ContentDto> searchTag(String tag);
 }

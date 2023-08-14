@@ -17,23 +17,10 @@ export const Home = () => {
     }
 
     Chatting.boot({
-<<<<<<< HEAD
       pluginKey: process.env.REACT_APP_CHAT_PLUGIN_KEY,
     });
     console.log("boot");
   }, []);
-=======
-      pluginKey: process.env.REACT_APP_CHAT_PLUGIN_KEY
-    })
-    console.log('boot')
-
-    // 홈화면 나가면 채팅 없어지도록
-    return() => {
-      Chatting.shutdown();
-    }
-  }, [])
-  
->>>>>>> 14c22222347471c821df64aaf503dad0cd3f6b08
 
   // 스크롤 한번으로 섹션 이동하도록
   const [currentSection, setCurrentSection] = useState(0);
