@@ -50,8 +50,8 @@ public class ContentController {
     // 컨텐츠 이미지 가져오기
     @Operation(summary = "컨텐트(중독, 코카인) 이미지 가져오기", description = "컨텐트(중독, 코카인)들의 이미지들을 가져온다.", tags = { "Content Controller" })
     @GetMapping(value = "/img", produces = { MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity<List<ContentDetailDto>> getImgs(){
-        List<ContentDetailDto> imgs = contentService.findAll();
-        return new ResponseEntity<List<ContentDetailDto>>(imgs, HttpStatus.OK);
+    public ResponseEntity<String> getImg(){
+        String img = contentService.getImg();
+        return new ResponseEntity<String>(img, HttpStatus.OK);
     }
 }
