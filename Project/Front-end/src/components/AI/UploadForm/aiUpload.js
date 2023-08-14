@@ -12,6 +12,7 @@ export const AI = () => {
   const [imageSrc, setImageSrc] = useState(null);
   const [selectedFiles, setSelectedFiles] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [loadingImg, setLoadingImgc] = useState(null);
   const navigate = useNavigate();
 
   // 사진 올렸을 때 실행
@@ -37,6 +38,20 @@ export const AI = () => {
   // 생성하기 눌렀을때
   const createResult = async () => {
     setLoading(true);
+    // 로딩창 컨텐츠 가져오기
+    await axios({
+      method: "GET",
+      url: "https://urnotweak.site:8589/content/img",
+    })
+    .then((response) => {
+      const img = response.data;
+      console.log(img);
+      setLoadingImgc(img);
+    })
+    .catch((Error) => {
+      console.log(Error);
+    });
+
     // AI Server 주소 가져오기
     let apiUrl;
     const urlResult = await axios({
@@ -99,7 +114,7 @@ export const AI = () => {
         // limit={1} // 알람 개수 제한
       />
 
-      {loading ? <Loading /> : null}
+      {loading ? <Loading loadingImg={loadingImg } /> : null}
       <div>
         <p className="st">예시</p>
         <ImageSlider />

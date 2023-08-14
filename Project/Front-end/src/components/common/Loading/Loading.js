@@ -3,20 +3,14 @@ import { Background, LoadingText } from "./LoadingStyle";
 import Spinner from "../../../assets/images/spinner2.gif";
 import axios from "axios";
 
-export default () => {
+export default (props) => {
   const [imageSrc, setImageSrc] = useState(null);
 
-  axios({
-    method: "GET",
-    url: "https://urnotweak.site:8589/content/img",
-  })
-  .then((response) => {
-    const img = response.data;
-    setImageSrc(img);
-  })
-  .catch((Error) => {
-    console.log(Error);
-  });
+  console.log(props);
+  useEffect(() => {
+    console.log(props);
+    setImageSrc(props.loadingImg || null);
+  }, [props]);
 
   return (
     <Background>
