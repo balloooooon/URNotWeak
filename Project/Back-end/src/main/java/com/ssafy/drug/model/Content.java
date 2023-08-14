@@ -30,4 +30,8 @@ public class Content {
         this.contentType = contentType;
         this.contentLike = contentLike;
     }
+
+    public void plusCount(){
+        this.contentLike+=1;
+    }
 }
