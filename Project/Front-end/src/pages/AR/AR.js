@@ -6,6 +6,7 @@ import Filter2 from 'components/AR filter/filter2';
 import Filter3 from 'components/AR filter/filter3';
 import Filter4 from 'components/AR filter/filter4';
 import Filter5 from 'components/AR filter/filter5';
+import { Select } from 'components/AR filter/Select'
 // import AiUpload from 'components/AI/UploadForm/aiUpload';
 // import AiResult from 'components/AI/ResultForm/aiResult';
 import './AR.css'
@@ -19,8 +20,9 @@ export const AR = () => {
         <img className='big-top back'></img>
 
         <div className="content">
-            <p className="main">AR 체험하기</p>
+            <p className="main tx-b">AR 체험하기</p>
             <Routes>
+                <Route path="/*" element={<Select></Select>}></Route>
                 <Route path="/filter1" element={<Filter1 />}></Route>
                 <Route path="/filter2" element={<Filter2 />}></Route>
                 <Route path="/filter3" element={<Filter3 />}></Route>

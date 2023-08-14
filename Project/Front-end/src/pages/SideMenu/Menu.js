@@ -27,6 +27,8 @@ export const MenuBar = ({closebtn}) => {
             <div className="item"><Link to="/simul" className="text-wrapper" style={{ textDecoration: "none" }}>Simulation </Link></div>
             <div className="item"><Link to="/ai/upload" className="text-wrapper" style={{ textDecoration: "none" }}>AI </Link></div>
             <div className="item"><Link to="/test" className="text-wrapper" style={{ textDecoration: "none" }}>Test </Link></div>
+            <div className="item"><Link to="/content/list" className="text-wrapper" style={{ textDecoration: "none" }}>Content </Link></div>
+            <div className="item"><Link to="/ar" className="text-wrapper" style={{ textDecoration: "none" }}>AR Filter </Link></div>
             <div className="item"><Link to="/" className="text-wrapper" style={{ textDecoration: "none" }}>AboutUs </Link></div>
         </div>
     </div>

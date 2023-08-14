@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Draggable from "react-draggable";
-import handback from "../../../assets/images/hand-back.png";
+import handback from "../../../assets/images/hand-back.jpg";
 import handdirec from "../../../assets/images/handform-direc.svg";
 import drug from "../../../assets/images/drug.png";
 
@@ -13,16 +13,16 @@ const HandForm = ({ onNext }) => {
     console.log("시작");
   };
 
-
   const handleDrag = (ui) => {
     if (
-      (ui.changedTouches && ui.changedTouches[0] && ui.changedTouches[0].clientY >= 350) ||
-      (!ui.changedTouches && ui.clientY >= 350)
+      (ui.changedTouches &&
+        ui.changedTouches[0] &&
+        ui.changedTouches[0].clientY >= 390) ||
+      (!ui.changedTouches && ui.clientY >= 390)
     ) {
       onNext();
     }
   };
-  
 
   return (
     <div className="hand-form">
