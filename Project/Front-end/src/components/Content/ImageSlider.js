@@ -23,7 +23,7 @@ export const ImageSlider = ({ images }) => {
               transform: `translateX(-${currentIndex * 100}%)`, // 이미지 이동
             }}
           >
-            <img src={image}></img>
+            <img src={image.contentImg}></img>
           </figure>
         ))}
       </div>

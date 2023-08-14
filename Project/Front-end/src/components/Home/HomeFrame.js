@@ -14,7 +14,7 @@ export const Frame = ({ backimage, text1, text2, link }) => {
                 <img className={`big-tophalf img ${backimage}`}></img>
                 <div className={`group`}>
                     <div className="tx-b">{text2}</div>
-                    <div className="title tx-t">{text1}</div>
+                    <div className="title tx-rt">{text1}</div>
                 </div>
                 {text2==""?
                     <></>:
