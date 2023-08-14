@@ -1,11 +1,20 @@
-import React from "react";
+import React , { useState, useEffect } from "react";
 import { Background, LoadingText } from "./LoadingStyle";
 import Spinner from "../../../assets/images/spinner2.gif";
+import axios from "axios";
 
-export default () => {
+export default (props) => {
+  const [imageSrc, setImageSrc] = useState(null);
+
+  console.log(props);
+  useEffect(() => {
+    console.log(props);
+    setImageSrc(props.loadingImg || null);
+  }, [props]);
+
   return (
     <Background>
-      <LoadingText>이미지 생성중 입니다.</LoadingText>
+      <img className="loadingImg" src={imageSrc} width="80%"/>
       <img src={Spinner} alt="로딩중" width="15%" />
     </Background>
   );
