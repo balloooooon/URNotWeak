@@ -1,6 +1,7 @@
 package com.ssafy.drug.repository;
 
 import com.querydsl.core.types.Projections;
+import com.querydsl.jpa.JPAExpressions;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.ssafy.drug.dto.ContentDetailDto;
 import com.ssafy.drug.dto.ContentDto;
@@ -35,6 +36,37 @@ public class ContentRepositoryImpl implements ContentRepositoryCustom {
         List<ContentTagDto> tags = queryFactory
                 .from(c)
                 .join(ct).on(c.contentId.eq(ct.content.contentId))
+                .transform(groupBy(c.contentId).
+                        list(Projections.constructor(ContentTagDto.class,
+                                c.contentId,
+                                list(Projections.constructor(String.class,ct.contentTagName)))));
+
+        for(int i=0; i<result.size(); i++){
+            if(result.get(i).getContentId()==tags.get(i).getContentId()) {
+                result.get(i).setTags(tags.get(i).getContentName());
+            }
+        }
+        return result;
+    }
+
+    @Override
+    @Transactional
+    public List<ContentDto> searchTag(String tag) {
+        QContent c = QContent.content;
+        QContentDetail cd = QContentDetail.contentDetail;
+        QContentTag ct = QContentTag.contentTag;
+        List<ContentDto> result = queryFactory
+                .from(c)
+                .join(cd).on(c.contentId.eq(cd.content.contentId)).orderBy(c.contentId.asc(),cd.contentOrder.asc())
+                .where(c.contentId.in(JPAExpressions.select(ct.content.contentId).from(ct).where(ct.contentTagName.eq(tag))))
+                .transform(groupBy(c.contentId).list(Projections.constructor(ContentDto.class,
+                        c.contentId, c.contentType, c.contentLike,
+                        list(Projections.constructor(ContentDetailDto.class, cd.contentOrder, cd.contentImg)))));
+
+        List<ContentTagDto> tags = queryFactory
+                .from(c)
+                .join(ct).on(c.contentId.eq(ct.content.contentId))
+                .where(c.contentId.in(JPAExpressions.select(ct.content.contentId).from(ct).where(ct.contentTagName.eq(tag))))
                 .transform(groupBy(c.contentId).
                         list(Projections.constructor(ContentTagDto.class,
                                 c.contentId,
