@@ -51,7 +51,7 @@ export const BottomMenu = () => {
           <div className="rectangle-container222">
             <div className="group-item222" />
               <Link
-                to="/ar/filter2"
+                to="/ar/"
                 style={{ textDecoration: "none", color: "black" }}
               >
                 <div
