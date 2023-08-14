@@ -16,6 +16,9 @@ export const Footer = ({goTop}) => {
                     <div></div><Link to={`simul`} className="tx-t" style={{ textDecoration: "none" }}>_ simulation</Link>
                     <div></div><Link to={`test`} className="tx-t" style={{ textDecoration: "none" }}>_ test</Link>
                     <div></div><Link to={`ai/upload`} className="tx-t" style={{ textDecoration: "none" }}>_ AI</Link>
+                    <div></div><Link to={`content/list`} className="tx-t" style={{ textDecoration: "none" }}>_ content</Link>
+                    <div></div><Link to={`ar`} className="tx-t" style={{ textDecoration: "none" }}>_ AR filter</Link>
+
                 </div>
                 <div className='item'>
                     <div className='tx-r'>관련 사이트</div>
