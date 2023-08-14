@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 import './TestContent.css'
+import axios from "axios";
 
 export const Content = ({list}) => {
   const [index, setIndex] = useState(1);
@@ -13,7 +14,7 @@ export const Content = ({list}) => {
 
   // index가 바뀔때 사진이랑 문항 새로고침
   useEffect(() => {
-    if(list === undefined) {  // 혹시 새로고침 했으면 list가 비어있으니까 뒤로가기
+    if(list === undefined || list.length === undefined) {  // 혹시 새로고침 했으면 list가 비어있으니까 뒤로가기
       navigate(-1);
     }
     else {
@@ -65,19 +66,59 @@ export const Content = ({list}) => {
     next();
   }
 
-
-  const next = () => {
-    if(index == list.length) navigate({
-      pathname: '/test/result',
-      search: `score=${score}`
+  // 마지막 결과 저장.
+  // result랜더링될때 저장하면 결과 아님에도 올라가니까
+  // 결과가 나왔을 때 저장하고 페이지 이동.
+  const saveResult = async () => {
+    // 현재 사용자의 번호 가져오기
+    const user = await axios
+    .get(process.env.REACT_APP_SERVER_API_URL + "/user/userno")
+    .catch((Error) => {
+      console.log(Error);
     });
+    let userno = user.data + 1;
+
+    // 사용자 점수 저장
+    await axios({
+    method: "POST",
+    url: process.env.REACT_APP_SERVER_API_URL + "/user/result",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: {
+      user_id: userno,
+      test_final_score: score,
+    },
+    })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((Error) => {
+      console.log(Error);
+    });
+
+  }
+
+
+  const next = async () => {
+    if(index == list.length) {
+        saveResult();
+    
+        navigate({
+        pathname: '/test/result',
+        search: `score=${score}`
+      });
+    }
     else setIndex((pre)=> pre+1);
   }
 
   return (
-    <div className="upload">
+    <div className="test">
+      <div className="progress">
+        {list?<a className="tx-s">{index}/{list.length}</a>:null}
+      </div>
       <img 
-        className="uploadimg"
+        className="testimg"
         src={img} 
         />
       <div className="btn test-btn tx-t" onClick={btn0}>{ans0.testAContent}</div>

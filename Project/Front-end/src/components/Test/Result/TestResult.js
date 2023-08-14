@@ -18,32 +18,6 @@ export const AI = () => {
   const [percent, setPercent] = useState(0.0);
 
   const finalResult = async () => {
-    // 현재 사용자의 번호 가져오기
-    const user = await axios
-      .get(process.env.REACT_APP_SERVER_API_URL + "/user/userno")
-      .catch((Error) => {
-        console.log(Error);
-      });
-    let userno = user.data + 1;
-
-    // 사용자 점수 저장
-    await axios({
-      method: "POST",
-      url: process.env.REACT_APP_SERVER_API_URL + "/user/result",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: {
-        user_id: userno,
-        test_final_score: score,
-      },
-    })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((Error) => {
-        console.log(Error);
-      });
 
     await axios
       .get(process.env.REACT_APP_SERVER_API_URL + "/test/result?score=" + score)
@@ -79,7 +53,7 @@ export const AI = () => {
       <div className="percent mt">
         <PercentBar bgcolor="#ef6c00" completed={percent}></PercentBar>
         <p className="tx-s">
-          {percent}의 사용자가 같은 결과를 가지고 있습니다.
+          {percent}%의 사용자가 같은 결과를 가지고 있습니다.
         </p>
       </div>
 
