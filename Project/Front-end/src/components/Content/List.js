@@ -13,7 +13,6 @@ export const ContentList = () => {
     const [list, setList] = useState([]);
     const [loading, setLoading] = useState(false);
     const [local, setLocal] = useState();
-    const hashtag = ["약물정보", "중독", "코카인", "필로폰"];
 
     useEffect(() => {
         const fetchData = async () => {
@@ -53,37 +52,12 @@ export const ContentList = () => {
 
     }
 
-
-    const searchTag = (tag) => {
-        
-        setLoading(true);
-
-        // 데이터 가져오기
-        axios.get(process.env.REACT_APP_SERVER_API_URL + "/content/search", {params:{tag: tag}})
-            .then((response) => {
-                console.log(response.data);
-                setList(response.data);
-            })
-            .catch((Error) => {console.log(Error)})
-        
-
-        setLoading(false);
-    }
-
   return (
     <div className="contents">
         {loading?
         <Loading></Loading>:null
         }
-        <div className="search-bar">
-            {hashtag.map(tag => {
-                return(
-                    <div className="wrapper" key={tag} onClick={()=>searchTag(tag)}><a className="tx-t-b">#{tag}</a></div>
-                )
-            })}
-        </div>
-        
-        <div className="scroll">
+      <div className="tx-b-b title">컨텐츠</div>
       <div className="items">
         {list.map(item => {
             return (
@@ -110,7 +84,6 @@ export const ContentList = () => {
             )
         }
         )}
-      </div>
       </div>
     </div>
   );
