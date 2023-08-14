@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Service
 @Transactional
@@ -35,12 +36,10 @@ public class ContentService {
         return contentRepository.searchTag(tag);
     }
 
-    public List<ContentDetailDto> findAll() {
+    public String getImg() {
         List<ContentDetail> contents = contentDetailRepository.findAll();
-        List<ContentDetailDto> results = new ArrayList<>();
-        contents.forEach(e -> {
-            results.add(ContentDetailDto.from(e));
-        });
-        return results;
+        Random random = new Random();
+        int num = random.nextInt(contents.size());
+        return contents.get(num).getContentImg();
     }
 }
