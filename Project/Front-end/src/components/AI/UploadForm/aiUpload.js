@@ -6,6 +6,7 @@ import axios from "axios";
 import Loading from "components/common/Loading/Loading";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+// import UserInteraction from "components/SimulationForm/BeforeAfterImg/UserInteraction";
 
 export const AI = () => {
   const [imageSrc, setImageSrc] = useState(null);
