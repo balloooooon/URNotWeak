@@ -4,6 +4,7 @@ import RejectBtn from "../../../assets/images/reject_btn.png";
 import CallingImg from "../../../assets/images/white_phone.png";
 import RedBtn from "../../../assets/images/redBtn.png";
 import VideoForm from "../StoryForm/VideoForm";
+import voice from "../../../assets/audio/hy_voice.m4a";
 import "./StartAnd.css";
 
 const StartAnd = ({ selectedIndex }) => {
@@ -11,20 +12,32 @@ const StartAnd = ({ selectedIndex }) => {
   const [isCallBtn, setCallBtn] = useState(true);
   const [isRedBtn, setRedBtn] = useState(false);
   const [showVideoForm, setShowVideoForm] = useState(false);
+  const [audio, setAudio] = useState(null);
+  let interval;
 
   const handleCallBtn = () => {
     setCallBtn(false);
     setRedBtn(true);
     setCount(0);
+    const audio = new Audio(voice);
+    setAudio(audio);
+    audio.play();
   };
-
+  const handleRedBtn = () => {
+    if (audio) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+    setShowVideoForm(true);
+    clearInterval(interval);
+  };
   useEffect(() => {
     if (!isCallBtn) {
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         setCount((prevCount) => prevCount + 1);
       }, 1000);
 
-      if (count >= 3) {
+      if (count >= 7) {
         setShowVideoForm(true);
         clearInterval(interval);
       }
@@ -60,7 +73,12 @@ const StartAnd = ({ selectedIndex }) => {
       {showVideoForm ? null : (
         <>
           {isRedBtn ? (
-            <img className="red-btn" alt="" src={RedBtn} />
+            <img
+              className="red-btn"
+              alt=""
+              src={RedBtn}
+              onClick={handleRedBtn}
+            />
           ) : (
             <>
               <img
