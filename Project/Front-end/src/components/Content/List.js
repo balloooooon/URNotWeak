@@ -1,27 +1,52 @@
 import React, { useState, useEffect } from "react";
 import {ImageSlider} from './ImageSlider'
+import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import './List.css'
 
+import thumb0 from 'assets/images/icon-thumb0.svg'
+import thumb1 from 'assets/images/icon-thumb1.svg'
+
 export const ContentList = () => {
-    //리스트 가져오기 만들어야함
-    const list = [
-        {
-            id:1,
-            imgs:["https://img.freepik.com/free-photo/cute-little-dog-isolated-on-yellow_23-2148985931.jpg","https://image.utoimage.com/preview/cp872722/2022/12/202212008462_500.jpg","https://img.freepik.com/free-photo/front-view-adorable-shiba-inu-dog_23-2149457807.jpg?w=360&t=st=1691718094~exp=1691718694~hmac=06fdac5e70ad01f4bac6b23f4d5de158656fd9d0c99fbea5f77cc18ddec9dfd7"],
-            tag:["#약물정보","#펜타닐"] //태그들
-        },
-        {
-            id:2,
-            imgs:["https://image.utoimage.com/preview/cp872722/2022/12/202212008462_500.jpg","https://image.utoimage.com/preview/cp872722/2022/12/202212008462_500.jpg"],
-            tag:["#약물정보","#펜타닐"] //태그들
-        },
-        {
-            id:3,
-            imgs:["https://img.freepik.com/free-photo/front-view-adorable-shiba-inu-dog_23-2149457807.jpg?w=360&t=st=1691718094~exp=1691718694~hmac=06fdac5e70ad01f4bac6b23f4d5de158656fd9d0c99fbea5f77cc18ddec9dfd7"],
-            tag:["#약물정보","#펜타닐"] //태그들
-        }
-    ]
+    const [list, setList] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [local, setLocal] = useState();
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(process.env.REACT_APP_SERVER_API_URL + "/content")
+                setList(response.data);
+            } catch (error) {
+                console.error("Error fetching result data:", error);
+            }
+        };
+
+        // 초기 세팅 동안 loading표시되도록
+        setLoading(true);
+
+        // 데이터 가져오기
+        fetchData();
+        // 좋아요 표시한 내용 localStorage에서 가져오기
+        var arr = localStorage.getItem('content-liked');
+        if(arr == null || arr == undefined) arr = [];
+        else arr = JSON.parse(arr);
+        setLocal(arr);
+        console.log(local)
+
+        setLoading(false);
+
+    }, [])
+
+    const clickThumb = (id) => {
+        var arr = local;
+        arr.push(id);
+        arr = [...arr];
+        localStorage.setItem('content-liked', JSON.stringify(arr));
+        setLocal(arr);
+
+        // 좋아요 누르는 axios 코드 필요
+    }
 
   return (
     <div className="contents">
@@ -29,13 +54,21 @@ export const ContentList = () => {
       <div className="items">
         {list.map(item => {
             return (
-                <div className="item" key={item.id}>
-                    <ImageSlider images={item.imgs}></ImageSlider>
+                <div className="item" key={item.contentId}>
+                    <ImageSlider images={item.details}></ImageSlider>
                     
+                    <div className="like">
+                        {local.includes(item.contentId)?
+                        <img src={thumb1}></img>:
+                        <div onClick={()=>clickThumb(item.contentId)}><img src={thumb0}></img></div>
+                        }
+                        <p className="tx-s-b">{item.contentLike}</p>
+                    </div>
+
                     <div className="tags">
-                    {item.tag.map(t => {
+                    {item.tags.map(t => {
                         return(
-                            <a>{t} </a>
+                            <a>#{t} </a>
                         )
                     })}
                     </div>

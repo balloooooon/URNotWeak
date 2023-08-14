@@ -1,7 +1,6 @@
 package com.ssafy.drug.controller;
 
 import com.ssafy.drug.dto.ContentDto;
-import com.ssafy.drug.dto.DrugBaImgDto;
 import com.ssafy.drug.service.ContentService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.slf4j.Logger;
@@ -10,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,5 +28,13 @@ public class ContentController {
     public ResponseEntity<List<ContentDto>> getContents(){
         List<ContentDto> contents = contentService.selectContents();
         return new ResponseEntity<List<ContentDto>>(contents, HttpStatus.OK);
+    }
+
+    // 좋아요 업데이트
+    @Operation(summary = "컨텐트(중독, 코카인)의 좋아요 요청", description = "컨텐트(중독, 코카인)의 좋아요가 +1 된다.", tags = { "Content Controller" })
+    @PostMapping(value = "/like/{contentId}", produces = { MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<String> updateLike(@PathVariable("contentId")  int contentId){
+        contentService.updateLike(contentId);
+        return new ResponseEntity<String>("좋아요를 업데이트를 완료했습니다", HttpStatus.OK);
     }
 }
