@@ -12,4 +12,5 @@ import java.util.List;
 
 @Repository
 public interface ContentRepository extends JpaRepository<Content, Integer>, ContentRepositoryCustom {
+    public Content findByContentId(int contentId);
 }
