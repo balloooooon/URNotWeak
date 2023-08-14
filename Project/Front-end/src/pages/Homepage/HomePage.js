@@ -18,14 +18,11 @@ export const Home = () => {
 
     Chatting.boot({
 <<<<<<< HEAD
-<<<<<<< HEAD
       pluginKey: process.env.REACT_APP_CHAT_PLUGIN_KEY,
     });
     console.log("boot");
   }, []);
 =======
-=======
->>>>>>> 912bec5d4d7c1b3745cabe02b71362df11a4811f
       pluginKey: process.env.REACT_APP_CHAT_PLUGIN_KEY
     })
     console.log('boot')
@@ -36,10 +33,7 @@ export const Home = () => {
     }
   }, [])
   
-<<<<<<< HEAD
 >>>>>>> 14c22222347471c821df64aaf503dad0cd3f6b08
-=======
->>>>>>> 912bec5d4d7c1b3745cabe02b71362df11a4811f
 
   // 스크롤 한번으로 섹션 이동하도록
   const [currentSection, setCurrentSection] = useState(0);
