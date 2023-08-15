@@ -18,7 +18,7 @@ const StartAnd = ({ selectedIndex }) => {
   let interval;
 
   const handleCallBtn = () => {
-    if (ringbackAudio) {
+    if (ringbackAudio && isCallBtn) {
       ringbackAudio.pause();
       ringbackAudio.currentTime = 0;
     }
@@ -42,8 +42,26 @@ const StartAnd = ({ selectedIndex }) => {
     const ringbackAudio = new Audio(ringback);
     setRingbackAudio(ringbackAudio);
     ringbackAudio.loop = true;
-    ringbackAudio.play();
-  }, []);
+
+    if (!showVideoForm && isCallBtn) {
+      ringbackAudio.play();
+    }
+    return () => {
+      if (!showVideoForm && ringbackAudio) {
+        ringbackAudio.pause();
+        ringbackAudio.currentTime = 0;
+      }
+    };
+  }, [isCallBtn, showVideoForm]);
+
+  useEffect(() => {
+    return () => {
+      if (!showVideoForm && audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    };
+  }, [isCallBtn, showVideoForm]);
 
   useEffect(() => {
     if (!isCallBtn) {
