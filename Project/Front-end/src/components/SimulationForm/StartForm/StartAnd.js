@@ -5,6 +5,7 @@ import CallingImg from "../../../assets/images/white_phone.png";
 import RedBtn from "../../../assets/images/redBtn.png";
 import VideoForm from "../StoryForm/VideoForm";
 import voice from "../../../assets/audio/hy_voice.m4a";
+import ringback from "../../../assets/audio/ringback.wav";
 import "./StartAnd.css";
 
 const StartAnd = ({ selectedIndex }) => {
@@ -13,9 +14,14 @@ const StartAnd = ({ selectedIndex }) => {
   const [isRedBtn, setRedBtn] = useState(false);
   const [showVideoForm, setShowVideoForm] = useState(false);
   const [audio, setAudio] = useState(null);
+  const [ringbackAudio, setRingbackAudio] = useState(null);
   let interval;
 
   const handleCallBtn = () => {
+    if (ringbackAudio) {
+      ringbackAudio.pause();
+      ringbackAudio.currentTime = 0;
+    }
     setCallBtn(false);
     setRedBtn(true);
     setCount(0);
@@ -31,6 +37,14 @@ const StartAnd = ({ selectedIndex }) => {
     setShowVideoForm(true);
     clearInterval(interval);
   };
+
+  useEffect(() => {
+    const ringbackAudio = new Audio(ringback);
+    setRingbackAudio(ringbackAudio);
+    ringbackAudio.loop = true;
+    ringbackAudio.play();
+  }, []);
+
   useEffect(() => {
     if (!isCallBtn) {
       interval = setInterval(() => {
