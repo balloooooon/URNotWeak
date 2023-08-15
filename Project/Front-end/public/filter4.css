@@ -6,13 +6,3 @@ canvas {
 body{
   text-align: center
 }
-@media (max-width: 400px){
-  canvas, video {
-    /* display: flex; */
-    
-    width: 110vw;
-    height: 60vh;
-  
-    transform: scale(1.4);
-  }
-}
