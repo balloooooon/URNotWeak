@@ -103,3 +103,8 @@ img {
   color: white;
   margin-right: 10px;
 }
+
+.tx-audio {
+  color: gray;
+  font-size: 12px;
+}
