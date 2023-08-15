@@ -123,27 +123,32 @@ const ResultForm = ({ selectedIndex }) => {
             <p className="api222">당신은 안전할까요?</p>
           </div>
         </div>
-        {/* 새 비디오 */}
         {isNewsImgVisible ? (
-          <img
-            className="result-img"
-            src={
-              selectedIndex === 1
-                ? news1
-                : selectedIndex === 2
-                ? news2
-                : selectedIndex === 3
-                ? news3
-                : null
-            }
-            alt={`news${selectedIndex}`}
-            onClick={handleNewsClick}
-          />
+          <>
+            <img
+              className="result-img"
+              src={
+                selectedIndex === 1
+                  ? news1
+                  : selectedIndex === 2
+                  ? news2
+                  : selectedIndex === 3
+                  ? news3
+                  : null
+              }
+              alt={`news${selectedIndex}`}
+              onClick={handleNewsClick}
+            />
+            <div className="des">⚠ 이미지를 누르면 영상이 재생됩니다.</div>
+          </>
         ) : (
-          <video className="result-video" autoPlay onClick={handleNewsClick}>
-            <source src={resultData.news} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <>
+            <video className="result-video" autoPlay onClick={handleNewsClick}>
+              <source src={resultData.news} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="des">⚠ 영상을 누르면 정지됩니다.</div>
+          </>
         )}
         <div className="group222">
           <div className="empty"></div>

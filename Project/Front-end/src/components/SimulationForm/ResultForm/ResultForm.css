@@ -352,3 +352,10 @@
   position: relative;
   pointer-events: auto;
 }
+
+.des {
+  position: relative;
+  color: gray;
+  font-size: 12px;
+  top: -10px;
+}
