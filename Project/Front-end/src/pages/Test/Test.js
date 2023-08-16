@@ -28,7 +28,6 @@ export const Test = () => {
         <img className='big-top back' src={backimg}></img>
 
         <div className="content">
-            <p className="main tx-b">취약성 테스트</p>
             <Routes>
                 <Route path="/" element={<TestLoading />}></Route>
                 <Route path="/content" element={<TestContent list={question}/>}></Route>

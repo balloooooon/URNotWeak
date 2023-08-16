@@ -12,6 +12,7 @@ export const AI = () => {
 
   return (
     <div className="upload">
+      <p className="test-main tx-b">취약성 테스트</p>s
       <img 
         className="uploadimg"
         src={loadimg} 
