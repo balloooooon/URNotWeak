@@ -1,34 +1,27 @@
-.centered-and-scaled {
-    /* 화면 중앙 정렬을 위한 스타일 */
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-  
-    /* 가로세로 2배 확대를 위한 스타일 */
-    /* transform: scale(2); */
-    /* width: 100vw ; */
-    /* height: 100% ; */
-  }
 
-  .some-element {
-    width: 600;
-    max-width: 1200px; /* 원하는 최대 너비로 설정 */
+/* body{
+  display: flex;
+  text-align: center
+} */
+canvas, video {
+  display: flex;
+  
+  width: 100%;
+  height: 100%;
+  zoom: 1.5;
 
-    /* padding: 20px; */
-    /* box-sizing: border-box; */
-    /* 기타 스타일 속성들 */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+@media (max-width: 400px){
+  canvas, video {
+    display: flex;
+    
+    width: 100%;
+    height: 100%;
+    /* align-items: center; */
+    /* justify-content: center; */
+  
+    zoom: 1.4;
   }
-  
-  /* 화면 폭이 400px 이하일 때 스타일 변경 */
-  @media (max-width: 400px) {
-    .some-element {
-      width: 320px;
-      /* 추가적인 스타일 조정 */
-    }
-  }
-  
-  
-  
-  
-  
-  
+}

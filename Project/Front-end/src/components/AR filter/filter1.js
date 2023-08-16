@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from "react";
 import * as cam from "@mediapipe/camera_utils";
 import Webcam from "react-webcam";
 import NextBtn from "components/SimulationForm/NextBtn";
+import "./filter1.css"
 
 import ant2 from "../../assets/images/ant2.png";
 import ant7 from "../../assets/images//ant7.png"; // 첫 번째 이미지의 경로를 입력해주세요.
@@ -141,7 +142,7 @@ function App({ onNext }) {
   }, [webcamRef]); // web
   return (
     <center style={{overflow:'hidden'}}>
-      <div className="App some-element">
+      <div className="App">
         {/* 웹캠 비디오를 표시합니다. */}
         <Webcam
           ref={webcamRef}
@@ -179,7 +180,7 @@ function App({ onNext }) {
           ref={bgCanvasRef}
           className="output_canvas some-element"
           style={{
-            position: "absolute",
+            // position: "absolute",
             marginLeft: "auto",
             marginRight: "auto",
             left: 0,

@@ -20,7 +20,6 @@ export const AR = () => {
         <img className='big-top back'></img>
 
         <div className="content">
-            <p className="main">AR 체험하기</p>
             <Routes>
                 <Route path="/filter1" element={<Filter1 />}></Route>
                 <Route path="/filter2" element={<Filter2 />}></Route>
