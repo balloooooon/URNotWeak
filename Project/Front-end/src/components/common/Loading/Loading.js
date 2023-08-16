@@ -1,6 +1,6 @@
 import React , { useState, useEffect } from "react";
 import { Background, LoadingText } from "./LoadingStyle";
-import Spinner from "../../../assets/images/spinner2.gif";
+import Spinner from "../../../assets/images/loading2.gif";
 import axios from "axios";
 
 export default (props) => {
