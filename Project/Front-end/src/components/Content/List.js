@@ -4,7 +4,6 @@ import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import './List.css'
 
-import { Loading } from 'pages/Loading/Loading'
 
 import thumb0 from 'assets/images/icon-thumb0.svg'
 import thumb1 from 'assets/images/icon-thumb1.svg'
@@ -73,8 +72,14 @@ export const ContentList = () => {
   return (
     <div className="contents">
         {loading?
-        <Loading></Loading>:null
-        }
+        <div className="skeleton-container">
+            <div className="tag-form skeleton"></div>
+            <div className="simg skeleton"></div>
+            <div className="slike skeleton"></div>
+            <div className="shash skeleton"></div>
+        </div>
+        :
+        <div>
         <div className="search-bar">
             {hashtag.map(tag => {
                 return(
@@ -111,7 +116,10 @@ export const ContentList = () => {
         }
         )}
       </div>
+         
       </div>
+      </div>
+        }
     </div>
   );
 };
