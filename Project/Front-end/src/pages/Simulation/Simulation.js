@@ -1,9 +1,9 @@
-import React from "react";
-import "./Simulation.css";
-import { Nav } from "components/Nav/Nav";
-import SelectForm from "components/SimulationForm/SelectForm/SelecctForm";
+import React from 'react';
+import './Simulation.css';
+import { Nav } from 'components/Nav/Nav';
+import SelectForm from 'components/SimulationForm/SelectForm/SelecctForm';
 
-import CardForm from "components/SimulationForm/StoryForm/CardForm";
+import CardForm from 'components/SimulationForm/StoryForm/CardForm';
 
 const cards = [
   'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/card1.png',
@@ -17,8 +17,9 @@ export const Simulation = () => {
   return (
     <div className="simul">
       <Nav />
-      {/* <CardForm cards={cards}/> */}
+
       <SelectForm />
+      {/* <CardForm cards={cards}/> */}
     </div>
   );
 };

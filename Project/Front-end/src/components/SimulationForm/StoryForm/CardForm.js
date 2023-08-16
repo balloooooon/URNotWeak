@@ -23,8 +23,7 @@ const to = (i) => ({
 
 const from = () => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
 
-const trans = (r, s) =>
-  `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`;
+const trans = (r, s) => `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`;
 
 function Deck({ cards }) {
   const [gone] = useState(() => new Set());
@@ -65,18 +64,12 @@ function Deck({ cards }) {
       {props.map(({ x, y, rot, scale }, i) => (
         <animated.div className={styles.deck} key={i} style={{ x, y }}>
           <animated.div
-          
             {...bind(i)}
-            
             style={{
               transform: trans(rot, scale),
               backgroundImage: `url(${cards[i]})`,
-            
             }}
-            
-          >
-          </animated.div>
-          
+          ></animated.div>
         </animated.div>
       ))}
     </>
@@ -86,7 +79,13 @@ function Deck({ cards }) {
 export default function CardForm({ cards }) {
   return (
     <div className={styles.container}>
-      <Deck cards = { cards }/>
+      <div className={styles.deckTitle}>당신의 생각 카드</div>
+      <Deck cards={cards} />
+      <img
+        src="https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/fingerGesture.gif"
+        alt="Finger Gesture"
+        className={styles.fingerGesture}
+      />
     </div>
   );
 }
