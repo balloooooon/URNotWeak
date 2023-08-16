@@ -42,7 +42,7 @@ export const AI = () => {
 
   return (
     <div className="test-result-page">
-      <p className="main tx-b">취약성 테스트</p>
+      <p className="main tx-b">당신은...</p>
       <img className="result" src={img} />
       <div className="text-content">
         <p className="tx-b title">{title}</p>
