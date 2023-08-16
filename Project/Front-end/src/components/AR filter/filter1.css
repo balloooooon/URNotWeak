@@ -3,7 +3,7 @@
   display: flex;
   text-align: center
 } */
-canvas, video {
+.filter1 canvas, .filter1 video {
   display: flex;
   
   width: 100%;
@@ -14,7 +14,7 @@ canvas, video {
   /* justify-content: center; */
 }
 @media (max-width: 400px){
-  canvas, video {
+  .filter1 canvas, .filter1 video {
     display: flex;
     
     width: 100%;
