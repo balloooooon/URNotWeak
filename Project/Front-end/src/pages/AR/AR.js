@@ -6,6 +6,7 @@ import Filter2 from 'components/AR filter/filter2';
 import Filter3 from 'components/AR filter/filter3';
 import Filter4 from 'components/AR filter/filter4';
 import Filter5 from 'components/AR filter/filter5';
+import Select from 'components/AR filter/Select';
 // import AiUpload from 'components/AI/UploadForm/aiUpload';
 // import AiResult from 'components/AI/ResultForm/aiResult';
 import './AR.css'
@@ -26,6 +27,7 @@ export const AR = () => {
                 <Route path="/filter3" element={<Filter3 />}></Route>
                 <Route path="/filter4" element={<Filter4 />}></Route>
                 <Route path="/filter5" element={<Filter5 />}></Route>
+                <Route path="/" element={<Select />}></Route>
                 {/* <Route path="/result" element={<AiResult />}></Route> */}
             </Routes>
         </div>
