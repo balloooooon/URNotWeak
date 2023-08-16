@@ -15,6 +15,7 @@ body {
   body {
       font-size: 10px;
       /* 모바일에 맞는 스타일 속성들 */
+      overscroll-behavior-y: none;
   }
 }
 
