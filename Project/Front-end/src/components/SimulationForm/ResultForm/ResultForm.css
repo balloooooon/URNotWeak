@@ -297,15 +297,17 @@
   width: 490px;
 }
 .group-container222 {
+  position: absoulte;
   top: 59px;
-  left: 61px;
+  justify-content: center;
   width: 302px;
   overflow-x: auto;
   color: #000;
 }
 .frame-div222 {
+  overflow-x: auto;
   position: relative;
-  width: 392px;
+  width: 300px;
   height: 387px;
 }
 .android-47,
