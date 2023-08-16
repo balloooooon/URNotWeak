@@ -8,6 +8,7 @@
 }
 
 .div {
+  word-break: keep-all;
   color: #f9f9f9;
   position: relative;
   letter-spacing: 0.1px;
@@ -73,6 +74,7 @@
 }
 
 .div003 {
+  word-break: keep-all;
   position: absolute;
   left: 50px;
   right: 50px;
