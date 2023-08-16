@@ -26,7 +26,6 @@ const ResultForm = ({ selectedIndex }) => {
   const count = useCountNum(calculatePredictedDeaths().predictedDeathsToday);
   const [isNewsImgVisible, setIsNewsImgVisible] = useState(true);
   const handleNewsClick = () => {
-    console.log("뉴스클릭확인");
     setIsNewsImgVisible(!isNewsImgVisible);
   };
   const getRandomArFilterPage = () => {
@@ -152,16 +151,16 @@ const ResultForm = ({ selectedIndex }) => {
         )}
         <div className="group222">
           <div className="empty"></div>
-          <p className="api222">이 시뮬레이션은 허구가 아닌</p>
-          <p className="api222">위 뉴스에 보도된</p>
-          <p className="api222">사실기반의 체험입니다.</p>
+          <p className="api222 tx-t">이 시뮬레이션은 허구가 아닌</p>
+          <p className="api222 tx-t">위 뉴스에 보도된</p>
+          <p className="api222 tx-t">사실기반의 체험입니다.</p>
 
           <div className="frame-child222" />
           {/* <img className="frame-item222" alt="" src={line} /> */}
         </div>
 
         <div className="container222">
-          <div className="div2223">마약을 하면..</div>
+          <div className="div2223 tx-t">마약을 하면..</div>
 
           <img className="icon222" alt="" src={randomImagePair.drugBeforeImg} />
           <img className="icon223" alt="" src={randomImagePair.drugAfterImg} />
@@ -200,7 +199,7 @@ const ResultForm = ({ selectedIndex }) => {
         <div className="group-wrapper222">
           <img className="frame-inner222" alt="" src={line} />
           <div className="group-div222">
-            <div className="div2224">친구에게 공유하기</div>
+            <div className="div2224 tx-t">친구에게 공유하기</div>
             <img
               className="kakaotalk222"
               alt="카톡공유이미지"
@@ -223,7 +222,7 @@ const ResultForm = ({ selectedIndex }) => {
           </div>
         </div>
         <div className="frame-div222">
-          <div className="div2225">추천</div>
+          <div className="div2225 tx-t">추천</div>
           <div
             className="buttonslight2222"
             // onClick={onButtonsLightContainer2Click}
