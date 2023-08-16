@@ -114,6 +114,7 @@ export const Content = ({list}) => {
 
   return (
     <div className="test">
+      <p className="test-main tx-b">취약성 테스트</p>
       <div className="progress">
         {list?<a className="tx-s">{index}/{list.length}</a>:null}
       </div>
