@@ -14,19 +14,19 @@ img {
 }
 
 .home1 {
-  content: url(assets/images/home1.png);
+  content: url(assets/images/home1.jpg);
 }
 .home2 {
-  content: url(assets/images/home2.png);
+  content: url(assets/images/home2.jpg);
 }
 .home3 {
-  content: url(assets/images/home3.png);
+  content: url(assets/images/home3.jpg);
 }
 .home4 {
-  content: url(assets/images/home4.png);
+  content: url(assets/images/home4.jpg);
 }
 .home5 {
-  content: url(assets/images/home5.png);
+  content: url(assets/images/home5.jpg);
 }
 
 .big-top {
