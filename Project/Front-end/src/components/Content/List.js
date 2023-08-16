@@ -4,8 +4,6 @@ import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import './List.css'
 
-import { Loading } from 'pages/Loading/Loading'
-
 import thumb0 from 'assets/images/icon-thumb0.svg'
 import thumb1 from 'assets/images/icon-thumb1.svg'
 
@@ -73,45 +71,54 @@ export const ContentList = () => {
   return (
     <div className="contents">
         {loading?
-        <Loading></Loading>:null
-        }
-        <div className="search-bar">
-            {hashtag.map(tag => {
-                return(
-                    <div className="wrapper" key={tag} onClick={()=>searchTag(tag)}><a className="tx-t-b">#{tag}</a></div>
-                )
-            })}
+        <div className="skeleton-container">
+            <div className="tag-form skeleton"></div>
+            <div className="simg skeleton"></div>
+            <div className="slike skeleton"></div>
+            <div className="shash skeleton"></div>
         </div>
-        
-        <div className="scroll">
-      <div className="items">
-        {list.map(item => {
-            return (
-                <div className="item" key={item.contentId}>
-                    <ImageSlider images={item.details}></ImageSlider>
-                    
-                    <div className="like">
-                        {local.includes(item.contentId)?
-                        <img src={thumb1}></img>:
-                        <div onClick={()=>clickThumb(item.contentId)}><img src={thumb0}></img></div>
-                        }
-                        <p className="tx-s-b num">{item.contentLike}</p>
-                    </div>
+        :
+        <div>
+            <div className="search-bar">
+                {hashtag.map(tag => {
+                    return(
+                        <div className="wrapper" key={tag} onClick={()=>searchTag(tag)}><a className="tx-t-b">#{tag}</a></div>
+                    )
+                })}
+            </div>
+            
+            <div className="scroll">
+        <div className="items">
+            {list.map(item => {
+                return (
+                    <div className="item" key={item.contentId}>
+                        <ImageSlider images={item.details}></ImageSlider>
+                        
+                        <div className="like">
+                            {local.includes(item.contentId)?
+                            <img src={thumb1}></img>:
+                            <div onClick={()=>clickThumb(item.contentId)}><img src={thumb0}></img></div>
+                            }
+                            <p className="tx-s-b num">{item.contentLike}</p>
+                        </div>
 
-                    <div className="tags">
-                    {item.tags.map(t => {
-                        return(
-                            <a>#{t} </a>
-                        )
-                    })}
-                    </div>
+                        <div className="tags">
+                        {item.tags.map(t => {
+                            return(
+                                <a>#{t} </a>
+                            )
+                        })}
+                        </div>
 
-                </div>
-            )
+                    </div>
+                )
+            }
+            )}
+        </div>
+        </div>
+        </div>
         }
-        )}
-      </div>
-      </div>
+        
     </div>
   );
 };

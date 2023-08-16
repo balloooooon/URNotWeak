@@ -73,3 +73,32 @@
     border-radius: 20px;
     border: 1px solid gray;
 }
+
+.skeleton {
+    background-color: lightgray;
+}
+
+.tag-form {
+    width: 95%;
+    margin: 10px;
+    height: 42px;
+    margin-top: 58px;
+}
+
+.simg {
+    width: 95%;
+    height: 340px;
+    margin: 10px;
+}
+
+.slike {
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+}
+
+.shash {
+    width: 200px;
+    height: 30px;
+    margin: 10px;
+}
