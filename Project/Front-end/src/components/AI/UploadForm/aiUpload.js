@@ -37,6 +37,7 @@ export const AI = () => {
 
   // 생성하기 눌렀을때
   const createResult = async () => {
+    if(imageSrc === null) return;
     setLoading(true);
     // 로딩창 컨텐츠 가져오기
     await axios({
@@ -126,8 +127,7 @@ export const AI = () => {
         <input
           name="file"
           id="file"
-          accept="image/*"
-          multiple
+          accept="image/png, image/jpeg"
           type="file"
           onChange={(e) => onUpload(e)}
         ></input>
