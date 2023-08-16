@@ -50,10 +50,6 @@
     top: 40%;
   }
 
-  .left img {
-    content: url("assets/images/arrow right.svg");
-    width: 100%;
-  }
   
   .image-slider .right {
     height: 30px;
@@ -62,9 +58,3 @@
     right: 0;
     top: 40%;
   }
-
-  .right img {
-    content: url("assets/images/arrow right.svg");
-    width: 100%;
-  }
-  
