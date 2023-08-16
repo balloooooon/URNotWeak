@@ -22,8 +22,8 @@ const SelectForm = () => {
       ) : (
         <div className="simul-form">
           <div className="select-parent">
-            <div className="simul-txt">시뮬레이션</div>
-            <div className="simul-txt2">시나리오 선택</div>
+            <div className="simul-txt tx-b">시뮬레이션</div>
+            <div className="simul-txt2 tx-t">시나리오 선택</div>
           </div>
           <SelectBox ThumbClick={handleThumbClick} />
         </div>

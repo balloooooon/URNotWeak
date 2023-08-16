@@ -91,14 +91,14 @@ const StartAnd = ({ selectedIndex }) => {
       {showVideoForm ? null : (
         <div className="call-wrapper">
           {isCallBtn ? (
-            <div className="calling-txt">통화 수신중</div>
+            <div className="calling-txt tx-rt">통화 수신중</div>
           ) : (
             <div className="count-time">
               <img className="call-img" src={CallingImg} alt="Calling" />
               {formatTime(count)}
             </div>
           )}
-          <div className="phone-num">02-1234-56**</div>
+          <div className="phone-num tx-b">02-1234-56**</div>
         </div>
       )}
 
