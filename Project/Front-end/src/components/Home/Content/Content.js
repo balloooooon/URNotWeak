@@ -1,8 +1,8 @@
 import './Content.css'
 
-import img1 from 'assets/images/contentThumnail01.png';
-import img2 from 'assets/images/contentThumnail02.png';
-import img3 from 'assets/images/contentThumnail03.png';
+import img1 from 'assets/images/contentThumnail01.jpg';
+import img2 from 'assets/images/contentThumnail02.jpg';
+import img3 from 'assets/images/contentThumnail03.jpg';
 
 export const Content = () => {
 
