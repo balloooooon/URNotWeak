@@ -1,5 +1,61 @@
 .display {
-    background-color: aqua;
-    min-height: 100vh;
-    width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+  overflow: hidden;
+}
+
+.homepages {
+display: flex;
+flex-direction: column;
+}
+
+.section {
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 2em;
+transition: transform 0.5s ease-in-out;
+scroll-snap-align: start;
+}
+
+.section.active {
+background-color: #f0f0f0;
+}
+
+.section:nth-child(odd) {
+background-color: #f0f0f0;
+}
+
+.section:nth-child(even) {
+background-color: #e0e0e0;
+}
+
+.scroll-img {
+position: fixed;
+bottom: 10px;
+left: 50%;
+transform: translate(-50%, 0);
+z-index: 3;
+text-align: center;
+}
+
+.nxtbtn {
+width: 60px;
+}
+
+.long-line {
+  background-color: white;
+  height: 1px;
+  margin: 1px;
+}
+
+.p-center {
+  top: 40%;
+  text-align: center;
+  height: fit-content;
+  position: absolute;
+  width: 100%;
+  min-width: 250px;
+  z-index: 2;
 }

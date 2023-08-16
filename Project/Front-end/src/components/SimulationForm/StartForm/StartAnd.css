@@ -1,99 +1,73 @@
-.div {
-  position: relative;
+.phone-num {
+  font-size: 30px;
+  top: 100px;
+  color: #fff;
+  text-align: center;
   letter-spacing: 0.1px;
   line-height: 20px;
   font-weight: 500;
 }
-.m324wifi-icon {
-  position: relative;
-  width: 24px;
-  height: 24px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-.icons,
-.status-bar {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.status-bar {
-  align-self: stretch;
-  padding: 14px 24px;
-  align-items: center;
-  justify-content: space-between;
-}
-.m324menu-icon {
-  position: relative;
-  width: 24px;
-  height: 24px;
-  overflow: hidden;
-  flex-shrink: 0;
-  cursor: pointer;
-}
-.div2,
-.wrapper {
+
+.call-btn1,
+.call-btn2,
+.red-btn {
   position: absolute;
+  width: 70px;
+  height: 70px;
 }
-.div2 {
-  top: 0;
-  left: calc(50% - 98.5px);
-  letter-spacing: 0.1px;
-  line-height: 20px;
-  font-weight: 500;
-}
-.wrapper {
-  top: 50px;
-  left: calc(50% - 96.5px);
-  width: 197px;
-  height: 20px;
-}
-.frame-child {
-  position: absolute;
-  top: 454px;
+
+.call-btn1 {
+  bottom: 150px;
   left: 66px;
-  width: 271px;
-  height: 69px;
 }
-.frame-item {
-  position: absolute;
-  top: 640px;
-  left: calc(50% - 30px);
-  width: 65px;
-  height: 2px;
+
+.call-btn2 {
+  bottom: 150px;
+  right: 66px;
 }
-.div3 {
-  position: absolute;
-  top: 0;
-  left: calc(50% - 34px);
-  font-size: 14px;
+
+.red-btn {
+  bottom: 150px;
+}
+
+.count-time,
+.calling-txt {
+  color: #fff;
+  text-align: center;
+  font-size: 17px;
   letter-spacing: 0.1px;
   line-height: 30px;
   font-weight: 300;
+  margin-bottom: 20px;
 }
-.android-92,
-.group-parent {
+
+.call-img {
+  height: 15px;
+  width: 15px;
+  padding-right: 7px;
+}
+
+.call-wrapper {
+  position: fixed;
+  top: 150px;
+  align-items: center;
+}
+
+.group-parent1 {
   position: relative;
   overflow: hidden;
-}
-.group-parent {
-  align-self: stretch;
   flex: 1;
-  text-align: center;
-  font-size: 32px;
+  justify-content: center;
+  align-items: center;
 }
-.android-92 {
+.start1 {
   border-radius: 22px;
   background-color: #000;
   width: 100%;
-  height: 758px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  text-align: left;
-  font-size: 14px;
-  color: #fff;
+  justify-content: center;
   font-family: Roboto;
 }

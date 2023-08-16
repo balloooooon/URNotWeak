@@ -1,0 +1,104 @@
+.test-result-page {
+  display: absolute;
+  width: 100%;
+  max-width: 500px;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.test-group-container222 {
+  /* width: 80%; */
+  display: flex;
+
+  overflow-x: auto;
+  width: 290px;
+  height: 180px;
+}
+
+.test-group-parent222 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0px;
+  overflow-x: auto;
+  /* width: 490px; */
+  width: 302px;
+  height: 180px;
+  position: absolute;
+}
+
+.test-frame-div222 {
+  position: relative;
+  display: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 302px;
+  height: 387px;
+  margin: auto;
+}
+
+.result {
+  border-radius: 50%;
+  border: 4px solid snow;
+}
+
+.text-content {
+  width: 70%;
+  margin: auto;
+  word-break: keep-all;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.percent {
+  width: 62%;
+  margin: auto;
+}
+
+.line {
+  width: 60px;
+  height: 2px;
+  background-color: white;
+  margin: auto;
+}
+
+.mt {
+  margin-top: 65px;
+}
+
+.result-item {
+  width: 100%;
+  margin: auto;
+  margin-top: 65px;
+}
+
+.result-item .btn-group {
+  width: 100%;
+  display: flex;
+  width: fit-content;
+  margin: auto;
+}
+
+.btn-group .circle {
+  width: 53px;
+  height: 53px;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  position: relative;
+  margin: 5px;
+}
+
+.btn-group .link {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;  
+
+  position: absolute;
+  left: 20%;
+  top: 20%;
+}

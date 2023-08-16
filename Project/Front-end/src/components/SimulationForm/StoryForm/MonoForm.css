@@ -1,0 +1,36 @@
+.p {
+  word-break: keep-all;
+  margin: 0;
+  color: #f9f9f9;
+}
+.mono-txt,
+.mono-wrapper {
+  position: absolute;
+}
+.mono-txt {
+  top: calc(50% - 100px);
+  left: 50px;
+  right: 50px;
+  letter-spacing: 0.1px;
+  line-height: 30px;
+}
+.mono-wrapper {
+  top: calc(50% - 82px);
+  width: 100%;
+  height: 200px;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
+  color: #f9f9f9;
+}
+
+.mono {
+  position: relative;
+  border-radius: 22px;
+  background-color: #000;
+  width: 100%;
+  height: 758px;
+  overflow: hidden;
+  font-size: 14px;
+  font-family: Roboto;
+}

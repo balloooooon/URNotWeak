@@ -1,23 +1,41 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
 .navbar {
   /* align-items: center; */
-  background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(8.37, 8.37, 8.37, 0.42) 56.25%,
-      rgba(51.85, 51.85, 51.85, 0) 100%
-  );
   display: flex;
   flex-direction: row;
   width: 100vw;
   align-items: center;
 }
 
-.element {
+.back-default {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(8.37, 8.37, 8.37, 0.42) 56.25%,
+      rgba(51.85, 51.85, 51.85, 0) 100%
+  );
+}
+
+.back-white {
+  background-color: white;
+}
+
+.back-default .element {
   color: whitesmoke;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.1px;
-  line-height: 20px;
+}
+
+.back-white .element {
+  color: black;
+}
+
+.nav .element {
   position: relative;
   white-space: nowrap;
   width: fit-content;
@@ -25,10 +43,27 @@
   margin-right: auto;
 }
 
+
 .m-menu {
   margin-left: auto;
-  height: 24px ;
+  height: 27px ;
   position: relative ;
-  width: 24px ;
-  margin: 14px;
+  width: 27px ;
+  margin: 12px;
+}
+
+.sidebar {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transition: 0.4s ease;
+}
+
+.non-background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
 }

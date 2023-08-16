@@ -1,0 +1,110 @@
+
+.homeFrame { 
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  position: relative;
+  background-color: black;
+}
+
+img {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.home1 {
+  content: url(assets/images/home1.png);
+}
+.home2 {
+  content: url(assets/images/home2.png);
+}
+.home3 {
+  content: url(assets/images/home3.png);
+}
+.home4 {
+  content: url(assets/images/home4.png);
+}
+.home5 {
+  content: url(assets/images/home5.png);
+}
+
+.big-top {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.big-tophalf {
+  height: 72%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.homeFrame .rectangle {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.25) 61.98%,
+      rgba(0, 0, 0, 0.47) 80.66%,
+      rgba(0, 0, 0, 0.5) 100%
+  );
+  z-index: 1;
+}
+
+.homeFrame .group {
+  height: fit-content;
+  padding-left: 3%;
+  position: absolute;
+  width: 90%;
+  min-width: 250px;
+  z-index: 2;
+  top: 12%;
+}
+
+.homeFrame .title {
+  left: 0;
+  line-height: 30px;
+  min-width: 230px;
+  width: 100%;
+  white-space: pre-wrap;
+  word-break: keep-all;
+  padding-bottom: 20px;
+}
+
+.link-btn {
+  position: absolute;
+  top: 72%;
+  width: 94%;
+  max-width: 500px;
+  margin: 3%;
+  margin-top: 10%;
+  border: 2px solid #ffffff;
+  background-color: transparent;
+  height: 44px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.link-btn .subtitle {
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.link-btn .nxtbtn {
+  width: 32px;
+  color: white;
+  margin-right: 10px;
+}
+
+.tx-audio {
+  color: gray;
+  font-size: 12px;
+}
