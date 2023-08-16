@@ -85,6 +85,7 @@ const VideoForm = ({ selectedIndex }) => {
     if (currentStepData.simulContentType === 1) {
       content = (
         <div className="video-story">
+          <NextBtn onClick={handleNextClick} />
           <div className="videoform-wrapper">
             <div className="videoform">
               <video
@@ -103,7 +104,6 @@ const VideoForm = ({ selectedIndex }) => {
                 Your browser does not support the video tag.
               </video>
             </div>
-            <NextBtn onClick={handleNextClick} />
           </div>
           <div className="frame-child001">
             <div className="chapter1-txt">{`${currentStepData.simulText}. ${currentStepData.simulAnswer1}`}</div>
