@@ -8,6 +8,7 @@
 .box .Thumnail1 {
   position: absolute;
   top: 60%;
+  transform: translateY(-10%);
   left: -15%;
   border-radius: 50%;
   height: 197px;
@@ -19,6 +20,7 @@
 .box .Thumnail2 {
   position: absolute;
   top: 35%;
+  transform: translateY(-5%);
   right: -24%;
   border: 5px solid rgba(47, 47, 47, 0.8);
   border-radius: 50%;
@@ -31,6 +33,7 @@
   position: absolute;
   left: 33%;
   top: 83%;
+  transform: translateY(-10%);
   border: 5px solid rgba(47, 47, 47, 0.8);
   border-radius: 50%;
   height: 177px;
