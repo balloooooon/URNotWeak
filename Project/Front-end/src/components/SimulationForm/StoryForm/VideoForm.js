@@ -10,6 +10,7 @@ import AR4 from "components/AR filter/filter4";
 import AR5 from "components/AR filter/filter5";
 import ResultForm from "../ResultForm/ResultForm";
 import NextBtn from "../NextBtn";
+import CardForm from "./CardForm";
 import "./VideoForm.css";
 
 const VideoForm = ({ selectedIndex }) => {
@@ -150,6 +151,14 @@ const VideoForm = ({ selectedIndex }) => {
       content = React.createElement(ARComponent, { onNext: handleNextClick });
     } else if (currentStepData.simulContentType === 5) {
       content = <HandForm onNext={handleNextClick} currentStep={currentStep} />;
+    } else if (currentStepData.simulContentType === 6) {
+      content = (
+        <CardForm
+          initialFlag={2}
+          onNext={handleNextClick}
+          currentStep={currentStep}
+        />
+      );
     }
   }
 
