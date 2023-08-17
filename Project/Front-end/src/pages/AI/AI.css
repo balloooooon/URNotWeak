@@ -23,8 +23,18 @@
     top: 0;
   }
 
-.content .main {
-    color: white;
+.back {
+    z-index: -2;
+}
+
+.ai-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    z-index: 99;
+}
+
+.ai-content .main {
     text-align: center;
     padding-bottom: 50px;
     margin: 0;

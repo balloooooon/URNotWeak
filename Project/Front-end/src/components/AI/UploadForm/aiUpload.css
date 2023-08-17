@@ -26,8 +26,10 @@ input {
 }
 
 .ai-uploadimg {
-  width: 95%;
-  height: 85%;
+  background-color: white;
+  width: 90%;
+  height: 320px;
+  object-fit: contain;
   display: block;
   margin: auto;
 }
