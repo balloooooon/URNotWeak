@@ -5,7 +5,7 @@ import CallingImg from "../../../assets/images/white_phone.png";
 import RedBtn from "../../../assets/images/redBtn.png";
 import VideoForm from "../StoryForm/VideoForm";
 import voice from "../../../assets/audio/hy_voice.m4a";
-import ringback from "../../../assets/audio/ringback.wav";
+import ringback from "../../../assets/audio/bells.mp3";
 import "./StartAnd.css";
 
 const StartAnd = ({ selectedIndex }) => {
