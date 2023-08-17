@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import SelectBox from "./SelectBox";
-import StartAnd from "../StartForm/StartAnd";
-import StartTxt from "../StartForm/StartTxt";
-import VideoForm from "../StoryForm/VideoForm";
-import "./SelectForm.css";
+import React, { useState } from 'react';
+import SelectBox from './SelectBox';
+import StartAnd from '../StartForm/StartAnd';
+import StartTxt from '../StartForm/StartTxt';
+import VideoForm from '../StoryForm/VideoForm';
+import './SelectForm.css';
 
 const SelectForm = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
