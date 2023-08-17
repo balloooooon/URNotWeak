@@ -97,7 +97,7 @@ export const Home = () => {
       {currentSection != 5 ? (
         <div className="scroll-img">
           <div className="tx-s">아래로 스크롤하세요.</div>
-          <img className="nxtbtn" src={scrollImg} />
+          <img width={60} height={60} src={scrollImg} alt="scroll-dwon" />
         </div>
       ) : (
         <></>
@@ -112,7 +112,7 @@ export const Home = () => {
             <div className="rectangle big-top" />
             <picture>
               <source srcSet={require(`assets/images/home1.webp`)} type="image/webp" />
-              <img className="big-top img" src={require(`assets/images/home1.jpg`)}></img>
+              <img alt="home-background-img" className="big-top img" src={require(`assets/images/home1.jpg`)}></img>
             </picture>
 
             <div className={`p-center`}>
