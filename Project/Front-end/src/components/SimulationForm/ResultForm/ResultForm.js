@@ -1,20 +1,20 @@
 // /* global Kakao */
 
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import SelectForm from '../SelectForm/SelectForm';
-import axios from 'axios';
-import line from '../../../assets/images/line.png';
-import twitter from '../../../assets/images/트위터.png';
-import kakaoimg from '../../../assets/images/kakao.png';
-import link from '../../../assets/images/share.png';
-import ai_img from '../../../assets/images/rec_ai.png';
-import ar_img from '../../../assets/images/rec_ar.png';
-import test_img from '../../../assets/images/rec_test.png';
-import news3 from '../../../assets/images/news_club.JPG';
-import news2 from '../../../assets/images/news_pregnant.JPG';
-import news1 from '../../../assets/images/news_teen.JPG';
-import './ResultForm.css';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import SelectForm from "../SelectForm/SelectForm";
+import axios from "axios";
+import line from "../../../assets/images/line.png";
+import twitter from "../../../assets/images/트위터.png";
+import kakaoimg from "../../../assets/images/kakao.png";
+import link from "../../../assets/images/share.png";
+import ai_img from "../../../assets/images/rec_ai.png";
+import ar_img from "../../../assets/images/rec_ar.png";
+import test_img from "../../../assets/images/rec_test.png";
+import news3 from "../../../assets/images/news_club.JPG";
+import news2 from "../../../assets/images/news_pregnant.JPG";
+import news1 from "../../../assets/images/news_teen.JPG";
+import "./ResultForm.css";
 
 import { calculatePredictedDeaths } from '../../common/Statistic/DrugDeathStatistics';
 import useCountNum from '../../common/Statistic/UseCountUp';

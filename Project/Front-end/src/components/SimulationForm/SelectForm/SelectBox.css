@@ -7,8 +7,9 @@
 
 .box .Thumnail1 {
   position: absolute;
-  top: 420px;
-  left: -50px;
+  top: 60%;
+  transform: translateY(-10%);
+  left: -15%;
   border-radius: 50%;
   height: 197px;
   width: 197px;
@@ -18,19 +19,21 @@
 
 .box .Thumnail2 {
   position: absolute;
-  top: 300px;
-  right: -85px;
+  top: 35%;
+  transform: translateY(-5%);
+  right: -24%;
   border: 5px solid rgba(47, 47, 47, 0.8);
   border-radius: 50%;
-  height: 300px;
-  width: 300px;
+  height: 290px;
+  width: 290px;
   overflow: hidden;
 }
 
 .box .Thumnail3 {
   position: absolute;
-  left: 100px;
-  top: 600px;
+  left: 33%;
+  top: 83%;
+  transform: translateY(-10%);
   border: 5px solid rgba(47, 47, 47, 0.8);
   border-radius: 50%;
   height: 177px;
