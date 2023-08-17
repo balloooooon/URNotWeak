@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
+// CardForm.js
+import React, { useState, useEffect } from 'react';
 import { useSprings, animated } from '@react-spring/web';
 import { useDrag } from 'react-use-gesture';
 
 import styles from './CardForm.module.css';
 import '../../../components/App/App.css';
-
-// const cards = [
-//   'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/card1.png',
-//   'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/card2.png',
-//   'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/card3.png',
-//   'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/card4.png',
-//   'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/card5.png',
-// ];
+import SelectForm from '../SelectForm/SelectForm';
+import NextBtn from '../NextBtn';
 
 const to = (i) => ({
   x: 0,
@@ -21,12 +16,30 @@ const to = (i) => ({
   delay: i * 100,
 });
 
+const cardsFirst = [
+  'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/card1.png',
+  'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/card2.png',
+  'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/card3.png',
+  'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/card4.png',
+  'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/card5.png',
+];
+
+const cardsFinal = [
+  'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/card1.png',
+  'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/drug4.png',
+  'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/drug3.png',
+  'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/drug2.png',
+  'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/drug.png',
+];
+
 const from = () => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
 
 const trans = (r, s) => `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`;
 
-function Deck({ cards }) {
+function Deck({ onAllCardsGone, flag, onNext }) {
   const [gone] = useState(() => new Set());
+
+  const cards = flag === 1 ? cardsFirst : cardsFinal;
 
   const [props, api] = useSprings(cards.length, (i) => ({
     ...to(i),
@@ -55,6 +68,12 @@ function Deck({ cards }) {
       setTimeout(() => {
         gone.clear();
         api.start((i) => to(i));
+
+        if (flag === 2) {
+          onNext();
+        } else {
+          onAllCardsGone();
+        }
       }, 600);
     }
   });
@@ -76,16 +95,36 @@ function Deck({ cards }) {
   );
 }
 
-export default function CardForm({ cards }) {
+export default function CardForm({ onNext, initialFlag }) {
+  const [showSelectForm, setShowSelectForm] = useState(false);
+  const [flag, setFlag] = useState(initialFlag);
+
+  useEffect(() => {
+    setFlag(initialFlag);
+  }, [initialFlag]);
+
+  const handleAllCardsGone = () => {
+    setShowSelectForm(true);
+    if (flag === 1) {
+      setFlag(2);
+    }
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.deckTitle}>당신의 생각 카드</div>
-      <Deck cards={cards} />
-      <img
-        src="https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/fingerGesture.gif"
-        alt="Finger Gesture"
-        className={styles.fingerGesture}
-      />
+      {showSelectForm ? (
+        <SelectForm />
+      ) : (
+        <div className={styles.container}>
+          <div className={styles.deckTitle}>도파민 카드</div>
+          <Deck onAllCardsGone={handleAllCardsGone} flag={flag} onNext={onNext} />
+          <img
+            src="https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/fingerGesture.gif"
+            alt="Finger Gesture"
+            className={styles.fingerGesture}
+          />
+        </div>
+      )}
     </div>
   );
 }

@@ -16,8 +16,8 @@ import news2 from "../../../assets/images/news_pregnant.JPG";
 import news1 from "../../../assets/images/news_teen.JPG";
 import "./ResultForm.css";
 
-import { calculatePredictedDeaths } from "../../common/Statistic/DrugDeathStatistics";
-import useCountNum from "../../common/Statistic/UseCountUp";
+import { calculatePredictedDeaths } from '../../common/Statistic/DrugDeathStatistics';
+import useCountNum from '../../common/Statistic/UseCountUp';
 
 const ResultForm = ({ selectedIndex }) => {
   const [resultData, setResultData] = useState(null);
@@ -35,14 +35,12 @@ const ResultForm = ({ selectedIndex }) => {
   useEffect(() => {
     const fetchResultData = async () => {
       try {
-        const response = await axios.get(
-          `https://www.urnotweak.site:8589/simulation/result/${selectedIndex}`
-        );
+        const response = await axios.get(`https://www.urnotweak.site:8589/simulation/result/${selectedIndex}`);
         setResultData(response.data);
         const imagePair = getRandomImagePair(response.data);
         setRandomImagePair(imagePair);
       } catch (error) {
-        console.error("Error fetching result data:", error);
+        console.error('Error fetching result data:', error);
       }
     };
 
@@ -61,43 +59,43 @@ const ResultForm = ({ selectedIndex }) => {
   // }, []);
 
   const copyToClipboard = (text) => {
-    const el = document.createElement("textarea");
+    const el = document.createElement('textarea');
     el.value = text;
     document.body.appendChild(el);
     el.select();
-    document.execCommand("copy");
+    document.execCommand('copy');
     document.body.removeChild(el);
-    window.alert("링크가 클립보드에 복사되었습니다.");
+    window.alert('링크가 클립보드에 복사되었습니다.');
   };
 
   const shareToTwitter = (url) => {
     const encodedUrl = encodeURIComponent(url);
-    console.log("Encoded URL:", encodedUrl);
+    console.log('Encoded URL:', encodedUrl);
     // const twitterUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}`;
     const twitterUrl = `https://twitter.com/intent/tweet?url=https://urnotweak.site/ 약해지지마 시뮬레이션 체험해보기 !`;
-    window.open(twitterUrl, "_blank");
+    window.open(twitterUrl, '_blank');
   };
-  const urlToShare = "https://urnotweak.site/";
+  const urlToShare = 'https://urnotweak.site/';
   console.log(urlToShare);
   const handleKakaoShare = () => {
     if (window.Kakao) {
       window.Kakao.Link.sendDefault({
-        objectType: "feed",
+        objectType: 'feed',
         content: {
-          title: "친구에게 공유하기",
-          description: "약해지지마 - 시뮬레이션을 체험하시겠습니까?",
+          title: '친구에게 공유하기',
+          description: '약해지지마 - 시뮬레이션을 체험하시겠습니까?',
           imageUrl: kakaoimg,
           link: {
-            mobileWebUrl: "https://urnotweak.site",
-            webUrl: "https://urnotweak.site",
+            mobileWebUrl: 'https://urnotweak.site',
+            webUrl: 'https://urnotweak.site',
           },
         },
         buttons: [
           {
-            title: "웹으로 보기",
+            title: '웹으로 보기',
             link: {
-              mobileWebUrl: "https://urnotweak.site",
-              webUrl: "https://urnotweak.site",
+              mobileWebUrl: 'https://urnotweak.site',
+              webUrl: 'https://urnotweak.site',
             },
           },
         ],
@@ -115,9 +113,7 @@ const ResultForm = ({ selectedIndex }) => {
       <div className="frame-parent222">
         <div className="api-wrapper222">
           <div className="api-container222">
-            <p className="api222">
-              지금도 {count} 명의 중독자와 사망자가 발생하고 있습니다.
-            </p>
+            <p className="api222">지금도 {count} 명의 중독자와 사망자가 발생하고 있습니다.</p>
             <p className="api222">&nbsp;</p>
             <p className="api222">당신은 안전할까요?</p>
           </div>
@@ -126,15 +122,7 @@ const ResultForm = ({ selectedIndex }) => {
           <>
             <img
               className="result-img"
-              src={
-                selectedIndex === 1
-                  ? news1
-                  : selectedIndex === 2
-                  ? news2
-                  : selectedIndex === 3
-                  ? news3
-                  : null
-              }
+              src={selectedIndex === 1 ? news1 : selectedIndex === 2 ? news2 : selectedIndex === 3 ? news3 : null}
               alt={`news${selectedIndex}`}
               onClick={handleNewsClick}
             />
@@ -166,15 +154,9 @@ const ResultForm = ({ selectedIndex }) => {
           <img className="icon223" alt="" src={randomImagePair.drugAfterImg} />
 
           <div className="buttonslight-parent222">
-            <div className="buttonslight222" style={{ pointerEvents: "none" }}>
-              <Link
-                to="/ai/upload"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                <div
-                  className="button-wrapper2221"
-                  style={{ pointerEvents: "auto" }}
-                >
+            <div className="buttonslight222" style={{ pointerEvents: 'none' }}>
+              <Link to="/ai/upload" style={{ textDecoration: 'none', color: 'white' }}>
+                <div className="button-wrapper2221" style={{ pointerEvents: 'auto' }}>
                   <div className="div2221">전, 후 사진 AI 체험하기</div>
                 </div>
               </Link>
@@ -200,25 +182,10 @@ const ResultForm = ({ selectedIndex }) => {
           <img className="frame-inner222" alt="" src={line} />
           <div className="group-div222">
             <div className="div2224 tx-t">친구에게 공유하기</div>
-            <img
-              className="kakaotalk222"
-              alt="카톡공유이미지"
-              src={kakaoimg}
-              onClick={handleKakaoShare}
-            />
-            <img
-              className="twitter222"
-              alt="트위터공유"
-              src={twitter}
-              onClick={() => shareToTwitter(urlToShare)}
-            />
+            <img className="kakaotalk222" alt="카톡공유이미지" src={kakaoimg} onClick={handleKakaoShare} />
+            <img className="twitter222" alt="트위터공유" src={twitter} onClick={() => shareToTwitter(urlToShare)} />
             <div className="group-child222" />
-            <img
-              className="share-url222"
-              alt="링크공유"
-              src={link}
-              onClick={() => copyToClipboard(urlToShare)}
-            />
+            <img className="share-url222" alt="링크공유" src={link} onClick={() => copyToClipboard(urlToShare)} />
           </div>
         </div>
         <div className="frame-div222">
@@ -237,40 +204,22 @@ const ResultForm = ({ selectedIndex }) => {
               // onClick={handleARClick}
             >
               <div className="group-item222" />
-              <Link
-                to={getRandomArFilterPage()}
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <div
-                  className="group-inner222"
-                  style={{ backgroundImage: `url(${ar_img})` }}
-                />
+              <Link to={getRandomArFilterPage()} style={{ textDecoration: 'none', color: 'black' }}>
+                <div className="group-inner222" style={{ backgroundImage: `url(${ar_img})` }} />
                 <div className="ai222">AR</div>
               </Link>
             </div>
             <div className="rectangle-container222">
               <div className="group-item222" />
-              <Link
-                to="/ai/upload"
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <div
-                  className="group-inner222"
-                  style={{ backgroundImage: `url(${ai_img})` }}
-                />
+              <Link to="/ai/upload" style={{ textDecoration: 'none', color: 'black' }}>
+                <div className="group-inner222" style={{ backgroundImage: `url(${ai_img})` }} />
                 <div className="ai222">AI</div>
               </Link>
             </div>
             <div className="rectangle-parent222">
               <div className="group-item222" />
-              <Link
-                to="/test"
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <div
-                  className="group-inner222"
-                  style={{ backgroundImage: `url(${test_img})` }}
-                />
+              <Link to="/test" style={{ textDecoration: 'none', color: 'black' }}>
+                <div className="group-inner222" style={{ backgroundImage: `url(${test_img})` }} />
                 <div className="ai222">TEST</div>
               </Link>
             </div>
