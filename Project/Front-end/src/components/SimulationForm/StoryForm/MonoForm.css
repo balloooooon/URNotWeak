@@ -25,6 +25,8 @@
 }
 
 .mono {
+  background-image: url("../../../assets/images/ai-background12.png");
+  object-fit: cover;
   position: relative;
   border-radius: 22px;
   background-color: #000;
