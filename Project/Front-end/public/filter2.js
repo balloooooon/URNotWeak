@@ -130,35 +130,35 @@ function grayscale() {
 }
 
 function drawCamera() {
-  const cH = camera.videoHeight * (STATE.W / camera.videoWidth);
-  const offset = (cH - STATE.H) / 2;
+  const cH = STATE.H; // 이미지의 높이를 화면 높이와 동일하게 설정
+  const cW = camera.videoWidth * (cH / camera.videoHeight); // 이미지의 너비를 가로 비율에 맞춰 계산
+  const offset = (cW - STATE.W) / 2;
 
   if (OPTIONS.specular) {
     distortionCtx.drawImage(
-    camera,
-    camera.videoWidth / 2, 0,
-    camera.videoWidth / 2, camera.videoHeight,
-    STATE.W / 2, -offset,
-    STATE.W / 2, cH);
-
+      camera,
+      camera.videoWidth / 2, 0,
+      camera.videoWidth / 2, camera.videoHeight,
+      STATE.W / 2, -offset,
+      STATE.W / 2, cH);
 
     distortionCtx.save();
     flipX(distortionCtx);
     distortionCtx.drawImage(
-    camera,
-    camera.videoWidth / 2, 0,
-    camera.videoWidth / 2, camera.videoHeight,
-    0, -offset,
-    STATE.W / 2, cH);
+      camera,
+      camera.videoWidth / 2, 0,
+      camera.videoWidth / 2, camera.videoHeight,
+      0, -offset,
+      STATE.W / 2, cH);
 
     distortionCtx.restore();
   } else {
     distortionCtx.drawImage(
-    camera,
-    0, 0,
-    camera.videoWidth, camera.videoHeight,
-    0, -offset,
-    STATE.W, cH);
+      camera,
+      0, 0,
+      camera.videoWidth, camera.videoHeight,
+      -offset, 0,
+      cW, cH);
 
   }
 }

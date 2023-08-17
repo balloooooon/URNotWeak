@@ -11,7 +11,7 @@ export const AI = () => {
   }
 
   return (
-    <div className="upload">
+    <div className="test-loading">
       <p className="test-main tx-b">취약성 테스트</p>s
       <img 
         className="uploadimg"

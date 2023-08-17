@@ -1,33 +1,6 @@
 .centered-and-scaled3 {
-  /* 화면 중앙 정렬을 위한 스타일 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* position: fixed; */
-  /* 가로세로 2배 확대를 위한 스타일 */
-  /* width: 100% ; */
-  zoom: 3.5;
-  transform: scale(1.4);
-  /* height: 100% ; */
-  overflow: hidden;
-
-}
-
-
-/* 모바일 화면 크기에 따른 미디어 쿼리 */
-@media screen and (max-width: 768px) {
-  /* 모바일 화면에서 컨테이너 높이에 맞춰서 화면 크게 보이도록 설정 */
-.centered-and-scaled3 {
-  height: 100%; /* 컨테이너의 높이를 화면 높이로 설정 */
   width: 100%;
-  zoom: 3.5;
-  
-}
-
-.centered-and-scaled3 object {
-/* 가로 크기를 자동으로 설정하여 세로 높이에 맞추기 */
-  height: 20vh; /* 화면 세로 높이의 2배로 설정하여 확대 */
-}
+  height: 100%;
 
 }
 

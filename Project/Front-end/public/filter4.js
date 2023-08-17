@@ -19,11 +19,16 @@ if ( !navigator.getUserMedia ) { return false; }
   var canvas = document.createElement('canvas'),
       ctx = canvas.getContext('2d');
   document.body.appendChild(canvas);
+
+  
+  // 여기서 canvas 요소의 높이를 100%로 설정합니다.
+  canvas.height = '100%';
   
   var video = document.createElement('video'),
       track;
   video.setAttribute('autoplay',true);
   
+
   window.vid = video;
   
   function getWebcam(){ 

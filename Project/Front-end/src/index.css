@@ -1,7 +1,7 @@
 body {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'LINESeedKR';
+  font-family: 'LINESeedKR', sans-serif;
   font-display: optional;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -53,24 +53,27 @@ body::-webkit-scrollbar-track {
 
 @font-face {
   font-family: "LINESeedKR";
-  src: local("LINESeedKR-Th") url("fonts/LINESeedKR-Th.woff2") format('woff2'),
-    url("fonts/LINESeedKR-Th.woff") format('woff'),
-    url("fonts/LINESeedKR-Th.ttf") format('ttf');
+  src: local("urnotweak-LINESeedKR-Th"),
+       url("fonts/LINESeedKR-Th.woff2") format('woff2'),
+       url("fonts/LINESeedKR-Th.woff") format('woff'),
+       url("fonts/LINESeedKR-Th.ttf") format('ttf');
   font-weight: 100;
 }
 
 @font-face {
   font-family: "LINESeedKR";
-  src: local("LINESeedKR-Rg") url("fonts/LINESeedKR-Rg.woff2") format('woff2'),
-    url("fonts/LINESeedKR-Rg.woff") format('woff'),
-    url("fonts/LINESeedKR-Rg.ttf") format('ttf'),;
+  src: local("urnotweak-LINESeedKR-Rg"),
+       url("fonts/LINESeedKR-Rg.woff2") format('woff2'),
+       url("fonts/LINESeedKR-Rg.woff") format('woff'),
+       url("fonts/LINESeedKR-Rg.ttf") format('ttf');
   font-weight: 400;
 }
 
 @font-face {
   font-family: "LINESeedKR";
-  src: local("LINESeedKR-Bd") url("fonts/LINESeedKR-Bd.woff2") format('woff2'),
-    url("fonts/LINESeedKR-Bd.woff") format('woff'),
-    url("fonts/LINESeedKR-Bd.ttf") format('ttf'),;
+  src: local("urnotweak-LINESeedKR-Bd"),
+       url("fonts/LINESeedKR-Bd.woff2") format('woff2'),
+       url("fonts/LINESeedKR-Bd.woff") format('woff'),
+       url("fonts/LINESeedKR-Bd.ttf") format('ttf');
   font-weight: 700;
 }
