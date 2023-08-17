@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import SelectForm from "../SelectForm/SelecctForm";
+import SelectForm from "../SelectForm/SelectForm";
 import axios from "axios";
 import line from "../../../assets/images/line.png";
 import twitter from "../../../assets/images/트위터.png";

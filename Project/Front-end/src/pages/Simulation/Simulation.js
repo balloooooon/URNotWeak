@@ -1,7 +1,7 @@
 import React from "react";
 import "./Simulation.css";
 import { Nav } from "components/Nav/Nav";
-import SelectForm from "components/SimulationForm/SelectForm/SelecctForm";
+import SelectForm from "components/SimulationForm/SelectForm/SelectForm";
 export const Simulation = () => {
   return (
     <div className="simul">
