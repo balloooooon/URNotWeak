@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import SelectTxt from './SelectTxt';
-import MonoForm from './MonoForm';
-import HandForm from './HandForm';
-import AR1 from 'components/AR filter/filter1';
-import AR2 from 'components/AR filter/filter2';
-import AR3 from 'components/AR filter/filter3';
-import AR4 from 'components/AR filter/filter4';
-import AR5 from 'components/AR filter/filter5';
-import ResultForm from '../ResultForm/ResultForm';
-import NextBtn from '../NextBtn';
-import './VideoForm.css';
-import CardForm from './CardForm';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import SelectTxt from "./SelectTxt";
+import MonoForm from "./MonoForm";
+import HandForm from "./HandForm";
+import AR1 from "components/AR filter/filter1";
+import AR2 from "components/AR filter/filter2";
+import AR3 from "components/AR filter/filter3";
+import AR4 from "components/AR filter/filter4";
+import AR5 from "components/AR filter/filter5";
+import ResultForm from "../ResultForm/ResultForm";
+import NextBtn from "../NextBtn";
+import "./VideoForm.css";
 
 const VideoForm = ({ selectedIndex }) => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -24,10 +23,12 @@ const VideoForm = ({ selectedIndex }) => {
   useEffect(() => {
     const fetchSimulData = async () => {
       try {
-        const response = await axios.get(`https://www.urnotweak.site:8589/simulation/${selectedIndex}`);
+        const response = await axios.get(
+          `https://www.urnotweak.site:8589/simulation/${selectedIndex}`
+        );
         setSimulData(response.data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 
@@ -38,10 +39,12 @@ const VideoForm = ({ selectedIndex }) => {
   useEffect(() => {
     const fetchSimulTxt = async () => {
       try {
-        const response = await axios.get(`https://www.urnotweak.site:8589/simulation/${selectedIndex}`);
+        const response = await axios.get(
+          `https://www.urnotweak.site:8589/simulation/${selectedIndex}`
+        );
         setSimulTxt(response.data[currentStep].simulText);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
     fetchSimulTxt();
@@ -89,12 +92,15 @@ const VideoForm = ({ selectedIndex }) => {
                 ref={(ref) => setVideoRef(ref)}
                 autoPlay
                 style={{
-                  objectFit: 'cover',
-                  width: '100%',
-                  height: '100%',
+                  objectFit: "cover",
+                  width: "100%",
+                  height: "100%",
                 }}
               >
-                <source src={simulData[currentStep].simulVideoUrl} type="video/mp4" />
+                <source
+                  src={simulData[currentStep].simulVideoUrl}
+                  type="video/mp4"
+                />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -103,8 +109,12 @@ const VideoForm = ({ selectedIndex }) => {
             <div className="chapter1-txt tx-b">{`${currentStepData.simulText}. ${currentStepData.simulAnswer1}`}</div>
           </div>
           <div className="url-group">
-            {currentStepData.sourceName && <p className="video_url">{`${currentStepData.sourceName}`}</p>}
-            {currentStepData.sourceUrl && <p className="video_url2">{`${currentStepData.sourceUrl}`}</p>}
+            {currentStepData.sourceName && (
+              <p className="video_url">{`${currentStepData.sourceName}`}</p>
+            )}
+            {currentStepData.sourceUrl && (
+              <p className="video_url2">{`${currentStepData.sourceUrl}`}</p>
+            )}
           </div>
         </div>
       );
@@ -120,11 +130,11 @@ const VideoForm = ({ selectedIndex }) => {
         />
       );
     } else if (currentStepData.simulContentType === 3) {
-      console.log('mono', currentStepData.simulText);
+      console.log("mono", currentStepData.simulText);
       content = <MonoForm text={simulTxt} onNext={handleNextClick} />;
     } else if (currentStepData.simulContentType === 4) {
-      console.log('ar으로 이동');
-      const newRandomIndex = Math.floor(Math.random() * 4) + 2;
+      console.log("ar으로 이동");
+      const newRandomIndex = Math.floor(Math.random() * 1) + 5;
       let ARComponent;
       if (newRandomIndex === 1) {
         ARComponent = AR1;
@@ -140,8 +150,6 @@ const VideoForm = ({ selectedIndex }) => {
       content = React.createElement(ARComponent, { onNext: handleNextClick });
     } else if (currentStepData.simulContentType === 5) {
       content = <HandForm onNext={handleNextClick} currentStep={currentStep} />;
-    } else if (currentStepData.simulContentType === 6) {
-      content = <CardForm initialFlag={2} onNext={handleNextClick} currentStep={currentStep} />;
     }
   }
 
