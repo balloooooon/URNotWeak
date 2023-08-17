@@ -50,7 +50,7 @@ function Deck({ onAllCardsGone, flag, onNext }) {
   const [ddd, setDDD] = useState(0);
   const bind = useDrag(({ args: [index], active, movement: [mx], direction: [xDir], velocity }) => {
     // 왜 인식이 잘 안될까요
-    const trigger = velocity > 0.2;
+    const trigger = velocity > 0.05;
     const dir = xDir < 0 ? -1 : 1;
 
     setVel(velocity);
@@ -62,6 +62,7 @@ function Deck({ onAllCardsGone, flag, onNext }) {
       const isGone = gone.has(index);
       const x = isGone ? (200 + window.innerWidth) * dir : active ? mx : 0;
       const rot = mx / 100 + (isGone ? dir * 10 * velocity : 0);
+      console.log(rot);
       const scale = active ? 1.1 : 1;
       return {
         x,
