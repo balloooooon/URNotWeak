@@ -97,7 +97,7 @@ export const Home = () => {
       {currentSection != 5 ? (
         <div className="scroll-img">
           <div className="tx-s">아래로 스크롤하세요.</div>
-          <img className="nxtbtn" src={scrollImg} />
+          <img width={60} height={60} src={scrollImg} />
         </div>
       ) : (
         <></>
