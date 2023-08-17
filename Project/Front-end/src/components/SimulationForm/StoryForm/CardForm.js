@@ -47,8 +47,13 @@ function Deck({ onAllCardsGone, flag, onNext }) {
   }));
 
   const bind = useDrag(({ args: [index], down, movement: [mx], direction: [xDir], velocity }) => {
-    const trigger = velocity > 0.2;
+    // 카카오톡에서 넘기는것이 인식안돼서 0.2->0.1 조정
+    const trigger = velocity > 0.1;
     const dir = xDir < 0 ? -1 : 1;
+    // console.log(velocity)
+    // console.log(down)
+    // console.log(trigger+" : "+dir)
+
     if (!down && trigger) gone.add(index);
     api.start((i) => {
       if (index !== i) return;
