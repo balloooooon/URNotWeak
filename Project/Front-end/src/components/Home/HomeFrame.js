@@ -9,7 +9,10 @@ export const Frame = ({ backimage, text1, text2, text3, link }) => {
     <div className={`homeFrame`}>
       <div className={`overlap `}>
         <div className="rectangle big-tophalf" />
-        <img className={`big-tophalf img ${backimage}`}></img>
+        <picture>
+          <source srcSet={require(`assets/images/${backimage}.webp`)} type="image/webp" />
+          <img className="big-tophalf img" src={require(`assets/images/${backimage}.jpg`)}></img>
+        </picture>
         <div className={`group`}>
           <div className="tx-b">{text2}</div>
           <div className="title tx-rt">{text1}</div>

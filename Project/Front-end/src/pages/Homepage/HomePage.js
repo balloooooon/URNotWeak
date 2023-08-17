@@ -110,7 +110,11 @@ export const Home = () => {
         >
           <div className={`homeFrame`}>
             <div className="rectangle big-top" />
-            <img className={`big-top img home1`}></img>
+            <picture>
+              <source srcSet={require(`assets/images/home1.webp`)} type="image/webp" />
+              <img className="big-top img" src={require(`assets/images/home1.jpg`)}></img>
+            </picture>
+
             <div className={`p-center`}>
               <div className="tx-xb">약해지지마</div>
               <div className="tx-t">
