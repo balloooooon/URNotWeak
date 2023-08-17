@@ -74,7 +74,7 @@ function Deck({ onAllCardsGone, flag, onNext }) {
         } else {
           onAllCardsGone();
         }
-      }, 600);
+      }, 100);
     }
   });
 

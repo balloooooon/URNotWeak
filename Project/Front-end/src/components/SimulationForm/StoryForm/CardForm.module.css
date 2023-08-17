@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: flex-start; /* 상단 정렬 */
   touch-action: none;
-  padding-top: 20px; /* 텍스트와의 간격 조정 */
+  padding-top: 50%; /* 텍스트와의 간격 조정 */
 }
 
 .deck > div {
@@ -28,9 +28,10 @@
   background-repeat: no-repeat;
   background-position: center center;
   width: 45vh;
-  max-width: 300px;
   height: 85vh;
-  max-height: 500px;
+
+  max-width: 80%;
+  max-height: 80%;
   will-change: transform;
   border-radius: 10px;
   box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
@@ -38,16 +39,24 @@
 
 .fingerGesture {
   position: absolute;
-  bottom: 3%; /* 덱 아래로 내려가도록 수직 거리를 조정하세요 */
+  top: 85%;
   align-content: center;
   width: 100px;
   height: auto;
 }
 
 .deckTitle {
+  font-family: Roboto;
   position: absolute;
-  top: 7%; /* 덱 상단에 위치하도록 설정 */
+  top: 15%;
   color: white;
-  font-size: 24px; /* 필요에 따라 폰트 크기 조정 */
-  margin-top: 10px; /* 텍스트와 덱 사이의 간격 조정 */
+  font-size: 24px;
+  margin-top: 10px;
+  text-align: center;
+  line-height: 30px;
+  font-weight: 600;
+  display: inline-block;
+  width: 229px;
+  height: 30px;
+  margin-bottom: 10px;
 }
