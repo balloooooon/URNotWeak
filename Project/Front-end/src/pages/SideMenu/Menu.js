@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Menu.css";
 
 export const MenuBar = ({ closebtn }) => {
+  const [shouldReload, setShouldReload] = useState(false);
   return (
     <div className="bg">
       <div onClick={closebtn}>
@@ -37,7 +38,7 @@ export const MenuBar = ({ closebtn }) => {
             to="/simul"
             className="text-wrapper"
             style={{ textDecoration: "none" }}
-            onClick={() => window.location.reload()}
+            onClick={() => setShouldReload(true)}
           >
             Simulation{" "}
           </Link>
@@ -88,6 +89,7 @@ export const MenuBar = ({ closebtn }) => {
           </Link>
         </div>
       </div>
+      {shouldReload && window.location.reload()}
     </div>
   );
 };
