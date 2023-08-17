@@ -11,7 +11,7 @@ export const Frame = ({ backimage, text1, text2, text3, link }) => {
         <div className="rectangle big-tophalf" />
         <picture>
           <source srcSet={require(`assets/images/${backimage}.webp`)} type="image/webp" />
-          <img className="big-tophalf img" src={require(`assets/images/${backimage}.jpg`)}></img>
+          <img alt="home-background-img" className="big-tophalf img" src={require(`assets/images/${backimage}.jpg`)}></img>
         </picture>
         <div className={`group`}>
           <div className="tx-b">{text2}</div>
