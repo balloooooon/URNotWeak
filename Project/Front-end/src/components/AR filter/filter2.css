@@ -18,17 +18,12 @@
 .centered-and-scaled2 {
   height: 100%; /* 컨테이너의 높이를 화면 높이로 설정 */
   width: 100%;
-  zoom: 3.2;
+  zoom: 1.0;
   
 }
 
-.centered-and-scaled2 object {
-/* 가로 크기를 자동으로 설정하여 세로 높이에 맞추기 */
-  height: 30vh; /* 화면 세로 높이의 2배로 설정하여 확대 */
-}
 
 }
-
 
 
 .scroll {

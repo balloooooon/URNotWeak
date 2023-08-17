@@ -27,12 +27,6 @@
     z-index: -2;
 }
 
-.ai-content {
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px;
-    z-index: 99;
-}
 
 .ai-content .main {
     text-align: center;

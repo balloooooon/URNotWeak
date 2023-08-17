@@ -166,8 +166,8 @@ function App({ onNext }) {
             right: 0,
             textAlign: 'center',
             zIndex: 9,
-            width: 320,
-            height: 480,
+            width: '100%',
+            height: '100vh',
             filter: 'grayscale(30%) contrast(12) brightness(0.8)',
           }}
         />
@@ -183,8 +183,8 @@ function App({ onNext }) {
             right: 0,
             textAlign: 'center',
             zIndex: 9,
-            width: 320,
-            height: 480,
+            width: '100%',
+            height: '100vh',
           }}
         />
         {/* Back 캔버스입니다. */}
@@ -199,8 +199,8 @@ function App({ onNext }) {
             right: 0,
             textAlign: 'center',
             zIndex: 9,
-            width: 320,
-            height: 480,
+            width: '100%',
+            height: '100vh',
           }}
         />
       </div>
