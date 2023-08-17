@@ -46,30 +46,32 @@ function Deck({ onAllCardsGone, flag, onNext }) {
     from: from(i),
   }));
 
-  const bind = useDrag(({ args: [index], down, movement: [mx], direction: [xDir], velocity }) => {
-    // 카카오톡에서 넘기는것이 인식안돼서 0.2->0.1 조정
-    const trigger = velocity > 0.1;
+  const [vel, setVel] = useState(0);
+  const [ddd, setDDD] = useState(0);
+  const bind = useDrag(({ args: [index], active, movement: [mx], direction: [xDir], velocity }) => {
+    // 왜 인식이 잘 안될까요
+    const trigger = velocity > 0.2;
     const dir = xDir < 0 ? -1 : 1;
-    // console.log(velocity)
-    // console.log(down)
-    // console.log(trigger+" : "+dir)
 
-    if (!down && trigger) gone.add(index);
+    setVel(velocity);
+    setDDD(dir);
+
+    if (!active && trigger) gone.add(index);
     api.start((i) => {
       if (index !== i) return;
       const isGone = gone.has(index);
-      const x = isGone ? (200 + window.innerWidth) * dir : down ? mx : 0;
+      const x = isGone ? (200 + window.innerWidth) * dir : active ? mx : 0;
       const rot = mx / 100 + (isGone ? dir * 10 * velocity : 0);
-      const scale = down ? 1.1 : 1;
+      const scale = active ? 1.1 : 1;
       return {
         x,
         rot,
         scale,
         delay: undefined,
-        config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 },
+        config: { friction: 50, tension: active ? 800 : isGone ? 200 : 500 },
       };
     });
-    if (!down && gone.size === cards.length) {
+    if (!active && gone.size === cards.length) {
       setTimeout(() => {
         gone.clear();
         api.start((i) => to(i));
@@ -87,6 +89,7 @@ function Deck({ onAllCardsGone, flag, onNext }) {
     <>
       {props.map(({ x, y, rot, scale }, i) => (
         <animated.div className={styles.deck} key={i} style={{ x, y }}>
+        <p className='tx-t'>{vel} / {ddd}</p>
           <animated.div
             {...bind(i)}
             style={{
