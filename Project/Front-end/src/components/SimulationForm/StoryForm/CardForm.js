@@ -46,15 +46,10 @@ function Deck({ onAllCardsGone, flag, onNext }) {
     from: from(i),
   }));
 
-  const [vel, setVel] = useState(0);
-  const [ddd, setDDD] = useState(0);
   const bind = useDrag(({ args: [index], active, movement: [mx], direction: [xDir], velocity }) => {
     // 왜 인식이 잘 안될까요
-    const trigger = velocity > 0.05;
+    const trigger = velocity > 0.02;
     const dir = xDir < 0 ? -1 : 1;
-
-    setVel(velocity);
-    setDDD(dir);
 
     if (!active && trigger) gone.add(index);
     api.start((i) => {
@@ -62,7 +57,6 @@ function Deck({ onAllCardsGone, flag, onNext }) {
       const isGone = gone.has(index);
       const x = isGone ? (200 + window.innerWidth) * dir : active ? mx : 0;
       const rot = mx / 100 + (isGone ? dir * 10 * velocity : 0);
-      console.log(rot);
       const scale = active ? 1.1 : 1;
       return {
         x,
@@ -90,7 +84,6 @@ function Deck({ onAllCardsGone, flag, onNext }) {
     <>
       {props.map(({ x, y, rot, scale }, i) => (
         <animated.div className={styles.deck} key={i} style={{ x, y }}>
-        <p className='tx-t'>{vel} / {ddd}</p>
           <animated.div
             {...bind(i)}
             style={{
