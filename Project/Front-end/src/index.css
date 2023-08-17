@@ -52,18 +52,18 @@ body::-webkit-scrollbar-track {
 
 @font-face {
   font-family: "LINESeedKR";
-  src: url("fonts/LINESeedKR-Th.ttf");
+  src: url("fonts/LINESeedKR-Th.woff2");
   font-weight: 100;
 }
 
 @font-face {
   font-family: "LINESeedKR";
-  src: url("fonts/LINESeedKR-Rg.ttf");
+  src: url("fonts/LINESeedKR-Rg.woff2");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "LINESeedKR";
-  src: url("fonts/LINESeedKR-Bd.ttf");
+  src: url("fonts/LINESeedKR-Bd.woff2");
   font-weight: 700;
 }
