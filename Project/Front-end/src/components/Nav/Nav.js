@@ -30,10 +30,12 @@ export const Nav = ({width=270}) => {
   // 사이드바 외부 클릭시 닫히는 함수
   const handleClose = e => {
     let sideArea = side.current;
-    let sideCildren = side.current.contains(e.target);
-    if (isOpen && (!sideArea || !sideCildren)) {
-      console.log('외부클릭')
-      toggleMenu();
+    if (sideArea) {
+      let sideChildren = sideArea.contains(e.target);
+      if (isOpen && !sideChildren) {
+        console.log('외부클릭');
+        toggleMenu();
+      }
     }
   }
 
