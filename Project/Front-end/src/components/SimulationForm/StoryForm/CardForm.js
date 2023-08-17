@@ -25,7 +25,7 @@ const cardsFirst = [
 ];
 
 const cardsFinal = [
-  'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/card1.png',
+  'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/drug5.png',
   'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/drug4.png',
   'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/drug3.png',
   'https://ssafy-e204-bucket.s3.ap-northeast-2.amazonaws.com/E204/card/drug2.png',
