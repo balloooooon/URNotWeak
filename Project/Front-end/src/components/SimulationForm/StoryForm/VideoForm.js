@@ -135,7 +135,7 @@ const VideoForm = ({ selectedIndex }) => {
       content = <MonoForm text={simulTxt} onNext={handleNextClick} />;
     } else if (currentStepData.simulContentType === 4) {
       console.log("ar으로 이동");
-      const newRandomIndex = Math.floor(Math.random() * 1) + 4;
+      const newRandomIndex = Math.floor(Math.random() * 1) + 5;
       let ARComponent;
       if (newRandomIndex === 1) {
         ARComponent = AR1;
