@@ -38,7 +38,7 @@ export const Footer = ({goTop}) => {
                 <div className='right'>
                     <div className="tx-s">연락처 : 02-3429-5100</div>
                     <div className="tx-s">이메일 : ssafy@ssafy.com</div>
-                    <div className="tx-s">CopyRight© &copy; SAMSUNG SW ACADEMY</div>
+                    <div className="tx-s">CopyRight &copy; SAMSUNG SW ACADEMY</div>
                 </div>
             </div>
         </div>
