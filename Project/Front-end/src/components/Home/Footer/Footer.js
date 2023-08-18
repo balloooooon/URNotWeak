@@ -27,7 +27,7 @@ export const Footer = ({goTop}) => {
                 </div>
             </div>
             <div className='up-btn'>
-                <img className="nxtbtn" src={NxtBtnImg} onClick={goTop}/>
+                <img alt='up-btn' className="nxtbtn" src={NxtBtnImg} onClick={goTop}/>
             </div>
             <div className="bottom-footer">
                 <div className='left'>
