@@ -8,7 +8,7 @@
 
 - CPU 정보: Intel Xeon(R) Core 4개
 
-    ![image.png](./image.png)
+    ![image-8.png](./image-8.png)
 
 - RAM : 16GB
     
