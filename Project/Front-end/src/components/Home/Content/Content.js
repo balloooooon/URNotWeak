@@ -17,7 +17,7 @@ export const Content = () => {
                     return( 
                         <picture className="wrapp" >
                             <source srcSet={require(`assets/images/${img}.webp`)} type="image/webp" />
-                            <img src={require(`assets/images/${img}.jpg`)}></img>
+                            <img src={require(`assets/images/${img}.jpg`)} alt='content-thumnail-img'></img>
                         </picture>  
                     )
                 }
