@@ -1,0 +1,15 @@
+.select .wrapper {
+    
+  border: 1px solid white;
+  border-radius: 10px;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+.select {
+    width: 100%;
+    text-align: center;
+    height: fit-content;
+    margin: auto;
+}

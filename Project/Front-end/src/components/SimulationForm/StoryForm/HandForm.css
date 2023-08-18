@@ -1,0 +1,69 @@
+.handbackimg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.hand-direc {
+  position: absolute;
+  top: 96.13px;
+  left: 28.52px;
+  width: 27.5px;
+  height: 70.96px;
+}
+.drug {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 81.48px;
+  height: 81.51px;
+  object-fit: cover;
+}
+.drag {
+  position: absolute;
+  top: 117.49px;
+  left: 71.08px;
+  letter-spacing: 0.1px;
+  line-height: 30px;
+  font-weight: 600;
+  display: inline-block;
+  width: 135.89px;
+  height: 31.19px;
+}
+.hand-group {
+  position: absolute;
+  left: 40%;
+  top: 120px;
+  width: 206.98px;
+  height: 167.09px;
+}
+.hand-parent {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+}
+.hand-form {
+  position: relative;
+  border-radius: 22px;
+  background-color: #000;
+  width: 100%;
+  height: 758px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 14px;
+  color: #fff;
+  font-family: Roboto;
+}

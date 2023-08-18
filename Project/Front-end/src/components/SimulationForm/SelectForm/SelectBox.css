@@ -1,0 +1,42 @@
+.box {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.box .Thumnail1 {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-10%);
+  left: -15%;
+  border-radius: 50%;
+  height: 197px;
+  width: 197px;
+  overflow: hidden;
+  border: 5px solid rgba(47, 47, 47, 0.8);
+}
+
+.box .Thumnail2 {
+  position: absolute;
+  top: 35%;
+  transform: translateY(-5%);
+  right: -24%;
+  border: 5px solid rgba(47, 47, 47, 0.8);
+  border-radius: 50%;
+  height: 290px;
+  width: 290px;
+  overflow: hidden;
+}
+
+.box .Thumnail3 {
+  position: absolute;
+  left: 33%;
+  top: 83%;
+  transform: translateY(-10%);
+  border: 5px solid rgba(47, 47, 47, 0.8);
+  border-radius: 50%;
+  height: 177px;
+  width: 177px;
+  overflow: hidden;
+}
