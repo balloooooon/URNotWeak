@@ -195,7 +195,7 @@ const ResultForm = ({ selectedIndex }) => {
             // onClick={onButtonsLightContainer2Click}
           >
             <div className="button-wrapper222">
-              <div className="div222">메인 페이지로</div>
+            
             </div>
           </div>
           <div className="group-container222">
