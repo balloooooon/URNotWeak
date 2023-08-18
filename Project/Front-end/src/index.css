@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   
-  overflow: auto;
+  /* overflow: auto; */
   scrollbar-width: thin; /* 스크롤바 너비 설정 (크롬 브라우저) */
   scrollbar-color: #888888 #f0f0f0; /* 스크롤바 색상 설정 (크롬 브라우저) */
 }
